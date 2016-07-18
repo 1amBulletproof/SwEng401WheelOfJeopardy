@@ -6,5 +6,5 @@
 
 ```python
 #Necessary to guarantee the path contains all modules
-import wheelsOfJeopardy.[YOUR_PATH]
+import wheelsofjeopardy.[YOUR_PATH]
 ```
