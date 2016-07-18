@@ -1,4 +1,4 @@
-from wheelofjeopardy.sector import Sector
+from wheelofjeopardy.sectors.sector import Sector
 
 # placeholder
 class Wheel(object):
