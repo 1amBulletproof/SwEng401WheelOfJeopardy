@@ -1,3 +1,10 @@
-## Wheels of Jeopardy
+# Wheels of Jeopardy
 
-This is the repository for the Wheels of Jeopardy program. Please contribute **only** using Python.
+## About
+- This is the repository for the Wheels of Jeopardy program. Please contribute **only** using Python.
+- Note, the following syntax is necessary to use import statements with our file structure:
+
+```python
+#Necessary to guarantee the path contains all modules
+import wheelsOfJeopardy.[YOUR_PATH]
+```
