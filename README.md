@@ -42,7 +42,8 @@ import wheelsofjeopardy.[YOUR_PATH]
 python -m unittest tests.all
 ```
 
-## About
+---
+## About This Project
 - This is the repository for the Wheel of Jeopardy program. Please contribute **only** using Python.
 - This program was designed and built during the 2016 Summer Semester of JHU 605.401
 - Team Members include the following:
