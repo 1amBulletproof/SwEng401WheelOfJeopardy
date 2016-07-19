@@ -27,14 +27,14 @@ class GameState(object):
         self.spins_remaining -= 1
 
     def end_turn(self):
-        self.choose_next_player()
+        self._choose_next_player()
 
     def has_game_ended(self):
         return (not self.board.any_questions_remaining()) or (not self.any_spins_remaining())
 
-  # private
+    # private
 
-    def choose_next_player(self):
+    def _choose_next_player(self):
         if self.current_player_index == len(self.player_states) - 1:
             self.current_player_index = 0
         else:
