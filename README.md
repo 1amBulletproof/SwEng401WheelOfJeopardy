@@ -33,7 +33,8 @@ import wheelsofjeopardy.[YOUR_PATH]
 ```
 
 ### Tests
-- Append all unit test names with "_tests"
+- Append all unit test file names with "_tests"
+- Run all unit tests before committing and/or pushing
 - Run all unit tests (from *root*, not tests, directory):
 
 ```bash
