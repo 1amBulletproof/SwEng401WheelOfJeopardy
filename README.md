@@ -11,15 +11,17 @@
 - [Constant names](https://www.python.org/dev/peps/pep-0008/#constants) are all *CAPITALIZED*
 - [Indentations](https://www.python.org/dev/peps/pep-0008/#indentation) = 4 [spaces](https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces)
 - [Docstrings](https://www.python.org/dev/peps/pep-0257/#rationale) should start each module/class and functions. This will help with pyDoc and generally make your code easy to understand.
+
 ```python
 #Docstring Example:
 """
 This module_a does thing_a
 """
 ```
-- Import Statements:
+- Import Statements should use the full module path
+
 ```python
-#Necessary to guarantee the path contains all modules
+#Import Example
 import wheelsofjeopardy.[YOUR_PATH]
 ```
 
