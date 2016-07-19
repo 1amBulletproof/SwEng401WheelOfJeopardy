@@ -5,7 +5,7 @@
 - Refer to [PEP 8](https://www.python.org/dev/peps/pep-0008/) for any and all questions.
 - [Package and Module names](https://www.python.org/dev/peps/pep-0008/#prescriptive-naming-conventions) should be lower case and either alloneword or separated_by_underscores
   - Underscores are discouraged here
-- [Class names](https://www.python.org/dev/peps/pep-0008/#class-names) should be Uppercase
+- [Class names](https://www.python.org/dev/peps/pep-0008/#class-names) should be CapWordConvention
 - [Function, Method, and Variable names](https://www.python.org/dev/peps/pep-0008/#function-names) should be lowercase separated_by_underscores when necessary
 - [Private/Internal Member names](https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles) should begin with an _underscore
 - [Constant names](https://www.python.org/dev/peps/pep-0008/#constants) are all CAPITALIZED
