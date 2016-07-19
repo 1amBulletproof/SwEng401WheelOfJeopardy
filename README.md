@@ -3,6 +3,7 @@
 
 ## Programming Guidelines
 - Refer to [PEP 8](https://www.python.org/dev/peps/pep-0008/) for any and all questions.
+- Example of PEP 8 in the wild: [django](https://github.com/django/django)
 - [Package and Module names](https://www.python.org/dev/peps/pep-0008/#prescriptive-naming-conventions) should be lower case and either *alloneword* or *separated_by_underscores*
   - Underscores are discouraged here
 - [Class names](https://www.python.org/dev/peps/pep-0008/#class-names) should be *CapWordConvention*
