@@ -35,10 +35,9 @@ import wheelsofjeopardy.[YOUR_PATH]
 ### Tests
 - Append all unit test file names with "_tests"
 - Run all unit tests before committing and/or pushing
-- Run all unit tests (from *root*, not tests, directory):
 
 ```bash
-#Run all unit Tests
+#Run all unit Tests from root directory
 python -m unittest tests.all
 ```
 
