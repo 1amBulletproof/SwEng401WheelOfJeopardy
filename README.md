@@ -1,4 +1,4 @@
-# Wheels of Jeopardy
+# Wheel of Jeopardy
 ---
 
 ## Programming Guidelines
