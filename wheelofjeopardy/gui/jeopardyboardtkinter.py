@@ -1,54 +1,63 @@
 """
-wheelofjeopardy GUI prototype using Tkinter
+wheelofjeopardy GUI prototype using
+
+using 3rd party Pillow which is a fork of the (possibly dead) Python Image Library
 """
 
-from os import listdir 															# need package to find all csv files in given directory
-import csv 																		# need to read csv's
-																	# For testing purposes
-import Tkinter														# for selecting the document to use
-from tkFileDialog import askopenfilename
+from Tkinter import *
+from PIL import Image, ImageTk
 
-
-#@TODO REFORMAT THIS TO FIT PEP 8
+#@TODO make rotating image
+#@TODO include basic features for game GUI
 #@TODO Update this GUI to represent Game Board
-class FileComparisonGUI(Tkinter.Tk):
-	def __init__(self, parent=None):
-		Tkinter.Tk.__init__(self, parent)
-		self.parent = parent
-		self.initialize()
+class WheelOfJeopardyGui(Tk):
+    def __init__(self, parent=None):
+        Tk.__init__(self, parent)
+        self.parent = parent
+        self.initialize()
+        self.configure(bg="#e6f3ff")
 
-	def initialize(self):
-		self.grid() # packing/geometry method
+    def initialize(self):
+        self.grid() # packing/geometry method
 
-		#Labels
-		self.ReqLabel = Tkinter.Label(self,  text ="Requirements CSV File Selected (CSV)")
-		self.ReqLabel.grid(column = 0, row = 1, sticky = "N", padx = 20, pady = 10)
+        #buttons
+        self.button_1 = Button(self, text = "Button 1", command = self.press_button_1)
+        self.button_1.grid(column=0, row=0, sticky="S", padx=20, pady=10)
 
-		self.SigLabel = Tkinter.Label(self,  text ="Signals CSV File Selected (CSV)")
-		self.SigLabel.grid(column = 2, row = 1, sticky = "N", padx = 20, pady = 10)
+        self.button_spin_wheel = Button(self, text = "Spin the Wheel", command = self.rotate_wheel)
+        self.button_spin_wheel.grid(column=2, row=0, sticky="S", padx=20, pady=10)
 
-		#buttons
-		self.ReqFileButton = Tkinter.Button(self, text = "Choose the Requirements File (CSV)", command = self.choose_requirements_file)
-		self.ReqFileButton.grid(column = 0, row = 0, sticky = "S", padx = 20, pady = 10)
+        self.button_quit = Button(self, text = "QUIT", command = self.quit)
+        self.button_quit.grid(column=1, row=4, padx=30, pady=15)
 
-		self.SigFileButton = Tkinter.Button(self, text = "Choose the Signals File (CSV)", command = self.choose_signals_file)
-		self.SigFileButton.grid(column = 2, row = 0, sticky = "S", padx = 20, pady = 10)
+        #Labels
+        self.label_1 = Label(self,  text ="Button 1")
+        self.label_1.grid(column=0, row=1, sticky="N", padx=20, pady=10)
 
-		self.QuitButton = Tkinter.Button(self, text = "QUIT", command = self.quit)
-		self.QuitButton.grid(column = 1, row = 4, padx = 30, pady = 15)
+        self.label_2 = Label(self,  text ="Spin The Wheel!")
+        self.label_2.grid(column=2, row=1, sticky="N", padx=20, pady=10)
 
-	def choose_requirements_file(self):
-		name = askopenfilename()
-		name_string = str(name)
-		self.ReqLabel["text"] = name_string
+        #image
+        # self.image_wheel = Image.open("../../img/wheel_of_fortune_1975.png")
+        self.image_wheel = Image.open("wheel_of_fortune_1975.png")
+        self.tk_image_wheel = ImageTk.PhotoImage(self.image_wheel)
+        self.label_image = Label(image=self.tk_image_wheel)
+        self.label_image.image = self.tk_image_wheel
 
-	def choose_signals_file(self):
-		name = askopenfilename()
-		name_string = str(name)
-		self.SigLabel["text"] = name_string
+        #Canvas for image
+        self.canvas = Canvas(self, width=1500, height=1200)
+        self.canvas.create_image(500, 500, image=self.tk_image_wheel)
+        self.canvas.grid(column=1, row=2, sticky="S", padx=20, pady=10)
+
+    def press_button_1(self):
+        print("button 1 pressed")
+
+    def rotate_wheel(self):
+        #@todo wheel spin logic
+        print("spin the wheel! WEEEEEEE!")
 
 if __name__ == "__main__":
-	FCapp = FileComparisonGUI(None)
-	FCapp.title('FILE COMPARISON APP v. 1.0')
-	FCapp.geometry()
-	FCapp.mainloop()
+    gui = WheelOfJeopardyGui(None)
+    gui.title("Wheel Of Jeopardy!")
+    gui.geometry()
+    gui.mainloop()
