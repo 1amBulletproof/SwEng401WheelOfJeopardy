@@ -35,7 +35,4 @@ class GameState(object):
     # private
 
     def _choose_next_player(self):
-        if self.current_player_index == len(self.player_states) - 1:
-            self.current_player_index = 0
-        else:
-            self.current_player_index += 1
+        self.current_player_index = (self.current_player_index + 1) % len(self.player_states)
