@@ -1,5 +1,7 @@
 import unittest
 
+from tests.support import TestEvents
+
 from wheelofjeopardy.events import Events
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.player_state import PlayerState
@@ -8,10 +10,17 @@ from wheelofjeopardy.wheel import Wheel
 
 class GameStateTestCase(unittest.TestCase):
     def setUp(self):
-        events = Events()
-        self.player1 = PlayerState(name='Arthur', events=events)
-        self.player2 = PlayerState(name='Lancelot', events=events)
-        self.game_state = GameState([self.player1, self.player2], events)
+        self.events = TestEvents()
+        self.player1 = PlayerState(name='Arthur', events=self.events)
+        self.player2 = PlayerState(name='Lancelot', events=self.events)
+        self.game_state = GameState([self.player1, self.player2], self.events)
+
+        # check for game state setup events
+        self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
+        self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
+
+        # clear out setup events
+        self.events.reset()
 
 class TestInitialGameState(GameStateTestCase):
     def test_number_of_remaining_spins(self):
@@ -35,11 +44,6 @@ class TestInitialGameState(GameStateTestCase):
     def test_any_spins_remaining(self):
         self.assertTrue(self.game_state.any_spins_remaining)
 
-    def test_spin_decrements_spins_remaining(self):
-        self.assertEqual(self.game_state.spins_remaining, 50)
-        self.game_state.spin()
-        self.assertEqual(self.game_state.spins_remaining, 49)
-
 class TestEndTurn(GameStateTestCase):
     def test_end_of_turn_chooses_next_player(self):
         self.assertEqual(self.game_state.get_current_player().name, 'Arthur')
@@ -52,6 +56,32 @@ class TestEndTurn(GameStateTestCase):
         self.assertEqual(self.game_state.get_current_player().name, 'Lancelot')
         self.game_state.end_turn()
         self.assertEqual(self.game_state.get_current_player().name, 'Arthur')
+
+    def test_end_of_turn_fires_events(self):
+        self.game_state.end_turn()
+        self.assertTrue(self.events.did_broadcast('game_state.turn_will_end'))
+        self.assertTrue(self.events.did_broadcast('game_state.turn_did_end'))
+        self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
+
+class TestSpin(GameStateTestCase):
+    def test_spin_decrements_spins_remaining(self):
+        self.assertEqual(self.game_state.spins_remaining, 50)
+        self.game_state.spin()
+        self.assertEqual(self.game_state.spins_remaining, 49)
+
+    def test_spin_fires_game_end_event(self):
+        self.game_state.spins_remaining = 1
+        self.game_state.spin()
+        self.assertTrue(self.events.did_broadcast('game_state.game_did_end'))
+
+    def test_spin_fires_spin_update_event(self):
+        self.game_state.spin()
+        self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
+
+    def test_spin_fires_sector_events(self):
+        self.game_state.spin()
+        self.assertTrue(self.events.did_broadcast('game_state.sector_will_apply'))
+        self.assertTrue(self.events.did_broadcast('game_state.sector_did_apply'))
 
 class TestEndGame(GameStateTestCase):
     def test_game_end_when_no_more_questions(self):

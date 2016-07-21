@@ -28,9 +28,14 @@ class GameState(object):
 
     def spin(self):
         sector = self.wheel.spin()
+        self._broadcast('sector_will_apply', self, sector)
         sector.apply_to(self)
+        self._broadcast('sector_did_apply', self, sector)
         self.spins_remaining -= 1
         self._broadcast('spins_did_update', self)
+
+        if self.has_game_ended():
+            self._broadcast('game_did_end', self)
 
     def end_turn(self):
         self._broadcast('turn_will_end', self)
