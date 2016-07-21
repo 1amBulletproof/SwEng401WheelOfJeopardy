@@ -1037,3 +1037,5 @@ class Ui_wojApplicationWindow(object):
         self.actionPlayer2.setText(_translate("wojApplicationWindow", "Player2", None))
         self.actionPlayer3.setText(_translate("wojApplicationWindow", "Player3", None))
 
+if __name__ == '__main__':
+    Ui_wojApplicationWindow().setupUi()
