@@ -23,7 +23,7 @@ class GameState(object):
 
     def spin(self):
         sector = self.wheel.spin()
-        sector.apply_to(self)
+        sector.action(self)
         self.spins_remaining -= 1
 
     def end_turn(self):

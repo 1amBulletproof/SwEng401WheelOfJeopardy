@@ -7,5 +7,5 @@ class Sector:
     def __init__(self, name):
         self.name = name
 
-    def action(self, gui):
+    def action(self):
         raise NotImplementedError()
