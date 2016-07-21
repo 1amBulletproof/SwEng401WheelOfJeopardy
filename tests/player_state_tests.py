@@ -1,9 +1,12 @@
 import unittest
+
+from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState, NoTokensAvailableError
 
 class PlayerStateTestCase(unittest.TestCase):
     def setUp(self):
-        self.player_state = PlayerState(name='Monty')
+        events = Events()
+        self.player_state = PlayerState(name='Monty', events=events)
 
 class TestInitialPlayerState(PlayerStateTestCase):
     def test_name_attribute(self):
@@ -17,7 +20,8 @@ class TestInitialPlayerState(PlayerStateTestCase):
 
 class TestScoreControls(PlayerStateTestCase):
     def setUp(self):
-        self.player_state = PlayerState(name='Monty')
+        events = Events()
+        self.player_state = PlayerState(name='Monty', events=events)
 
     def test_increases_score(self):
         self.assertEqual(self.player_state.score, 0)
