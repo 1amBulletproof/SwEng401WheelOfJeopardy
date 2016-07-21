@@ -1,5 +1,6 @@
 import unittest
 
+from wheelofjeopardy.events import Events
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.question_board_state import QuestionBoardState
@@ -7,9 +8,10 @@ from wheelofjeopardy.wheel import Wheel
 
 class GameStateTestCase(unittest.TestCase):
     def setUp(self):
-        self.player1 = PlayerState(name='Arthur')
-        self.player2 = PlayerState(name='Lancelot')
-        self.game_state = GameState([self.player1, self.player2])
+        events = Events()
+        self.player1 = PlayerState(name='Arthur', events=events)
+        self.player2 = PlayerState(name='Lancelot', events=events)
+        self.game_state = GameState([self.player1, self.player2], events)
 
 class TestInitialGameState(GameStateTestCase):
     def test_number_of_remaining_spins(self):
