@@ -28,13 +28,9 @@ class GameState(object):
 
     def spin(self):
         sector = self.wheel.spin()
-<<<<<<< HEAD
-        sector.action(self)
-=======
         self._broadcast('sector_will_apply', self, sector)
-        sector.apply_to(self)
+        sector.action(self)
         self._broadcast('sector_did_apply', self, sector)
->>>>>>> dc79324844d2c190216741995b1bfe24f37c9209
         self.spins_remaining -= 1
         self._broadcast('spins_did_update', self)
 
