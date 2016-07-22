@@ -27,7 +27,7 @@ class Wheel(object):
         # return [sector1, sector2, sector3, sector4, sector5, sector6 ... sector12]
 
     """
-    get random sector, notify GUI of this sector (to show/animate it), and pass game_state to the random sector's action() method
+    get random sector, notify GUI of this sector (to show/animate it), and return the random sector
     """
     #@TODO:unfinished method
     def spin(self):
