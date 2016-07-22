@@ -8,5 +8,4 @@ class Sector:
         self.name = name
 
     def action(self, game_state):
-        game_state.end_turn()
         pass
