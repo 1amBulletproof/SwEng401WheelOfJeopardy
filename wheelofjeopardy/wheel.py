@@ -2,13 +2,12 @@
 Wraps the sector classes and controls which affect the game_state
 """
 
-from wheelofjeopardy.sectors import *
+from wheelofjeopardy.sectors.sector import *
 
 #@TODO: create unit tests for this class
 class Wheel(object):
-<<<<<<< HEAD
     #@TODO: initialization incomplete?
-    def __init__(self):
+    def __init__(self, event):
         pass
         # self._sectors = self._initialize_sectors()
 
@@ -31,13 +30,9 @@ class Wheel(object):
     get random sector, notify GUI of this sector (to show/animate it), and pass game_state to the random sector's action() method
     """
     #@TODO:unfinished method
-=======
-    def __init__(self, events):
-      self.events = events
-
->>>>>>> dc79324844d2c190216741995b1bfe24f37c9209
     def spin(self):
-        pass
+        self.sector_selected = Sector("random sector")
+        return self.sector_selected
         # self.current_sector = self._get_random_sector()
         # #Notify GUI? GUI Observers?
         # self.current_sector.action(game_state) - handled by the game_state currently
