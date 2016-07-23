@@ -40,9 +40,9 @@ class TextGUI(object):
     # private instance
 
     def _start(self):
-        self.events.on('game_state.current_player_did_change', self._on_current_player_did_change)
-        self.events.on('game_state.spins_did_update', self._on_spins_did_update)
-        self.events.on('game_state.turn_will_end', self._on_turn_will_end)
+        self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
+        self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
+        self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
 
         while self.game_state.any_spins_remaining():
             print 'What would you like to do, %s?' % self.game_state.get_current_player().name
