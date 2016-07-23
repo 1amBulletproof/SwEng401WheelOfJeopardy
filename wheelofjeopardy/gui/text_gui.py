@@ -11,12 +11,12 @@ from wheelofjeopardy.text_helper import apostrophize, pluralize
 
 class TextGUI(object):
     @classmethod
-    def run(cls):
+    def start(cls):
         print 'Welcome to Wheel of Jeopardy!'
         print "Let's get started!"
 
         events = Events()
-        TextGUI(cls._create_game_state(events), events)._run()
+        TextGUI(cls._create_game_state(events), events)._start()
 
     # private static
 
@@ -39,7 +39,7 @@ class TextGUI(object):
 
     # private instance
 
-    def _run(self):
+    def _start(self):
         self.events.on('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.on('game_state.spins_did_update', self._on_spins_did_update)
         self.events.on('game_state.turn_will_end', self._on_turn_will_end)
@@ -87,4 +87,4 @@ class TextGUI(object):
         return "It's %s turn." % apostrophize(self.game_state.get_current_player().name)
 
 if __name__ == '__main__':
-    TextGUI.run()
+    TextGUI.start()
