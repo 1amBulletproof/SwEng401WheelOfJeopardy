@@ -14,42 +14,41 @@ themselves will contain the question text as well as the correct
 answer.
 
 John has written a script that will create 12 lists of questions
-2 rounds * 6 categories of questions
+2 rounds * 6 categories of questions = 12 lists
 
 reader returns an instance of question matrix
 
 has a load file method
 
 """
+#need an import statement from question class?
+#from wheelofjeopardy.question import Question
+
 class QuestionMatrix(object):
     def __init__(self):
         #2d array of questions, with 5 rows and 6 columns
-        rows = 5
+        #there are 6 different categories of questions
         cols = 6
+        #there are 5 questions in each category
+        rows = 5
         #this matrix is filled with default Questions.. EDIT?
-        #are we reading questions in from a file? Or generating them
-        #in the question class?
-        #12 lists of questions
-        questionMatrix = [[Question() for j in range(cols)] for i in range(rows)]
+        #John created a script that will read questions in from
+        #an input file.
+        #12 lists of questions - 2 rounds of 6 categories
+        questions = [[Question() for j in range(cols)]
+                          for i in range(rows)]
 
-    #find and return the row, column of the given element in matrix l
-    def find(l, elem):
-        for row, i in enumerate(l):
-            try:
-                column = i.index(elem)
-            except ValueError:
-                continue
-            return row, column
-        return -1
+    #return the question at location r, c (row, column)
+    def get(r, c):
+        return questions[r][c]
 
-    #replace a given old question with a new question
-    def replace_question(oldQuestion, newQuestion):
-        # @TODO: replace with correct logic
+    #load contents - didn't John write this?
+    def load(contents)
+    # @TODO: replace with correct logic
 
-        #find the old question in the question matrix
-        #the find method returns the row, column of the oldQuestion
-        row, column = find(questionMatrix, oldQuestion)
-        questionMatrix[row, column] = newQuestion
+    #load file of questions - didn't John write this?
+    def load_file(path)
+    # @TODO: replace with correct logic
 
 """
     #needed? probably not..
