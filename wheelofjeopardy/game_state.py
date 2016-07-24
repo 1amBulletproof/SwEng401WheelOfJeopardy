@@ -28,9 +28,9 @@ class GameState(object):
 
     def spin(self):
         sector = self.wheel.spin()
-        self._broadcast('sector_will_apply', self, sector)
+        self._broadcast('sector_will_apply', self, sector) # are these both needed? only included 1 in sequence diagram
+        self._broadcast('sector_did_apply', self, sector) # are these both needed? only included 1 in sequence diagram
         sector.action(self)
-        self._broadcast('sector_did_apply', self, sector)
         self.spins_remaining -= 1
         self._broadcast('spins_did_update', self)
 
