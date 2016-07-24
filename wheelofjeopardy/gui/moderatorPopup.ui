@@ -85,7 +85,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QRadioButton" name="yesRadio">
+      <widget class="QRadioButton" name="playerCorrectRadio">
        <property name="font">
         <font>
          <pointsize>24</pointsize>
@@ -110,7 +110,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QRadioButton" name="definitelyNotRadio">
+      <widget class="QRadioButton" name="playerIncorrectRadio">
        <property name="font">
         <font>
          <pointsize>24</pointsize>
@@ -173,17 +173,6 @@
     </layout>
    </item>
   </layout>
-  <zorder>mainLabel</zorder>
-  <zorder>yesRadio</zorder>
-  <zorder>definitelyNotRadio</zorder>
-  <zorder>autoCheckRadio</zorder>
-  <zorder>okButton</zorder>
-  <zorder>definitelyNotRadio</zorder>
-  <zorder>correctAnswerLabel</zorder>
-  <zorder>correctAnswer</zorder>
-  <zorder>playerAnswerLabel</zorder>
-  <zorder>playerAnswer</zorder>
-  <zorder>horizontalSpacer_3</zorder>
  </widget>
  <resources/>
  <connections/>
