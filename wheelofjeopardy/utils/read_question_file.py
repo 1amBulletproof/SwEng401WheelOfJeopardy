@@ -7,23 +7,9 @@ formatting requirements for questions. See README
 
 @author: J Wu, johnwuy@gmail.com
 """
-# def read_question_file(inFileName):
-
-#%% Setup and configurations
-import os, csv, sys
-
-# TODO(J Wu) once option class is done, implement use of that in this section
-
-numQs = 5 # number of questions in category
-numCats = 6 # number of categories per round
-
-trueList = set(['TRUE', '1', 'T', 'Y'])
-
-# d = os.path.dirname(os.path.realpath(sys.argv[0]))
-inFileName = 'Questions_Aired_08Apr2011.csv'
-fPath = os.path.join(os.getcwd(), 'cfg', inFileName)
 
 #%% Auxiliary function section
+trueList = set(['TRUE', '1', 'T', 'Y'])
 
 # to index entire row in 2D-List
 def sliceCol( mat, col):
@@ -40,38 +26,59 @@ def getDataFromQRow(row):
     return (rdInd, row['Category'], pts, row['Question'], row['Answer'], dd)
 
 
+#%% Read CSV
+def ReadQuestions(opts):
+    import os, csv, sys
+
+    numQs = 5 # number of questions in category
+    numCats = 6 # number of categories per round
+
+    #d = os.path.dirname(os.path.realpath(sys.argv[0]))
+    inFileName = opts.qFileName
+    fPath = os.path.join(os.getcwd(), "wheelofjeopardy", 'cfg', inFileName)
+
 #%% Parse CSV line-by-line and instantiate the various questions
 
-catgRd1 = dict() # dict to keep list indices for round 1 categories
-catgRd2 = dict() # dict to keep list indices for round 2 categories
-# the following 2D-list are to store questions for round 1 and 2
-qsRd1 = [[None for x in range(numQs)] for y in range(numCats)]
-qsRd2 = [[None for x in range(numQs)] for y in range(numCats)]
+    catgInd1 = dict() # dict to keep list indices for round 1 categories
+    catgInd2 = dict() # dict to keep list indices for round 2 categories
+    # the following 2D-list are to store questions for round 1 and 2
+    qsRd1 = [[None for x in range(numQs)] for y in range(numCats)]
+    qsRd2 = [[None for x in range(numQs)] for y in range(numCats)]
 
-with open(fPath, 'r') as csvfile:
-    reader = csv.DictReader(csvfile)
+    with open(fPath, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
 
-    for row in reader:
-        (rdInd, cat, pts, qTxt, ans, dd) = getDataFromQRow(row) # read row
+        for row in reader:
+            (rdInd, cat, pts, qTxt, ans, dd) = getDataFromQRow(row) # read row
 
-        if rdInd == 1:
-            if not catgRd1.has_key(cat): # if category not encountered yet
-                catgRd1[cat] = len(catgRd1) # designate new index
+            if rdInd == 1:
+                if not catgInd1.has_key(cat): # if category not encountered yet
+                    catgInd1[cat] = len(catgInd1) # designate new index
 
-            # put question class instantiation here
-            qsRd1[catgRd1[cat]][pts-1] = qTxt +'|' +ans # placeholder for now
+                # put question class instantiation here
+                qsRd1[catgInd1[cat]][pts-1] = qTxt +'|' +ans # placeholder
+                val = opts.qPoints1[pts-1]
 
-        elif rdInd == 2:
-            if not catgRd2.has_key(cat):
-                catgRd2[cat] = len(catgRd2)
+            elif rdInd == 2:
+                if not catgInd2.has_key(cat):
+                    catgInd2[cat] = len(catgInd2)
 
-            # put question class instantiation here
-            qsRd2[catgRd2[cat]][pts-1] = qTxt +'|' +ans # placeholder for now
+                # put question class instantiation here
+                qsRd2[catgInd2[cat]][pts-1] = qTxt +'|' +ans # placeholder
+                val = opts.qPoints2[pts-1]
 
-        else: # do nothing with final jeopardy for now
-            pass
+            else: # do nothing with final jeopardy for now
+                pass
+
+    # prepare categories for return
+    catgRound1 = [None for x in range(numCats)]
+    catgRound2 = [None for x in range(numCats)]
+    for key,val in catgInd1.iteritems():
+        catgRound1[val] = key
+    for key,val in catgInd2.iteritems():
+        catgRound2[val] = key
 
 #%% Instantiate QuestionMatrix method, check for consistency, and return
 # TODO(J Wu) implement this once we get class functions
 
-#return (qsRd1, qsRd2)
+    return (catgRound1, qsRd1, catgRound2, qsRd2)
