@@ -5,10 +5,10 @@ class NoTokensAvailableError(Exception):
     pass
 
 class PlayerState(object):
-    def __init__(self, name, events):
+    def __init__(self, name, score=0, events):
         self.name = name
         self.events = events
-        self.score = 0
+        self.score = score # handicaps
         self.free_spin_tokens = 0
 
     def increase_score_by(self, amount):
