@@ -7,6 +7,8 @@ formatting requirements for questions. See README
 
 @author: J Wu, johnwuy@gmail.com
 """
+# def read_question_file(inFileName):
+
 #%% Setup and configurations
 import os, csv, sys
 
@@ -17,9 +19,9 @@ numCats = 6 # number of categories per round
 
 trueList = set(['TRUE', '1', 'T', 'Y'])
 
-d = os.path.dirname(os.path.realpath(sys.argv[0]))
-f = 'Questions_Aired_08Apr2011.csv'
-fPath = os.path.join(d, f)
+# d = os.path.dirname(os.path.realpath(sys.argv[0]))
+inFileName = 'Questions_Aired_08Apr2011.csv'
+fPath = os.path.join(os.getcwd(), 'cfg', inFileName)
 
 #%% Auxiliary function section
 
@@ -70,5 +72,6 @@ with open(fPath, 'r') as csvfile:
             pass
 
 #%% Instantiate QuestionMatrix method, check for consistency, and return
-
 # TODO(J Wu) implement this once we get class functions
+
+#return (qsRd1, qsRd2)
