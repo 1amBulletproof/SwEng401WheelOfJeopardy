@@ -1,26 +1,25 @@
 # -*- coding: utf-8 -*-
 
-def ReadCfgToOptions(cfgFile = "./cfg/Options.ini"):
+def ReadCfgToOptions(cfgFile = "Options.ini"):
     """
-    Read Options.ini file located in the ./cfg/ directory, and return an 
+    Read Options.ini file located in the ./cfg/ directory, and return an
     immutable object with fields representing the content of the ini file. The
-    fields are: ['nPlayers','playerNames', 'startScores', 'qPoints1', 
+    fields are: ['nPlayers','playerNames', 'startScores', 'qPoints1',
         'qPoints2' ,'qFileName', 'totalSpins', 'dailyDouble','timeLimit1',
-        'timeLimit2', 'enableSound', 'enableAnimation'
-    
+        'timeLimit2', 'enableSound', 'enableAnimation']
+
     @type	cfgFile: string
     @param	cfgFile: path to the Options.ini
 
     @rtype	namedTuple
-    @return	parsed INI file 
+    @return	parsed INI file
 
     @author: J Wu, johnwuy@gmail.com
     """
-    import ConfigParser
+    import ConfigParser, os
     from collections import namedtuple as ntp  # use nametuple since immutable
 
-    #cfgFile = "./cfg/Default.ini"
-
+    cfgFile = os.path.join(os.getcwd(), "wheelofjeopardy", "cfg", cfgFile)
     cp = ConfigParser.RawConfigParser() # configParser
     cp.read(cfgFile) # read in config file
 
