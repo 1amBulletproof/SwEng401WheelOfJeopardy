@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/user/mlink/pycode/moderatorpopup.ui'
+# Form implementation generated from reading ui file '/user/mlink/pycode/moderatorPopup.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -66,20 +66,20 @@ class Ui_moderatorDialog(object):
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.yesRadio = QtGui.QRadioButton(moderatorDialog)
+        self.playerCorrectRadio = QtGui.QRadioButton(moderatorDialog)
         font = QtGui.QFont()
         font.setPointSize(24)
-        self.yesRadio.setFont(font)
-        self.yesRadio.setObjectName(_fromUtf8("yesRadio"))
-        self.horizontalLayout.addWidget(self.yesRadio)
+        self.playerCorrectRadio.setFont(font)
+        self.playerCorrectRadio.setObjectName(_fromUtf8("playerCorrectRadio"))
+        self.horizontalLayout.addWidget(self.playerCorrectRadio)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.definitelyNotRadio = QtGui.QRadioButton(moderatorDialog)
+        self.playerIncorrectRadio = QtGui.QRadioButton(moderatorDialog)
         font = QtGui.QFont()
         font.setPointSize(24)
-        self.definitelyNotRadio.setFont(font)
-        self.definitelyNotRadio.setObjectName(_fromUtf8("definitelyNotRadio"))
-        self.horizontalLayout.addWidget(self.definitelyNotRadio)
+        self.playerIncorrectRadio.setFont(font)
+        self.playerIncorrectRadio.setObjectName(_fromUtf8("playerIncorrectRadio"))
+        self.horizontalLayout.addWidget(self.playerIncorrectRadio)
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
         self.autoCheckRadio = QtGui.QRadioButton(moderatorDialog)
@@ -97,16 +97,6 @@ class Ui_moderatorDialog(object):
         self.okButton.setObjectName(_fromUtf8("okButton"))
         self.horizontalLayout_2.addWidget(self.okButton)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.mainLabel.raise_()
-        self.yesRadio.raise_()
-        self.definitelyNotRadio.raise_()
-        self.autoCheckRadio.raise_()
-        self.okButton.raise_()
-        self.definitelyNotRadio.raise_()
-        self.correctAnswerLabel.raise_()
-        self.correctAnswer.raise_()
-        self.playerAnswerLabel.raise_()
-        self.playerAnswer.raise_()
 
         self.retranslateUi(moderatorDialog)
         QtCore.QMetaObject.connectSlotsByName(moderatorDialog)
@@ -118,8 +108,8 @@ class Ui_moderatorDialog(object):
         self.correctAnswer.setText(_translate("moderatorDialog", "TextLabel", None))
         self.playerAnswerLabel.setText(_translate("moderatorDialog", "Player\'s Answer:", None))
         self.playerAnswer.setText(_translate("moderatorDialog", "TextLabel", None))
-        self.yesRadio.setText(_translate("moderatorDialog", "YES!", None))
-        self.definitelyNotRadio.setText(_translate("moderatorDialog", "Definitely Not.", None))
+        self.playerCorrectRadio.setText(_translate("moderatorDialog", "YES!", None))
+        self.playerIncorrectRadio.setText(_translate("moderatorDialog", "Definitely Not.", None))
         self.autoCheckRadio.setText(_translate("moderatorDialog", "Auto Check", None))
         self.okButton.setText(_translate("moderatorDialog", "OK", None))
 
