@@ -2,7 +2,10 @@
 Sector Super Class
 """
 
-# placeholder
-class Sector(object):
-    def apply_to(self, game_state):
+#@TODO: unit tests for class
+class Sector:
+    def __init__(self, name):
+        self.name = name
+
+    def action(self, game_state):
         pass
