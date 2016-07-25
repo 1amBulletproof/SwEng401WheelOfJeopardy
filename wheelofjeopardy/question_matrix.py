@@ -25,7 +25,7 @@ has a load file method
 #from wheelofjeopardy.question import Question
 
 class QuestionMatrix(object):
-    def __init__(self):
+    def __init__(self, catgs, Qs, pts):
         #2d array of questions, with 5 rows and 6 columns
         #there are 6 different categories of questions
         cols = 6
@@ -35,33 +35,38 @@ class QuestionMatrix(object):
         #John created a script that will read questions in from
         #an input file.
         #12 lists of questions - 2 rounds of 6 categories
-        questions = [[Question() for j in range(cols)]
-                          for i in range(rows)]
+        self.categories = catgs
+        self.questions = Qs
+        self.pointValue = pts
 
-    #return the question at location r, c (row, column)
+
+    #return the tuple of (pointValue, Category, Question)
+    #stored at location r, c (row, column)
     def get(r, c):
-        return questions[r][c]
+        catg = categories[c]
+        val = pointValue[c]
+        return (val, catg, questions[r][c])
 
-    #load contents - didn't John write this?
-    def load(contents)
-    # @TODO: replace with correct logic
 
-    #load file of questions - didn't John write this?
-    def load_file(path)
-    # @TODO: replace with correct logic
+class Question(object):
+    """
+    Question Class, represents a question of WoJ
+    Must be instantiated with the question text and the answer.
+    @author J Wu, johnwuy@gmail.com
+    """
+    def __init__(self, questionText, answer):
+        self.text = questionText
+        self.answer = answer
 
-"""
-    #needed? probably not..
-    def remove_question(self):
-        # @TODO: replace with correct logic
+    # get question text
+    def getQuestion(self):
+        return self.text
 
-    def get_question_category(self):
-        # @TODO: replace with correct logic
-        #get question column
-        #get the category value from the category array
+    # get answer
+    def getAnswer(self):
+        return self.answer
 
-    #needed? probably not...
-    def set_question_category(column):
-        # @TODO: replace with correct logic
-        #set the category for a column
-"""
+    # string representation
+    def __str__(self):
+        return self.text + " : " + self.answer
+
