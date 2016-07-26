@@ -8,6 +8,7 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.text_helper import apostrophize, pluralize
+from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
 
 class TextGUI(object):
     @classmethod
@@ -16,6 +17,7 @@ class TextGUI(object):
         print "Let's get started!"
 
         events = Events()
+        opts = ReadCfgToOptions()
         TextGUI(cls._create_game_state(events), events)._start()
 
     # private static

@@ -5,8 +5,8 @@ Control and monitor the wheelofjeopardy game state
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.wheel import Wheel
 
-class GameState(object):
-    TOTAL_SPINS = 50
+class GameState(object, opts):
+    TOTAL_SPINS = opts.totalSpins
 
     def __init__(self, player_states, events):
         self.events = events
@@ -15,6 +15,7 @@ class GameState(object):
         self.current_player_index = 0
         self.board = QuestionBoardState(events)
         self.wheel = Wheel(events)
+        self.active_wager = 0 # placeholder
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -28,8 +29,9 @@ class GameState(object):
 
     def spin(self):
         self.current_sector = self.wheel.spin()
-        self._broadcast('sector_will_apply', self, sector) # are these both needed? only included 1 in sequence diagram
-        self._broadcast('sector_did_apply', self, sector) # are these both needed? only included 1 in sequence diagram
+        # are these both needed? only included 1 in sequence diagram
+        self._broadcast('sector_will_apply', self, sector) 
+        self._broadcast('sector_did_apply', self, sector)
         self.current_sector.action(self)
         self.spins_remaining -= 1
         self._broadcast('spins_did_update', self)
