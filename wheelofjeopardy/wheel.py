@@ -30,7 +30,7 @@ class Wheel(object):
     get random sector, notify GUI of this sector (to show/animate it), and return the random sector
     """
     #@TODO:unfinished method
-    def spin(self):
+    def get_random_sector(self):
         self.sector_selected = Sector("random sector")
         return self.sector_selected
         # self.current_sector = self._get_random_sector()
