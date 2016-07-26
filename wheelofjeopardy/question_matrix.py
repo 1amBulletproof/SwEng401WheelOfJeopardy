@@ -1,43 +1,36 @@
-"""
-Controls and monitors the Question Matrix
-Initial Author: Victoria
-
-
-From SRS document:
-It is worth noting that the question matrix itself
-is not responsible for selecting, displaying, or tracking
-which questions have already been selected. Such tasks are
-the responsibility of the board submodule. The question matrix
-will store the category of the questions and contain references
-to the full body of questions in each game. The question objects
-themselves will contain the question text as well as the correct
-answer.
-
-John has written a script that will create 12 lists of questions
-2 rounds * 6 categories of questions = 12 lists
-
-reader returns an instance of question matrix
-
-has a load file method
-
-"""
 #need an import statement from question class?
 #from wheelofjeopardy.question import Question
 
 class QuestionMatrix(object):
+    """
+    Controls and monitors the Question Matrix
+    Initial Author: Victoria
+
+
+    From SRS document:
+    It is worth noting that the question matrix itself
+    is not responsible for selecting, displaying, or tracking
+    which questions have already been selected. Such tasks are
+    the responsibility of the board submodule. The question matrix
+    will store the category of the questions and contain references
+    to the full body of questions in each game. The question objects
+    themselves will contain the question text as well as the correct
+    answer.
+    """
     def __init__(self, catgs, Qs, pts):
-        #2d array of questions, with 5 rows and 6 columns
         #there are 6 different categories of questions
         cols = 6
         #there are 5 questions in each category
         rows = 5
-        #this matrix is filled with default Questions.. EDIT?
-        #John created a script that will read questions in from
-        #an input file.
-        #12 lists of questions - 2 rounds of 6 categories
         self.categories = catgs
         self.questions = Qs
         self.pointValue = pts
+        
+        # sanity check
+        if (not len(self.categories)==6) or (not len(self.questions)==6):
+            raise TypeError('Check the dimension of the questions')
+        if not( map(len, self.questions)==[5 for x in range(6)]):
+            raise TypeError('Check the dimensions of the questions')
 
 
     #return the tuple of (pointValue, Category, Question)
@@ -47,6 +40,18 @@ class QuestionMatrix(object):
         val = pointValue[c]
         return (val, catg, questions[r][c])
 
+    def __str__(self):
+        catg = 'Categories: ' + self.categories.__str__()
+        strOut = '';
+        
+        # loop over questions and categories, add to strOut
+        for (cat,qs) in zip(self.categories, self.questions): 
+            strOut += '__' + str(cat) + '__::'
+            strOut += str(map(str,qs))
+            strOut += '\n'
+
+        return strOut
+        
 
 class Question(object):
     """
@@ -69,4 +74,6 @@ class Question(object):
     # string representation
     def __str__(self):
         return self.text + " : " + self.answer
-
+        
+    #def __repr__(self):
+    #	return 'Qu:self.__str__()""'

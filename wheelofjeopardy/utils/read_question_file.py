@@ -29,6 +29,7 @@ def getDataFromQRow(row):
 #%% Read CSV
 def ReadQuestions(opts):
     import os, csv, sys
+    import wheelofjeopardy.question_matrix as qm
 
     numQs = 5 # number of questions in category
     numCats = 6 # number of categories per round
@@ -54,23 +55,22 @@ def ReadQuestions(opts):
             if rdInd == 1:
                 if not catgInd1.has_key(cat): # if category not encountered yet
                     catgInd1[cat] = len(catgInd1) # designate new index
-
-                # put question class instantiation here
-                qsRd1[catgInd1[cat]][pts-1] = qTxt +'|' +ans # placeholder
-                val = opts.qPoints1[pts-1]
+                # instantiate questions
+                qsRd1[catgInd1[cat]][pts-1] = qm.Question(qTxt, ans) 
 
             elif rdInd == 2:
                 if not catgInd2.has_key(cat):
                     catgInd2[cat] = len(catgInd2)
-
-                # put question class instantiation here
-                qsRd2[catgInd2[cat]][pts-1] = qTxt +'|' +ans # placeholder
-                val = opts.qPoints2[pts-1]
+                # instantiate questions
+                qsRd2[catgInd2[cat]][pts-1] = qm.Question(qTxt, ans)
 
             else: # do nothing with final jeopardy for now
                 pass
 
-    # prepare categories for return
+#%% Instantiate QuestionMatrix method, check for consistency, and return
+# TODO(J Wu) implement this once we get class functions
+
+    # prepare categories
     catgRound1 = [None for x in range(numCats)]
     catgRound2 = [None for x in range(numCats)]
     for key,val in catgInd1.iteritems():
@@ -78,7 +78,8 @@ def ReadQuestions(opts):
     for key,val in catgInd2.iteritems():
         catgRound2[val] = key
 
-#%% Instantiate QuestionMatrix method, check for consistency, and return
-# TODO(J Wu) implement this once we get class functions
+    # Instantiate two QuestionMatrix objects
+    qMat1 = qm.QuestionMatrix(catgRound1, qsRd1, opts.qPoints1)
+    qMat2 = qm.QuestionMatrix(catgRound2, qsRd2, opts.qPoints2)
 
-    return (catgRound1, qsRd1, catgRound2, qsRd2)
+    return (qMat1, qMat2)
