@@ -1,6 +1,3 @@
-#need an import statement from question class?
-#from wheelofjeopardy.question import Question
-
 class QuestionMatrix(object):
     """
     Controls and monitors the Question Matrix

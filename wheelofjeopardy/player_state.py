@@ -5,7 +5,7 @@ class NoTokensAvailableError(Exception):
     pass
 
 class PlayerState(object):
-    def __init__(self, name, score=0, events):
+    def __init__(self, name, events, score=0):
         self.name = name
         self.events = events
         self.score = score # handicaps

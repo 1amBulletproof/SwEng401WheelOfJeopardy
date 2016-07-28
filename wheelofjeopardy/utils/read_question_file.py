@@ -68,8 +68,6 @@ def ReadQuestions(opts):
                 pass
 
 #%% Instantiate QuestionMatrix method, check for consistency, and return
-# TODO(J Wu) implement this once we get class functions
-
     # prepare categories
     catgRound1 = [None for x in range(numCats)]
     catgRound2 = [None for x in range(numCats)]
