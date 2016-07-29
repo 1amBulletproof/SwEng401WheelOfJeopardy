@@ -36,7 +36,7 @@ def ReadQuestions(opts):
 
     #d = os.path.dirname(os.path.realpath(sys.argv[0]))
     inFileName = opts.qFileName
-    fPath = os.path.join(os.getcwd(), "wheelofjeopardy", 'cfg', inFileName)
+    fPath = os.path.join(os.getcwd(), 'cfg', inFileName)
 
 #%% Parse CSV line-by-line and instantiate the various questions
 
