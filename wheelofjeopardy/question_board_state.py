@@ -38,12 +38,13 @@ class QuestionBoardState(object):
 
 
     def mark_q_used(self, roundNum, catgNum):
-        if self.progress[roundNum-1][catgNum-1] < self.MAX_QS
+        if self.progress[roundNum-1][catgNum-1] < self.MAX_QS:
             # increment the progress count if still question left in category
             self.progress[roundNum-1][catgNum-1] += 1
         else:
             raise RuntimeWarning('No more questions in category.')
 
 
-    def next_in_category(category):
-        #@TODO: replace with correct logic
+    def next_in_category(roundNum, catgNum):
+        # not sure if I should mark question as used automatically after get
+        return q_mat[roundNum-1][catgNum-1]
