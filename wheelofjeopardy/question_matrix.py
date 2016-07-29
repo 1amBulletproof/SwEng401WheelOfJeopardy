@@ -1,6 +1,3 @@
-#need an import statement from question class?
-#from wheelofjeopardy.question import Question
-
 class QuestionMatrix(object):
     """
     Controls and monitors the Question Matrix
@@ -18,34 +15,42 @@ class QuestionMatrix(object):
     answer.
     """
     def __init__(self, catgs, Qs, pts):
-        #there are 6 different categories of questions
-        cols = 6
-        #there are 5 questions in each category
-        rows = 5
-        self.categories = catgs
+        self.headers = catgs
         self.questions = Qs
         self.pointValue = pts
         
-        # sanity check
-        if (not len(self.categories)==6) or (not len(self.questions)==6):
+        # sanity check: number of columns
+        if len(self.headers) != len(self.questions):
             raise TypeError('Check the dimension of the questions')
-        if not( map(len, self.questions)==[5 for x in range(6)]):
+        else:
+            self.cols = len(self.headers)
+        # sanity check: number of rows
+        tmp = map(len, self.questions)
+        if tmp[1:] != tmp[:-1]:
             raise TypeError('Check the dimensions of the questions')
+        else:
+            self.rows = tmp[0]
 
 
     #return the tuple of (pointValue, Category, Question)
-    #stored at location r, c (row, column)
-    def get(r, c):
-        catg = categories[c]
-        val = pointValue[c]
+    #stored at location c, r (column, row)
+    def get(c, r):
+        catg = self.headers[c]
+        val = self.pointValue[r]
         return (val, catg, questions[r][c])
 
+    def get_value(r):
+        """
+        Get the point value of the n-th question in the round.
+        """
+        return self.pointValue[r]
+
     def __str__(self):
-        catg = 'Categories: ' + self.categories.__str__()
+        catg = 'categories: ' + self.headers.__str__()
         strOut = '';
         
         # loop over questions and categories, add to strOut
-        for (cat,qs) in zip(self.categories, self.questions): 
+        for (cat,qs) in zip(self.headers, self.questions): 
             strOut += '__' + str(cat) + '__::'
             strOut += str(map(str,qs))
             strOut += '\n'
@@ -64,11 +69,11 @@ class Question(object):
         self.answer = answer
 
     # get question text
-    def getQuestion(self):
+    def get_question(self):
         return self.text
 
     # get answer
-    def getAnswer(self):
+    def get_answer(self):
         return self.answer
 
     # string representation
