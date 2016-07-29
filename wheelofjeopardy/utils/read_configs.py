@@ -32,7 +32,7 @@ def ReadCfgToOptions(cfgFile = "Options.ini"):
     startScores = [None for x in range(nPlayers)]
     for n in range(nPlayers):
         playerNames[n] = cp.get(sec, 'name'+str(n+1) )
-        startScores[n] = cp.get(sec, 'startScore'+str(n+1))
+        startScores[n] = cp.getint(sec, 'startScore'+str(n+1))
 
     # Parse [board] section
     sec = 'board'
