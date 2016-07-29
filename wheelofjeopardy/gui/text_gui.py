@@ -8,28 +8,31 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.text_helper import apostrophize, pluralize
+from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
 
 class TextGUI(object):
     @classmethod
     def start(cls):
         print 'Welcome to Wheel of Jeopardy!'
         print "Let's get started!"
+        global opts
 
         events = Events()
+        opts = ReadCfgToOptions()
         TextGUI(cls._create_game_state(events), events)._start()
 
     # private static
 
     @classmethod
     def _create_game_state(cls, events):
-        player1 = cls._create_player("Enter first player's name: ", events)
-        player2 = cls._create_player("Enter second player's name: ", events)
-        return GameState([player1, player2], events)
+        players = [PlayerState(opts.playerNames[n], events, opts.startScores[n])
+                   for n in range(opts.nPlayers)]
+        return GameState(players, events, opts)
 
-    @classmethod
-    def _create_player(cls, message, events):
-        sys.stdout.write(message)
-        return PlayerState(name=raw_input(), events=events)
+    # not sure if the following is needed anymore??
+#	@classmethod
+#	def _create_player(cls, name, events, score):
+#		return PlayerState(name=name, events=events, score=score)
 
     # public instance
 
@@ -45,6 +48,7 @@ class TextGUI(object):
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
 
         while self.game_state.any_spins_remaining():
+            print(self.game_state.board)
             print 'What would you like to do, %s?' % self.game_state.get_current_player().name
             sys.stdout.write("(S)pin, (Q)uit, (P)rint scores: ")
             answer = raw_input().lower()

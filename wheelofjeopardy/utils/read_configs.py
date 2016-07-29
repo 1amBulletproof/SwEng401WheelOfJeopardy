@@ -19,9 +19,11 @@ def ReadCfgToOptions(cfgFile = "Options.ini"):
     import ConfigParser, os
     from collections import namedtuple as ntp  # use nametuple since immutable
 
-    cfgFile = os.path.join(os.getcwd(), "wheelofjeopardy", "cfg", cfgFile)
+    cfgFile = os.path.join(os.getcwd(), "cfg", cfgFile)
     cp = ConfigParser.RawConfigParser() # configParser
-    cp.read(cfgFile) # read in config file
+    tmpName = cp.read(cfgFile) # read in config file
+    if not tmpName: # if file is not found
+        raise IOError('Config file "%s" not found.' % cfgFile)
 
     # Parse [players] section
     sec = 'players'
@@ -30,7 +32,7 @@ def ReadCfgToOptions(cfgFile = "Options.ini"):
     startScores = [None for x in range(nPlayers)]
     for n in range(nPlayers):
         playerNames[n] = cp.get(sec, 'name'+str(n+1) )
-        startScores[n] = cp.get(sec, 'startScore'+str(n+1))
+        startScores[n] = cp.getint(sec, 'startScore'+str(n+1))
 
     # Parse [board] section
     sec = 'board'
