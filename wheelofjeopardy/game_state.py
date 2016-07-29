@@ -5,15 +5,13 @@ Control and monitor the wheelofjeopardy game state
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.wheel import Wheel
 
-class GameState(object, opts):
-    TOTAL_SPINS = opts.totalSpins
-
-    def __init__(self, player_states, events):
+class GameState(object):
+    def __init__(self, player_states, events, opts):
         self.events = events
-        self.spins_remaining = GameState.TOTAL_SPINS
+        self.spins_remaining = opts.totalSpins
         self.player_states = player_states
         self.current_player_index = 0
-        self.board = QuestionBoardState(events)
+        self.board = QuestionBoardState(events, opts)
         self.wheel = Wheel(events)
         self.active_wager = 0 # placeholder
 
@@ -22,7 +20,7 @@ class GameState(object, opts):
         self._broadcast('current_player_did_change', self)
 
     def get_current_player(self):
-        return self.player_states[self.current_player_index]
+        return self.player_states[self.current_player_index]                     
 
     def any_spins_remaining(self):
         return self.spins_remaining > 0
@@ -46,7 +44,8 @@ class GameState(object, opts):
         self._broadcast('current_player_did_change', self)
 
     def has_game_ended(self):
-        return (not self.board.any_questions_remaining()) or (not self.any_spins_remaining())
+        return (not self.board.any_questions_remaining()) or \
+            (not self.any_spins_remaining())
 
     # private
 
@@ -54,4 +53,5 @@ class GameState(object, opts):
         self.events.broadcast('game_state.%s' % channel, *args)
 
     def _choose_next_player(self):
-        self.current_player_index = (self.current_player_index + 1) % len(self.player_states)
+        self.current_player_index = \
+            (self.current_player_index + 1) % len(self.player_states)		
