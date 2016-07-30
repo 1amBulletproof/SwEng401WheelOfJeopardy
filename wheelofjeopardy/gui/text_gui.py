@@ -29,6 +29,10 @@ class TextGUI(object):
                    for n in range(opts.nPlayers)]
         return GameState(players, events, opts)
 
+    @staticmethod
+    def _clear_terminal():
+        os.system('cls' if os.name=='nt' else 'clear')
+
     # not sure if the following is needed anymore??
 #	@classmethod
 #	def _create_player(cls, name, events, score):
@@ -47,6 +51,7 @@ class TextGUI(object):
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
 
+        TextGUI._clear_terminal()
         while self.game_state.any_spins_remaining():
             print(self.game_state.board)
             print 'What would you like to do, %s?' % self.game_state.get_current_player().name
@@ -66,6 +71,7 @@ class TextGUI(object):
         print self._get_whose_turn_message()
 
     def _on_spins_did_update(self, game_state):
+        print('Your spinned %s.' % str(self.game_state.current_sector))
         print self._get_spins_remaining_message()
 
     def _on_turn_will_end(self, game_state):
@@ -75,10 +81,12 @@ class TextGUI(object):
         score_strings = []
 
         for player_state in self.game_state.player_states:
-            score_strings.append("%s has %d points" % (player_state.name, player_state.score))
+            score_strings.append("\t%s has %d points" % (player_state.name, player_state.score))
 
         print 'Here are the scores:'
-        print ', '.join(score_strings)
+        print '\n'.join(score_strings)
+        raw_input("Press Enter to continue...")
+        TextGUI._clear_terminal()
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining
