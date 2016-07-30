@@ -8,6 +8,7 @@ from wheelofjeopardy.sectors.sector import *
 class Wheel(object):
     #@TODO: initialization incomplete?
     def __init__(self, event):
+        self.description = 'Generic Sector'
         pass
         # self._sectors = self._initialize_sectors()
 
@@ -41,3 +42,6 @@ class Wheel(object):
     #@TODO: get random number and return that index of self._sectors
     def _get_random_sector(self):
         pass
+
+    def __str__(self):
+        return self.description
