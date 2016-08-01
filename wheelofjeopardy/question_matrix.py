@@ -1,7 +1,8 @@
+import random
+
 class QuestionMatrix(object):
     """
     Controls and monitors the Question Matrix
-    Initial Author: Victoria
 
 
     From SRS document:
@@ -14,6 +15,8 @@ class QuestionMatrix(object):
     themselves will contain the question text as well as the correct
     answer.
     """
+    #I think we need to pass in the current round also - Victoria
+    #this will allow us to assign the correct # of daily doubles
     def __init__(self, catgs, Qs, pts):
         self.headers = catgs
         self.questions = Qs
@@ -31,7 +34,17 @@ class QuestionMatrix(object):
         else:
             self.rows = tmp[0]
 
+        #set the daily double questions
+        set_daily_double_pos(self)
 
+    #generate random daily double position in the matrix
+    def set_daily_double_pos(self):
+        #insert logic for determining 1st or 2nd round
+        randCol = random.randrange(0, len(self.headers))
+        randRow = random.randrange(0, len(self.questions))
+        self.questions[randRow][randCol].set_daily_double()
+        #if 2nd round, do this again
+    
     #return the tuple of (pointValue, Category, Question)
     #stored at location c, r (column, row)
     def get(c, r):
@@ -67,6 +80,8 @@ class Question(object):
     def __init__(self, questionText, answer):
         self.text = questionText
         self.answer = answer
+        #default to False - will be assigned from the matrix
+        self.daily_double = False #is question a daily double
 
     # get question text
     def get_question(self):
@@ -75,6 +90,14 @@ class Question(object):
     # get answer
     def get_answer(self):
         return self.answer
+
+    #get daily double status
+    def is_daily_double(self):
+        return self.daily_double
+
+    #set daily double status to true(called from QuestionMatrix)
+    def set_daily_double(self):
+        self.daily_double = True
 
     # string representation
     def __str__(self):
