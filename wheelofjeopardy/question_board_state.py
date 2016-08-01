@@ -2,7 +2,6 @@
 
 """
 Controls and monitors the state of the Questions/Board
-Initial author: Victoria Scalfari
 From SRS document:
 ...is responsible for selecting, displaying, or tracking
 which questions have already been selected.
@@ -15,11 +14,21 @@ class QuestionBoardState(object):
         self.MAX_CATS = 6 # max categories per round
 
         (tmp1,tmp2) = ReadQuestions(Opts) # read questions
+        
+        #the question matrix
         self.q_mat = [tmp1, tmp2]
 
         #list of int to keep track of question progress
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
 
+        """
+        #list of category statuses - 1 means the category
+        #still has questions, 0 means all questions have been
+        #used
+        """
+        self.catgs_statuses = [1 1 1 1 1 1]
+
+        
     def q_remaining(self, roundNum):
         """
         Number of questions remaining in a round
@@ -44,10 +53,12 @@ class QuestionBoardState(object):
             # increment the progress count if still question left in category
             self.progress[roundNum-1][catgNum-1] += 1
         else:
+            catgs_statuses[catgNum-1] = 0 #set the catg status to 0
             raise RuntimeWarning('No more questions in category.')
 
     def next_q_in_category(self, roundNum, catgNum):
         # not sure if I should mark question as used automatically after get
+        mark_q_used(self, roundNum-1, catgNum-1)
         return self.q_mat[roundNum-1][catgNum-1]
 
     def _current_round(self):
