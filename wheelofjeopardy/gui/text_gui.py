@@ -8,28 +8,35 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.text_helper import apostrophize, pluralize
+from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
 
 class TextGUI(object):
     @classmethod
     def start(cls):
         print 'Welcome to Wheel of Jeopardy!'
         print "Let's get started!"
+        global opts
 
         events = Events()
+        opts = ReadCfgToOptions()
         TextGUI(cls._create_game_state(events), events)._start()
 
     # private static
 
     @classmethod
     def _create_game_state(cls, events):
-        player1 = cls._create_player("Enter first player's name: ", events)
-        player2 = cls._create_player("Enter second player's name: ", events)
-        return GameState([player1, player2], events)
+        players = [PlayerState(opts.playerNames[n], events, opts.startScores[n])
+                   for n in range(opts.nPlayers)]
+        return GameState(players, events, opts)
 
-    @classmethod
-    def _create_player(cls, message, events):
-        sys.stdout.write(message)
-        return PlayerState(name=raw_input(), events=events)
+    @staticmethod
+    def _clear_terminal():
+        os.system('cls' if os.name=='nt' else 'clear')
+
+    # not sure if the following is needed anymore??
+#	@classmethod
+#	def _create_player(cls, name, events, score):
+#		return PlayerState(name=name, events=events, score=score)
 
     # public instance
 
@@ -44,7 +51,9 @@ class TextGUI(object):
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
 
+        TextGUI._clear_terminal()
         while self.game_state.any_spins_remaining():
+            print(self.game_state.board)
             print 'What would you like to do, %s?' % self.game_state.get_current_player().name
             sys.stdout.write("(S)pin, (Q)uit, (P)rint scores: ")
             answer = raw_input().lower()
@@ -62,6 +71,7 @@ class TextGUI(object):
         print self._get_whose_turn_message()
 
     def _on_spins_did_update(self, game_state):
+        print('Your spinned %s.' % str(self.game_state.current_sector))
         print self._get_spins_remaining_message()
 
     def _on_turn_will_end(self, game_state):
@@ -71,10 +81,12 @@ class TextGUI(object):
         score_strings = []
 
         for player_state in self.game_state.player_states:
-            score_strings.append("%s has %d points" % (player_state.name, player_state.score))
+            score_strings.append("\t%s has %d points" % (player_state.name, player_state.score))
 
         print 'Here are the scores:'
-        print ', '.join(score_strings)
+        print '\n'.join(score_strings)
+        raw_input("Press Enter to continue...")
+        TextGUI._clear_terminal()
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining
