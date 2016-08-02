@@ -8,7 +8,7 @@ from wheelofjeopardy.sectors.sector import *
 class Wheel(object):
     #@TODO: initialization incomplete?
     def __init__(self, event):
-        self.description = 'Wheel from the Wheel of Jeopardy!'
+        self.description = 'Wheel from the game Wheel of Jeopardy!'
         pass
         # self._sectors = self._initialize_sectors()
 

@@ -19,6 +19,10 @@ class PlayerState(object):
         self.score -= amount
         self._broadcast('score_did_update', self)
 
+    def reset_score(self):
+        self.score = 0
+        self._broadcast('score_did_update', self)
+
     def grant_free_spin_token(self):
         self.free_spin_tokens += 1
         self._broadcast('spin_tokens_did_update', self)

@@ -9,4 +9,5 @@ class BankruptSector(Sector):
         Sector.__init__(self, "bankrupt sector")
 
     def action(self, game_state):
-        pass
+        player = game_state.get_current_player()
+        player.reset_score()
