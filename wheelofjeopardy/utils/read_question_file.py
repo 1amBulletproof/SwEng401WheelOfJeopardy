@@ -56,13 +56,13 @@ def ReadQuestions(opts):
                 if not catgInd1.has_key(cat): # if category not encountered yet
                     catgInd1[cat] = len(catgInd1) # designate new index
                 # instantiate questions
-                qsRd1[catgInd1[cat]][pts-1] = qm.Question(qTxt, ans) 
+                qsRd1[catgInd1[cat]][pts-1] = qm.Question(qTxt, ans, dd) 
 
             elif rdInd == 2:
                 if not catgInd2.has_key(cat):
                     catgInd2[cat] = len(catgInd2)
                 # instantiate questions
-                qsRd2[catgInd2[cat]][pts-1] = qm.Question(qTxt, ans)
+                qsRd2[catgInd2[cat]][pts-1] = qm.Question(qTxt, ans, dd)
 
             else: # do nothing with final jeopardy for now
                 pass
