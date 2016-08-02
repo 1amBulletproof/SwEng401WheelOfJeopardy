@@ -5,7 +5,7 @@ class NoTokensAvailableError(Exception):
     pass
 
 class PlayerState(object):
-    def __init__(self, name, score=0, events):
+    def __init__(self, name, events, score=0):
         self.name = name
         self.events = events
         self.score = score # handicaps
@@ -17,6 +17,10 @@ class PlayerState(object):
 
     def decrease_score_by(self, amount):
         self.score -= amount
+        self._broadcast('score_did_update', self)
+
+    def reset_score(self):
+        self.score = 0
         self._broadcast('score_did_update', self)
 
     def grant_free_spin_token(self):
@@ -34,6 +38,5 @@ class PlayerState(object):
         return self.free_spin_tokens > 0
 
     # private
-
     def _broadcast(self, channel, *args):
         self.events.broadcast('player_state.%s' % channel, *args)
