@@ -1,7 +1,7 @@
 """
 Logic for player landing on "lose turn" sector of Wheel
 """
-
+#@todo unit tests
 from wheelofjeopardy.sectors.sector import Sector
 
 class LoseTurnSector(Sector):

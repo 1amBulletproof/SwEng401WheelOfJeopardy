@@ -9,4 +9,4 @@ class OpponentChoiceSector(Sector):
         Sector.__init__(self, "opponent choice sector")
 
     def action(self, game_state):
-        pass
+        events.broadcast('opponent_choice_sector.choose_cateogry')

@@ -8,5 +8,9 @@ class SpinAgainSector(Sector):
     def __init__ (self):
         Sector.__init__(self, "spin again sector")
 
+    """
+    as currently implemented, should do nothing since game_state will
+    decrement the spins and broadcast that event (deviates slightly from sequence diagram)
+    """
     def action(self, game_state):
         pass

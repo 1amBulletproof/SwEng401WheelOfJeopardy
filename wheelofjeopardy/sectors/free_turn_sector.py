@@ -9,4 +9,6 @@ class FreeTurnSector(Sector):
         Sector.__init__(self, "free turn sector")
 
     def action(self, game_state):
-        pass
+        player = game_state.get_current_player()
+        player.grant_free_spin_token()
+        
