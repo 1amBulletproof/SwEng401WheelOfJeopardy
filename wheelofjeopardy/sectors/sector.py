@@ -9,3 +9,6 @@ class Sector:
 
     def action(self, game_state):
         pass
+
+    def __str__(self):
+        return self.name
