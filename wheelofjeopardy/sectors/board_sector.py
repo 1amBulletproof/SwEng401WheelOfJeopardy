@@ -6,7 +6,8 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class BoardSector(Sector):
     def __init__ (self, category):
-        Sector.__init__(self, category +"Board sector")
+        Sector.__init__(self, str(category)+"Board sector")
+        self.category = category
 
     def action(self, game_state):
         pass
