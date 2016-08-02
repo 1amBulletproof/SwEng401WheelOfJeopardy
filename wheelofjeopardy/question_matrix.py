@@ -34,17 +34,6 @@ class QuestionMatrix(object):
         else:
             self.rows = tmp[0]
 
-        #set the daily double questions
-        set_daily_double_pos(self)
-
-    #generate random daily double position in the matrix
-    def set_daily_double_pos(self):
-        #insert logic for determining 1st or 2nd round
-        randCol = random.randrange(0, len(self.headers))
-        randRow = random.randrange(0, len(self.questions))
-        self.questions[randRow][randCol].set_daily_double()
-        #if 2nd round, do this again
-    
     #return the tuple of (pointValue, Category, Question)
     #stored at location c, r (column, row)
     def get(c, r):
@@ -77,11 +66,10 @@ class Question(object):
     Must be instantiated with the question text and the answer.
     @author J Wu, johnwuy@gmail.com
     """
-    def __init__(self, questionText, answer):
+    def __init__(self, questionText, answer, dailyDouble=False):
         self.text = questionText
         self.answer = answer
-        #default to False - will be assigned from the matrix
-        self.daily_double = False #is question a daily double
+        self.daily_double = dailyDouble # is question a daily double (def=no)
 
     # get question text
     def get_question(self):
@@ -95,13 +83,10 @@ class Question(object):
     def is_daily_double(self):
         return self.daily_double
 
-    #set daily double status to true(called from QuestionMatrix)
-    def set_daily_double(self):
+    #set daily double status to true (hidden method)
+    def _set_daily_double(self):
         self.daily_double = True
 
     # string representation
     def __str__(self):
         return self.text + " : " + self.answer
-        
-    #def __repr__(self):
-    #	return 'Qu:self.__str__()""'
