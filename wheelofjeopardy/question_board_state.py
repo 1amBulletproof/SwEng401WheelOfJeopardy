@@ -26,7 +26,7 @@ class QuestionBoardState(object):
         #still has questions, 0 means all questions have been
         #used
         """
-        self.catgs_statuses = [1 1 1 1 1 1]
+        self.catgs_statuses = [1, 1, 1, 1, 1, 1]
 
         
     def q_remaining(self, roundNum):
