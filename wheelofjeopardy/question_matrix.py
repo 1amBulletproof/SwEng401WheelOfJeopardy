@@ -87,6 +87,10 @@ class Question(object):
     def _set_daily_double(self):
         self.daily_double = True
 
+    #set daily double status to false (hidden method)
+    def _unset_daily_double(self):
+        self.daily_double = True
+
     # string representation
     def __str__(self):
         return self.text + " : " + self.answer
