@@ -82,12 +82,6 @@ class Ui_moderatorDialog(object):
         self.horizontalLayout.addWidget(self.playerIncorrectRadio)
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
-        self.autoCheckRadio = QtGui.QRadioButton(moderatorDialog)
-        font = QtGui.QFont()
-        font.setPointSize(24)
-        self.autoCheckRadio.setFont(font)
-        self.autoCheckRadio.setObjectName(_fromUtf8("autoCheckRadio"))
-        self.horizontalLayout.addWidget(self.autoCheckRadio)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
@@ -96,6 +90,8 @@ class Ui_moderatorDialog(object):
         self.okButton = QtGui.QPushButton(moderatorDialog)
         self.okButton.setObjectName(_fromUtf8("okButton"))
         self.horizontalLayout_2.addWidget(self.okButton)
+        spacerItem3 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem3)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.retranslateUi(moderatorDialog)
@@ -110,6 +106,5 @@ class Ui_moderatorDialog(object):
         self.playerAnswer.setText(_translate("moderatorDialog", "TextLabel", None))
         self.playerCorrectRadio.setText(_translate("moderatorDialog", "YES!", None))
         self.playerIncorrectRadio.setText(_translate("moderatorDialog", "Definitely Not.", None))
-        self.autoCheckRadio.setText(_translate("moderatorDialog", "Auto Check", None))
         self.okButton.setText(_translate("moderatorDialog", "OK", None))
 
