@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/user/mlink/pycode/moderatorPopup.ui'
+# Form implementation generated from reading ui file 'wheelofjeopardy/gui/pyqt/ui_moderator_popup.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -22,13 +22,13 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_moderatorDialog(object):
-    def setupUi(self, moderatorDialog):
-        moderatorDialog.setObjectName(_fromUtf8("moderatorDialog"))
-        moderatorDialog.resize(515, 318)
-        self.verticalLayout = QtGui.QVBoxLayout(moderatorDialog)
+class Ui_ModeratorPopup(object):
+    def setupUi(self, ModeratorPopup):
+        ModeratorPopup.setObjectName(_fromUtf8("ModeratorPopup"))
+        ModeratorPopup.resize(515, 318)
+        self.verticalLayout = QtGui.QVBoxLayout(ModeratorPopup)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.mainLabel = QtGui.QLabel(moderatorDialog)
+        self.mainLabel = QtGui.QLabel(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(24)
         self.mainLabel.setFont(font)
@@ -36,13 +36,13 @@ class Ui_moderatorDialog(object):
         self.verticalLayout.addWidget(self.mainLabel)
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
         self.horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
-        self.correctAnswerLabel = QtGui.QLabel(moderatorDialog)
+        self.correctAnswerLabel = QtGui.QLabel(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.correctAnswerLabel.setFont(font)
         self.correctAnswerLabel.setObjectName(_fromUtf8("correctAnswerLabel"))
         self.horizontalLayout_3.addWidget(self.correctAnswerLabel)
-        self.correctAnswer = QtGui.QLabel(moderatorDialog)
+        self.correctAnswer = QtGui.QLabel(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.correctAnswer.setFont(font)
@@ -51,13 +51,13 @@ class Ui_moderatorDialog(object):
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.horizontalLayout_4 = QtGui.QHBoxLayout()
         self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
-        self.playerAnswerLabel = QtGui.QLabel(moderatorDialog)
+        self.playerAnswerLabel = QtGui.QLabel(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.playerAnswerLabel.setFont(font)
         self.playerAnswerLabel.setObjectName(_fromUtf8("playerAnswerLabel"))
         self.horizontalLayout_4.addWidget(self.playerAnswerLabel)
-        self.playerAnswer = QtGui.QLabel(moderatorDialog)
+        self.playerAnswer = QtGui.QLabel(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.playerAnswer.setFont(font)
@@ -66,7 +66,7 @@ class Ui_moderatorDialog(object):
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.playerCorrectRadio = QtGui.QRadioButton(moderatorDialog)
+        self.playerCorrectRadio = QtGui.QRadioButton(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(24)
         self.playerCorrectRadio.setFont(font)
@@ -74,7 +74,7 @@ class Ui_moderatorDialog(object):
         self.horizontalLayout.addWidget(self.playerCorrectRadio)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.playerIncorrectRadio = QtGui.QRadioButton(moderatorDialog)
+        self.playerIncorrectRadio = QtGui.QRadioButton(ModeratorPopup)
         font = QtGui.QFont()
         font.setPointSize(24)
         self.playerIncorrectRadio.setFont(font)
@@ -87,24 +87,24 @@ class Ui_moderatorDialog(object):
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
         spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
-        self.okButton = QtGui.QPushButton(moderatorDialog)
+        self.okButton = QtGui.QPushButton(ModeratorPopup)
         self.okButton.setObjectName(_fromUtf8("okButton"))
         self.horizontalLayout_2.addWidget(self.okButton)
         spacerItem3 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem3)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
-        self.retranslateUi(moderatorDialog)
-        QtCore.QMetaObject.connectSlotsByName(moderatorDialog)
+        self.retranslateUi(ModeratorPopup)
+        QtCore.QMetaObject.connectSlotsByName(ModeratorPopup)
 
-    def retranslateUi(self, moderatorDialog):
-        moderatorDialog.setWindowTitle(_translate("moderatorDialog", "Dialog", None))
-        self.mainLabel.setText(_translate("moderatorDialog", "Moderator: Is the player\'s answer correct?", None))
-        self.correctAnswerLabel.setText(_translate("moderatorDialog", "Correct Answer:", None))
-        self.correctAnswer.setText(_translate("moderatorDialog", "TextLabel", None))
-        self.playerAnswerLabel.setText(_translate("moderatorDialog", "Player\'s Answer:", None))
-        self.playerAnswer.setText(_translate("moderatorDialog", "TextLabel", None))
-        self.playerCorrectRadio.setText(_translate("moderatorDialog", "YES!", None))
-        self.playerIncorrectRadio.setText(_translate("moderatorDialog", "Definitely Not.", None))
-        self.okButton.setText(_translate("moderatorDialog", "OK", None))
+    def retranslateUi(self, ModeratorPopup):
+        ModeratorPopup.setWindowTitle(_translate("ModeratorPopup", "Dialog", None))
+        self.mainLabel.setText(_translate("ModeratorPopup", "Moderator: Is the player\'s answer correct?", None))
+        self.correctAnswerLabel.setText(_translate("ModeratorPopup", "Correct Answer:", None))
+        self.correctAnswer.setText(_translate("ModeratorPopup", "TextLabel", None))
+        self.playerAnswerLabel.setText(_translate("ModeratorPopup", "Player\'s Answer:", None))
+        self.playerAnswer.setText(_translate("ModeratorPopup", "TextLabel", None))
+        self.playerCorrectRadio.setText(_translate("ModeratorPopup", "YES!", None))
+        self.playerIncorrectRadio.setText(_translate("ModeratorPopup", "Definitely Not.", None))
+        self.okButton.setText(_translate("ModeratorPopup", "OK", None))
 

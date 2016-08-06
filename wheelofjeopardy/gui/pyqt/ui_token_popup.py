@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/user/mlink/pycode/tokenPopup.ui'
+# Form implementation generated from reading ui file 'wheelofjeopardy/gui/pyqt/ui_token_popup.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -22,23 +22,23 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_tokenDialog(object):
-    def setupUi(self, tokenDialog):
-        tokenDialog.setObjectName(_fromUtf8("tokenDialog"))
-        tokenDialog.resize(526, 239)
-        self.horizontalLayout_3 = QtGui.QHBoxLayout(tokenDialog)
+class Ui_TokenPopup(object):
+    def setupUi(self, TokenPopup):
+        TokenPopup.setObjectName(_fromUtf8("TokenPopup"))
+        TokenPopup.resize(526, 239)
+        self.horizontalLayout_3 = QtGui.QHBoxLayout(TokenPopup)
         self.horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
         self.everythingLayout = QtGui.QVBoxLayout()
         self.everythingLayout.setObjectName(_fromUtf8("everythingLayout"))
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
-        self.label = QtGui.QLabel(tokenDialog)
+        self.label = QtGui.QLabel(TokenPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
         self.horizontalLayout_2.addWidget(self.label)
-        self.playerLabel = QtGui.QLabel(tokenDialog)
+        self.playerLabel = QtGui.QLabel(TokenPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.playerLabel.setFont(font)
@@ -47,7 +47,7 @@ class Ui_tokenDialog(object):
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.everythingLayout.addLayout(self.horizontalLayout_2)
-        self.question = QtGui.QLabel(tokenDialog)
+        self.question = QtGui.QLabel(TokenPopup)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.question.setFont(font)
@@ -57,7 +57,7 @@ class Ui_tokenDialog(object):
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
-        self.useTokenButton = QtGui.QPushButton(tokenDialog)
+        self.useTokenButton = QtGui.QPushButton(TokenPopup)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -70,7 +70,7 @@ class Ui_tokenDialog(object):
         self.useTokenButton.setFont(font)
         self.useTokenButton.setObjectName(_fromUtf8("useTokenButton"))
         self.horizontalLayout.addWidget(self.useTokenButton)
-        self.denyTokenButton = QtGui.QPushButton(tokenDialog)
+        self.denyTokenButton = QtGui.QPushButton(TokenPopup)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -88,14 +88,14 @@ class Ui_tokenDialog(object):
         self.everythingLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_3.addLayout(self.everythingLayout)
 
-        self.retranslateUi(tokenDialog)
-        QtCore.QMetaObject.connectSlotsByName(tokenDialog)
+        self.retranslateUi(TokenPopup)
+        QtCore.QMetaObject.connectSlotsByName(TokenPopup)
 
-    def retranslateUi(self, tokenDialog):
-        tokenDialog.setWindowTitle(_translate("tokenDialog", "Dialog", None))
-        self.label.setText(_translate("tokenDialog", "Player:", None))
-        self.playerLabel.setText(_translate("tokenDialog", "TextLabel", None))
-        self.question.setText(_translate("tokenDialog", "You have an available token. Would you like to use it?", None))
-        self.useTokenButton.setText(_translate("tokenDialog", "YES!", None))
-        self.denyTokenButton.setText(_translate("tokenDialog", "No Thanks", None))
+    def retranslateUi(self, TokenPopup):
+        TokenPopup.setWindowTitle(_translate("TokenPopup", "Dialog", None))
+        self.label.setText(_translate("TokenPopup", "Player:", None))
+        self.playerLabel.setText(_translate("TokenPopup", "TextLabel", None))
+        self.question.setText(_translate("TokenPopup", "You have an available token. Would you like to use it?", None))
+        self.useTokenButton.setText(_translate("TokenPopup", "YES!", None))
+        self.denyTokenButton.setText(_translate("TokenPopup", "No Thanks", None))
 
