@@ -2,6 +2,7 @@
 Wraps the sector classes and controls which affect the game_state
 """
 #FARHEEN COMMENT
+import random
 from wheelofjeopardy.sectors.sector import *
 
 #@TODO: create unit tests for this class
@@ -41,6 +42,7 @@ class Wheel(object):
 
     #@TODO: get random number and return that index of self._sectors
     def _get_random_sector(self):
+        return random.randrange(len(self._sectors))
         pass
 
 

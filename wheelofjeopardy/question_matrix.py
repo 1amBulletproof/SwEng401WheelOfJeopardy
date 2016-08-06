@@ -89,7 +89,7 @@ class Question(object):
 
     #set daily double status to false (hidden method)
     def _unset_daily_double(self):
-        self.daily_double = True
+        self.daily_double = False
 
     # string representation
     def __str__(self):
