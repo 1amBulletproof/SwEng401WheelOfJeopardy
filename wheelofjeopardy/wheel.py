@@ -1,5 +1,5 @@
 """
-Wraps the sector classes and controls which affect the game_state
+Wraps the sector classes and controls which sector affects the game_state
 """
 
 from wheelofjeopardy.sectors.sector import *
