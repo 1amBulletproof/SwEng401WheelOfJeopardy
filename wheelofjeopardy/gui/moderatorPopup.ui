@@ -134,18 +134,6 @@
        </property>
       </spacer>
      </item>
-     <item>
-      <widget class="QRadioButton" name="autoCheckRadio">
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Auto Check</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
    <item>
@@ -169,6 +157,19 @@
         <string>OK</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
