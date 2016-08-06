@@ -4,18 +4,18 @@ This is a class that can be called to bring up the wojApplication gui.
 @author = Miranda Link, mirandanlink@gmail.com
 '''
 
+from os import sys
 
-# imports
-#
-import sys
-sys.path.append('./gui')
-import wojApplication # this is the .py file spit out from PyQt
+from PyQt4.QtGui import QMainWindow, QApplication
+from PyQt4.QtCore import pyqtSignature
 
-# define wojApplication class
-#
-class ActivateWojApplication(QMainWindow, WojApplication.Ui_WojApplication):
+# this is the .py file spit out from PyQt
+from wheelofjeopardy.gui.pyqt.ui_woj_application_window import Ui_WojApplicationWindow
+from wheelofjeopardy.events import Events
+
+class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 	def __init__(self, events, parent=None):
-		super(ActivateWojApplication, self).__init__(parent)
+		super(WojApplicationWindow, self).__init__(parent)
 		self.setupUi(self)
 		self.events = events
 
@@ -34,8 +34,8 @@ class ActivateWojApplication(QMainWindow, WojApplication.Ui_WojApplication):
 
 		# initialize variables - i.e. set up the entire board.
 		#
-		board_population(categories, question_values, self)
-		contestant_population(players, self)
+		# board_population(categories, question_values, self)
+		# contestant_population(players, self)
 
 		# put image behind wheel
 		#
@@ -180,9 +180,12 @@ def contestant_population(players, self):
 
 # Display GUI.
 #
-application = QApplication(sys.argv)
-application.setApplicationName("Wheel of Jeopardy")
-gui = ActivateWojApplication()
-gui.show()
-gui.raise_()
-application.exec_()
+
+if __name__ == '__main__':
+	application = QApplication(sys.argv)
+	application.setApplicationName("Wheel of Jeopardy")
+	events = Events()
+	gui = WojApplicationWindow(events)
+	gui.show()
+	gui.raise_()
+	application.exec_()

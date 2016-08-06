@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>wojApplicationWindow</class>
- <widget class="QMainWindow" name="wojApplicationWindow">
+ <class>WojApplicationWindow</class>
+ <widget class="QMainWindow" name="WojApplicationWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
