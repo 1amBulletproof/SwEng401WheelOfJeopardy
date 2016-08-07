@@ -71,25 +71,9 @@ class Question(object):
         self.answer = answer
         self.daily_double = dailyDouble # is question a daily double (def=no)
 
-    # get question text
-    def get_question(self):
-        return self.text
-
-    # get answer
-    def get_answer(self):
-        return self.answer
-
     #get daily double status
     def is_daily_double(self):
         return self.daily_double
-
-    #set daily double status to true (hidden method)
-    def _set_daily_double(self):
-        self.daily_double = True
-
-    #set daily double status to false (hidden method)
-    def _unset_daily_double(self):
-        self.daily_double = False
 
     # string representation
     def __str__(self):
