@@ -9,4 +9,4 @@ class PlayerChoiceSector(Sector):
         Sector.__init__(self, "player choice sector")
 
     def action(self, game_state):
-        events.broadcast('player_choice_sector.choose_cateogry')
+        game_state.events.broadcast('player_choice_sector.choose_cateogry')
