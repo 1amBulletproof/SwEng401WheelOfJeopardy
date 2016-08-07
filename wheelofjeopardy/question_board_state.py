@@ -17,18 +17,10 @@ class QuestionBoardState(object):
         (tmp1,tmp2) = ReadQuestions(Opts) # read questions
 
         #the question matrix REPLACE WITH question_matrix
-        self.q_mat = [tmp1, tmp2]
+        self._q_mat = [tmp1, tmp2]
 
         #list of int to keep track of question progress
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
-
-        """
-        #list of category statuses - 1 means the category
-        #still has questions, 0 means all questions have been
-        #used
-        """
-        self.catgs_statuses = [1, 1, 1, 1, 1, 1]
-
 
     def q_remaining(self, roundNum):
         """
@@ -40,31 +32,37 @@ class QuestionBoardState(object):
         @rtype:  int
         @return: the number of questions remaining in said round
         """
-        return sum(self.progress[roundNum-1])
+        return (self.MAX_QS*self.MAX_CATS) - sum(self.progress[roundNum-1])
 
     def no_q_in_round(self, roundNum):
-        return (self.q_remaining(roundNum) > 0)
+        """
+        Whether there are remaining questions in a round
 
-    # this may be redundant, as can use _current_round() == 3
+        @type    roundNum: int
+        @param   roundNum: The round number (1 = round one, etc)
+
+        @rtype:  boolean
+        @return: True if no more questions remains in round, False otherwise
+        """
+        return (self.q_remaining(roundNum) == 0)
+
     def no_more_q(self):
-        return (self.no_q_in_round(1) and self.no_q_in_round(2))
+        return self._current_round() > 2 # round = 3 means first 2 round is over
 
     def mark_q_used(self, roundNum, catgNum):
         if self.progress[roundNum-1][catgNum-1] < self.MAX_QS:
             # increment the progress count if still question left in category
             self.progress[roundNum-1][catgNum-1] += 1
         else:
-            catgs_statuses[catgNum-1] = 0 #set the catg status to 0
             raise RuntimeWarning('No more questions in category.')
 
     def next_q_in_category(self, roundNum, catgNum):
         # not sure if I should mark question as used automatically after get
         mark_q_used(self, roundNum-1, catgNum-1)
-        return self.q_mat[roundNum-1][catgNum-1]
+        return self._q_mat[roundNum-1][catgNum-1]
 
-    #@TODO complete this category
-    def no_q_in_category(self, roundNum, category):
-        pass
+    def no_q_in_category(self, roundNum, catgNum):
+        return (self.progress[roundNum-1][catgNum-1] < self.MAX_QS)
 
     def _current_round(self):
         if self.no_q_in_round(1):
@@ -76,7 +74,7 @@ class QuestionBoardState(object):
             return 1
 
     def get_categories(self):
-        cats = self.q_mat[self._current_round()].headers
+        cats = self._q_mat[self._current_round()].headers
         outStr = ''
         for n in range(len(cats)):
             outStr += ('\t' + '(' + str(n+1) + ') ' + cats[n] + '\n')
