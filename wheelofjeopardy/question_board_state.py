@@ -1,23 +1,25 @@
 # -*- coding: utf-8 -*-
 
+from wheelofjeopardy.utils.read_question_file import ReadQuestions
+
 """
 Controls and monitors the state of the Questions/Board
 From SRS document:
 ...is responsible for selecting, displaying, or tracking
 which questions have already been selected.
 """
+
 #@TODO use the question_matrix.py module/class instead of your 2d list
 class QuestionBoardState(object):
     def __init__(self, events, Opts):
-        from wheelofjeopardy.utils.read_question_file import ReadQuestions
         self.events = events
         self.MAX_QS = 5 # max questions per category
         self.MAX_CATS = 6 # max categories per round
 
-        (tmp1,tmp2) = ReadQuestions(Opts) # read questions
+        (mat1,mat2) = ReadQuestions(Opts) # read questions
 
         #the question matrix REPLACE WITH question_matrix
-        self._q_mat = [tmp1, tmp2]
+        self._q_mat = [mat1, mat2]
 
         #list of int to keep track of question progress
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
@@ -58,8 +60,9 @@ class QuestionBoardState(object):
 
     def next_q_in_category(self, roundNum, catgNum):
         # not sure if I should mark question as used automatically after get
-        mark_q_used(self, roundNum-1, catgNum-1)
-        return self._q_mat[roundNum-1][catgNum-1]
+        self.mark_q_used(roundNum-1, catgNum-1)
+        next_idx = self.progress[roundNum-1][catgNum-1]
+        return self._q_mat[roundNum-1].get(catgNum-1, next_idx)
 
     def no_q_in_category(self, roundNum, catgNum):
         return (self.progress[roundNum-1][catgNum-1] < self.MAX_QS)
