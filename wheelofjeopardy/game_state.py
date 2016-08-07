@@ -14,6 +14,8 @@ class GameState(object):
         self.board = QuestionBoardState(events, opts)
         self.wheel = Wheel(events)
         self.active_wager = 0 # placeholder
+        self.current_round = 1
+        self.current_category
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -36,6 +38,27 @@ class GameState(object):
 
         if self.has_game_ended():
             self._broadcast('game_did_end', self)
+
+    def set_category(self, category):
+        self.current_category = category
+        _process_a_question()
+
+    def _process_a_question(self):
+        events = game_state.events
+        board_state = game_state.board
+        round = game_state.current_round
+        if board_state.no_q_in_round(round):
+            if (round == 1):
+                game_state.current_round += 1
+                round += 1
+                events.broadcast('game_state.round_did_end')
+            elif (round == 2):
+                events.broadcast('game_state.game_did_end')
+        elif board_state.no_q_in_category(round, category):
+            events.broadcast('game_state.prompt_no_remaining_question_spin_again')
+        else:
+            question = board_state.next_q_in_category(round, category)
+            events.broadcast('game_state.question_will_be_asked', question)
 
     def end_turn(self):
         self._broadcast('turn_will_end', self)
