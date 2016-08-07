@@ -15,8 +15,6 @@ class QuestionMatrix(object):
     themselves will contain the question text as well as the correct
     answer.
     """
-    #I think we need to pass in the current round also - Victoria
-    #this will allow us to assign the correct # of daily doubles
     def __init__(self, catgs, Qs, pts):
         self.headers = catgs
         self.questions = Qs
@@ -34,9 +32,19 @@ class QuestionMatrix(object):
         else:
             self.rows = tmp[0]
 
-    #return the tuple of (pointValue, Category, Question)
-    #stored at location c, r (column, row)
     def get(self, c, r):
+        """
+        get the tuple of (pointValue, Category, Question)
+        from the given location in the matrix
+
+        @type    c: int
+        @param   c: the column # of the matrix
+        @type    r: int
+        @param   r: the row # of the matrix
+
+        @rtype:  pointValue, Category, Question
+        @return: tuple of (pointValue, Category, Question)
+        """
         catg = self.headers[c]
         val = self.pointValue[r]
         return (val, catg, self.questions[r][c])
@@ -48,6 +56,9 @@ class QuestionMatrix(object):
         return self.pointValue[r]
 
     def __str__(self):
+        """
+        get the string version of the matrix
+        """
         catg = 'categories: ' + self.headers.__str__()
         strOut = '';
 
