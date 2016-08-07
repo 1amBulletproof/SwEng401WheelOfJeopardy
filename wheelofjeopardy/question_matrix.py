@@ -21,7 +21,7 @@ class QuestionMatrix(object):
         self.headers = catgs
         self.questions = Qs
         self.pointValue = pts
-        
+
         # sanity check: number of columns
         if len(self.headers) != len(self.questions):
             raise TypeError('Check the dimension of the questions')
@@ -36,10 +36,10 @@ class QuestionMatrix(object):
 
     #return the tuple of (pointValue, Category, Question)
     #stored at location c, r (column, row)
-    def get(c, r):
+    def get(self, c, r):
         catg = self.headers[c]
         val = self.pointValue[r]
-        return (val, catg, questions[r][c])
+        return (val, catg, self.questions[r][c])
 
     def get_value(r):
         """
@@ -50,15 +50,15 @@ class QuestionMatrix(object):
     def __str__(self):
         catg = 'categories: ' + self.headers.__str__()
         strOut = '';
-        
+
         # loop over questions and categories, add to strOut
-        for (cat,qs) in zip(self.headers, self.questions): 
+        for (cat,qs) in zip(self.headers, self.questions):
             strOut += '__' + str(cat) + '__::'
             strOut += str(map(str,qs))
             strOut += '\n'
 
         return strOut
-        
+
 
 class Question(object):
     """
