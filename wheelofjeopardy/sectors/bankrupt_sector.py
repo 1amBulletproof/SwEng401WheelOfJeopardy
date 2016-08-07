@@ -1,7 +1,7 @@
 """
 Logic for player landing on "bankrupt" sector of Wheel
 """
-#@todo unit tests
+#@TODO unit tests
 from wheelofjeopardy.sectors.sector import Sector
 
 class BankruptSector(Sector):
