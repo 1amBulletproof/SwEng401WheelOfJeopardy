@@ -36,7 +36,7 @@ def ReadQuestions(opts):
 
     #d = os.path.dirname(os.path.realpath(sys.argv[0]))
     inFileName = opts.qFileName
-    fPath = os.path.join(os.getcwd(), 'cfg', inFileName)
+    fPath = os.path.join(os.getcwd(), 'wheelofjeopardy', 'cfg', inFileName)
 
 #%% Parse CSV line-by-line and instantiate the various questions
 
@@ -56,7 +56,7 @@ def ReadQuestions(opts):
                 if not catgInd1.has_key(cat): # if category not encountered yet
                     catgInd1[cat] = len(catgInd1) # designate new index
                 # instantiate questions
-                qsRd1[catgInd1[cat]][pts-1] = qm.Question(qTxt, ans, dd) 
+                qsRd1[catgInd1[cat]][pts-1] = qm.Question(qTxt, ans, dd)
 
             elif rdInd == 2:
                 if not catgInd2.has_key(cat):
