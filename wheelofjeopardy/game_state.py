@@ -12,7 +12,7 @@ class GameState(object):
         self.player_states = player_states
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
-        self.wheel = Wheel(events)
+        self.wheel = Wheel()
         self.active_wager = 0 # placeholder
         self.current_round = 1
         self.current_category

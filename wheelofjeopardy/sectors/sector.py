@@ -8,7 +8,6 @@ action() method MUST be overriden by sub-classes
 class Sector:
     def __init__(self, name):
         self.name = name
-        self.events = events
 
     def action(self, game_state):
         raise NotImplementedError
