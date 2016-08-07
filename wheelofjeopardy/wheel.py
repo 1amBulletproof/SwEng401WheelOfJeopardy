@@ -4,6 +4,8 @@ Wraps the sector classes and controls which sector affects the game_state
 from wheelofjeopardy.sectors import *
 from wheelofjeopardy.category import Category
 
+import random
+
 #@TODO: create unit tests for this class
 class Wheel(object):
     def __init__(self):
