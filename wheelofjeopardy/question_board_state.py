@@ -6,6 +6,7 @@ From SRS document:
 ...is responsible for selecting, displaying, or tracking
 which questions have already been selected.
 """
+#@TODO use the question_matrix.py module/class instead of your 2d list
 class QuestionBoardState(object):
     def __init__(self, events, Opts):
         from wheelofjeopardy.utils.read_question_file import ReadQuestions
@@ -14,8 +15,8 @@ class QuestionBoardState(object):
         self.MAX_CATS = 6 # max categories per round
 
         (tmp1,tmp2) = ReadQuestions(Opts) # read questions
-        
-        #the question matrix
+
+        #the question matrix REPLACE WITH question_matrix
         self.q_mat = [tmp1, tmp2]
 
         #list of int to keep track of question progress
@@ -28,7 +29,7 @@ class QuestionBoardState(object):
         """
         self.catgs_statuses = [1, 1, 1, 1, 1, 1]
 
-        
+
     def q_remaining(self, roundNum):
         """
         Number of questions remaining in a round
@@ -60,6 +61,10 @@ class QuestionBoardState(object):
         # not sure if I should mark question as used automatically after get
         mark_q_used(self, roundNum-1, catgNum-1)
         return self.q_mat[roundNum-1][catgNum-1]
+
+    #@TODO complete this category
+    def no_q_in_category(self, roundNum, category):
+        pass
 
     def _current_round(self):
         if self.no_q_in_round(1):
@@ -96,4 +101,3 @@ class QuestionBoardState(object):
         outStr += '\n'.join(tmp) + '\n' # all table lines
         outStr += '¯' * (self.MAX_CATS*4+1) # bottom bar
         return outStr
-
