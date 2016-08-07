@@ -56,7 +56,6 @@ class GameState(object):
                 events.broadcast('game_state.game_did_end')
         elif board_state.no_q_in_category(round, category):
             events.broadcast('game_state.prompt_no_remaining_question_spin_again')
-            break
         else:
             question = board_state.next_q_in_category(round, category)
             events.broadcast('game_state.question_will_be_asked', question)
