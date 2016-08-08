@@ -48,6 +48,7 @@ class TextGUI(object):
         self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
         self.events.subscribe('sector.prompt_for_token_use', self._on_prompt_for_token_use)
+        self.events.subscribe('sector.no_questions_in_category', self._on_no_questions_in_category)
 
         TextGUI._clear_terminal()
         while self.game_state.any_spins_remaining():
@@ -103,6 +104,9 @@ class TextGUI(object):
             self.events.broadcast('gui.use_free_token')
         else:
             self.events.broadcast('gui.dont_use_free_token')
+
+    def _on_no_questions_in_category(self, category):
+        print 'No questions remaining in category %s, spin again.' % (category)
 
     def _print_scores(self):
         score_strings = []

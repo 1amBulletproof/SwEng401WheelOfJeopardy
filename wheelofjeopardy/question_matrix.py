@@ -45,9 +45,12 @@ class QuestionMatrix(object):
         @rtype:  int, string, Question
         @return: tuple of (pointValue, Category, Question)
         """
-        catg = self.headers[c]
-        val = self.pointValue[r]
-        return (val, catg, self.questions[c][r])
+        if c < len(self.questions) and r < len(self.questions[c]):
+            catg = self.headers[c]
+            val = self.pointValue[r]
+            return (val, catg, self.questions[c][r])
+        else:
+            return None
 
     def get_value(r):
         """
