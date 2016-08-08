@@ -18,8 +18,7 @@ class QuestionBoardState(object):
         #two question_matrix returned - 1 for each round
         (tmp1,tmp2) = ReadQuestions(Opts) # read questions
 
-        #the question matrix
-        #2 question_matrix (1 for each round)
+        #the question matrix, 2 question_matrix (1 for each round)
         self._q_mat = [tmp1, tmp2]
 
         #list of int to keep track of question progress
@@ -66,7 +65,7 @@ class QuestionBoardState(object):
         @param   roundNum: The round number (1 = round one, etc)
 
         @type    catgNum: int
-        @param   catgNum: The category number (0 = first category, etc)
+        @param   catgNum: The category number (1 = first category, etc)
         """
         if self.progress[roundNum-1][catgNum-1] < self.MAX_QS:
             # increment the progress count if still question left in category
@@ -82,13 +81,13 @@ class QuestionBoardState(object):
         @param   roundNum: The round number (1 = round one, etc)
 
         @type    catgNum: int
-        @param   catgNum: The category number (0 = first category, etc)
+        @param   catgNum: The category number (1 = first category, etc)
 
         @rtype:  Question
         @return: next Question in the category given
         """
-        self.mark_q_used(roundNum-1, catgNum-1)
-        next_idx = self.progress[roundNum-1][catgNum-1]
+        next_idx = self.progress[roundNum-1][catgNum-1] # get idx before marking
+        self.mark_q_used(roundNum, catgNum) # note: mark_q_used is 1-indexed
         return self._q_mat[roundNum-1].get(catgNum-1, next_idx)
 
     def no_q_in_category(self, roundNum, catgNum):
@@ -115,7 +114,7 @@ class QuestionBoardState(object):
         @param   roundNum: The round number (1 = round one, etc)
 
         @type    catgNum: int
-        @param   catgNum: The category number (0 = first category, etc)
+        @param   catgNum: The category number (1 = first category, etc)
 
         @rtype:  boolean
         @return: true if there are questions remaining in the category
