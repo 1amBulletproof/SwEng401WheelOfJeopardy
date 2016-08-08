@@ -72,10 +72,10 @@ class TextGUI(object):
 
     def _on_spins_did_update(self, game_state):
         print self._get_spins_remaining_message()
+        TextGUI._clear_terminal()
 
     def _on_sector_was_chosen(self, sector):
-        print('You spinned %s.' % str(sector))
-        TextGUI._clear_terminal()
+        print('You spun %s.' % str(sector))
 
     def _on_turn_will_end(self, game_state):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
