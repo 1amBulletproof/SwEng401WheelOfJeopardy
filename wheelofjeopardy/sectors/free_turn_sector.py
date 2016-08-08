@@ -11,4 +11,3 @@ class FreeTurnSector(Sector):
     def action(self, game_state):
         player = game_state.get_current_player()
         player.grant_free_spin_token()
-        game_state.end_turn()

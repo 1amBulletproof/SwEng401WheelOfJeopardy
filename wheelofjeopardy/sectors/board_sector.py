@@ -9,7 +9,6 @@ class BoardSector(Sector):
         Sector.__init__(self, "Board sector " + str(category))
         self.category = category
 
-    #@TODO Apply Question Selection logic (i.e. are there any questions left: see sequence diagram)
     def action(self, game_state):
         game_state.current_category = self.category
-        self.process_question(game_state)
+        self.ask_next_question_in_category(self.category, game_state)

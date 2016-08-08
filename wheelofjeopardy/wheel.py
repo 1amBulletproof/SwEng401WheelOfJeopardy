@@ -39,6 +39,10 @@ class Wheel(object):
         random_number = random.randrange(0, len(self._sectors), 1)
         return self._sectors[random_number]
 
+    def _get_sector(self, ind):
+        if ind >= len(self._sectors):
+            raise IndexError('Invalid sector choice.')
+        return self._sectors[ind]
 
     def __str__(self):
         return self.description

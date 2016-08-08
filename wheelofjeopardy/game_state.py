@@ -15,7 +15,7 @@ class GameState(object):
         self.wheel = Wheel()
         self.active_wager = 0 # placeholder
         self.current_round = 1
-        self.current_category = None # these two will be set by methods
+        self.current_category = None # these three will be set by methods
         self.current_question = None
         self.current_sector = None
 
@@ -23,6 +23,9 @@ class GameState(object):
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
         self.events.subscribe('gui.incorrect_answer_received', self._on_incorrect_answer_received)
+
+        self.events.subscribe('gui.use_free_token', self._on_use_free_token)
+        self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -34,16 +37,24 @@ class GameState(object):
     def any_spins_remaining(self):
         return self.spins_remaining > 0
 
-    def spin(self):
-        self.current_sector = self.wheel.get_random_sector()
+    def spin(self, sect=None):
+        if sect is None:
+            self.current_sector = self.wheel.get_random_sector()
+        else:
+            self.current_sector = self.wheel._get_sector(sect)
         self.spins_remaining -= 1
-        self._broadcast('spins_did_update', self)
-        # are these both needed? only included 1 in sequence diagram
         self._broadcast('sector_was_chosen', self.current_sector)
+        self._broadcast('spins_did_update', self)
         self.current_sector.action(self)
 
         if self.has_game_ended():
             self._broadcast('game_did_end', self)
+
+    def _cheat(self, sect):
+        if not sect.isdigit():
+            raise ValueError('Second char is not a digit')
+        else:
+            self.spin( int(sect)-1 ) # sector number needs to be subtracted
 
     def next_question_in_category(self, category):
         return self.board.next_q_in_category(self.current_round, category)
@@ -86,3 +97,9 @@ class GameState(object):
 
     def _on_incorrect_answer_received(self, question):
         self.current_sector.received_incorrect_answer(self, question)
+
+    def _on_use_free_token(self):
+        self.current_sector.received_use_free_token(self)
+
+    def _on_dont_use_free_token(self):
+        self.current_sector.received_dont_use_free_token(self)

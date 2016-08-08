@@ -1,9 +1,6 @@
 import sys
 import os
 
-# make sure wheelofjeopardy module is available on the load path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-
 from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
@@ -50,6 +47,8 @@ class TextGUI(object):
 
         self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
+        self.events.subscribe('sector.prompt_for_token_use', self._on_prompt_for_token_use)
+        self.events.subscribe('sector.no_questions_in_category', self._on_no_questions_in_category)
 
         TextGUI._clear_terminal()
         while self.game_state.any_spins_remaining():
@@ -64,6 +63,8 @@ class TextGUI(object):
                 self._print_scores()
             elif answer == 'q':
                 break
+            elif answer[0] == 'c': # cheat menu
+                self.game_state._cheat(answer[1])
 
         print 'Good game!'
 
@@ -72,32 +73,40 @@ class TextGUI(object):
 
     def _on_spins_did_update(self, game_state):
         print self._get_spins_remaining_message()
+        TextGUI._clear_terminal()
 
     def _on_sector_was_chosen(self, sector):
-        print('You spinned %s.' % str(sector))
-        TextGUI._clear_terminal()
+        print('You spun %s.' % str(sector))
 
     def _on_turn_will_end(self, game_state):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
 
     def _on_question_will_be_asked(self, question):
+        print "Alright, here's the %d-point question in %s:" % (question[0], question[1])
         sys.stdout.write('%s: ' % (question[2].text))
         answer = raw_input()
         self.events.broadcast('gui.answer_received', answer)
 
     def _on_check_answer(self, question, answer):
-        mod_response = ''
+        player_name = self.game_state.get_current_player().name
+        print 'Correct answer is: %s' % (question[2].answer)
+        prompt = 'Hey moderator, is %s answer correct (y/n)? ' % (apostrophize(player_name))
 
-        while mod_response != 'y' and mod_response != 'n':
-            player_name = self.game_state.get_current_player().name
-            print 'Correct answer is: %s' % (question[2].answer)
-            sys.stdout.write('Hey moderator, is %s answer correct (y/n)? ' % (apostrophize(player_name)))
-            mod_response = raw_input()
-
-        if mod_response == 'y':
+        if self._prompt_yes_no(prompt):
             self.events.broadcast('gui.correct_answer_received', question)
         else:
             self.events.broadcast('gui.incorrect_answer_received', question)
+
+    def _on_prompt_for_token_use(self):
+        prompt = 'Would you like to use one of your free spin tokens (y/n)? '
+
+        if self._prompt_yes_no(prompt):
+            self.events.broadcast('gui.use_free_token')
+        else:
+            self.events.broadcast('gui.dont_use_free_token')
+
+    def _on_no_questions_in_category(self, category):
+        print 'No questions remaining in category %s, spin again.' % (category)
 
     def _print_scores(self):
         score_strings = []
@@ -119,6 +128,15 @@ class TextGUI(object):
 
     def _get_whose_turn_message(self):
         return "It's %s turn." % apostrophize(self.game_state.get_current_player().name)
+
+    def _prompt_yes_no(self, prompt):
+        response = None
+
+        while response != 'y' and response != 'n':
+            sys.stdout.write(prompt)
+            response = raw_input()
+
+        return response == 'y'
 
 if __name__ == '__main__':
     TextGUI.start()

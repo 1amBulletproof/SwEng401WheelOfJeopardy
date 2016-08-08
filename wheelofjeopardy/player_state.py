@@ -38,5 +38,6 @@ class PlayerState(object):
         return self.free_spin_tokens > 0
 
     # private
+
     def _broadcast(self, channel, *args):
         self.events.broadcast('player_state.%s' % channel, *args)
