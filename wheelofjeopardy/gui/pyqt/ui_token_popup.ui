@@ -164,5 +164,38 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>useTokenButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TokenPopup</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>denyTokenButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TokenPopup</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

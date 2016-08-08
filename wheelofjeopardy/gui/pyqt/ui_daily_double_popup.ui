@@ -121,16 +121,16 @@
   <connection>
    <sender>submitWagerButton</sender>
    <signal>clicked()</signal>
-   <receiver>dailyDoubleDialog</receiver>
+   <receiver>DailyDoublePopup</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>211</x>
-     <y>198</y>
+     <x>229</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
-     <x>335</x>
-     <y>205</y>
+     <x>301</x>
+     <y>204</y>
     </hint>
    </hints>
   </connection>

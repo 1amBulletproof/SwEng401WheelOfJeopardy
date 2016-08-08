@@ -10,6 +10,7 @@ from PyQt4.QtGui import QMainWindow, QApplication
 from PyQt4.QtCore import pyqtSignature
 
 # this is the .py file spit out from PyQt
+#from wheelofjeopardy.gui.moderator_popup import ModeratorPopup
 from wheelofjeopardy.gui.pyqt.ui_woj_application_window import Ui_WojApplicationWindow
 from wheelofjeopardy.events import Events
 
@@ -40,12 +41,12 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         # put image behind wheel
         #
 
-
         # setup the player answer interface to not show "TextLabels" everywhere.
         #
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
+        self.spinCountValue.setText("50")
 
 
     # Methods that run on specific button clicks
@@ -63,8 +64,10 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     @pyqtSignature("")
     def on_submitAnswerButton_clicked(self):
-        # call activateModeratorPopup
-        self.broadcast('gui.answer_received')
+        # call moderator_popup
+        #
+        player_answer = self.playerAnswerEntryBox.text()
+        self.events.broadcast('gui.answer_received', player_answer)
         pass
 
 
@@ -91,20 +94,19 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         pass
 
     def _show_category_popup(self):
-        # call activateCategoryPopup
+        # call category_choice_popup
         #
         pass
 
 
     def _show_daily_double_popup(self):
-        # call activateDailyDoublePopup
+        # call daily_double_popup
         pass
-
+    
 
     def _show_token_popup(self):
-        # call activateTokenPopup
+        # call token_popup
         pass
-
 
     def _update_score(self):
         # needs to know current player..
