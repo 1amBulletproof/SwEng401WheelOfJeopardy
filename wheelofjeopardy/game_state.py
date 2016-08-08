@@ -19,6 +19,7 @@ class GameState(object):
         self.current_question = None
         self.current_sector = None
 
+        self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
         self.events.subscribe('gui.incorrect_answer_received', self._on_incorrect_answer_received)
@@ -73,6 +74,9 @@ class GameState(object):
     def _choose_next_player(self):
         self.current_player_index = \
             (self.current_player_index + 1) % len(self.player_states)
+
+    def _on_category_chosen(self, category):
+        self.current_sector.process_question(self)
 
     def _on_answer_received(self, answer):
         self.current_sector.receive_answer(self, self.current_question, answer)

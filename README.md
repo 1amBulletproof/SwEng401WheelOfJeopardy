@@ -57,6 +57,7 @@ Tests are written with the TestUnit functionality available in the Python standa
 
 There are two available GUIs:
 
+(run these commands from the root directory of your project)
 ```bash
 # PyQt GUI:
 python -m wheelofjeopardy.gui.woj_application_window
