@@ -47,6 +47,7 @@ class TextGUI(object):
 
         self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
+        self.events.subscribe('sector.prompt_for_token_use', self._on_prompt_for_token_use)
 
         TextGUI._clear_terminal()
         while self.game_state.any_spins_remaining():
@@ -86,18 +87,22 @@ class TextGUI(object):
         self.events.broadcast('gui.answer_received', answer)
 
     def _on_check_answer(self, question, answer):
-        mod_response = ''
+        player_name = self.game_state.get_current_player().name
+        print 'Correct answer is: %s' % (question[2].answer)
+        prompt = 'Hey moderator, is %s answer correct (y/n)? ' % (apostrophize(player_name))
 
-        while mod_response != 'y' and mod_response != 'n':
-            player_name = self.game_state.get_current_player().name
-            print 'Correct answer is: %s' % (question[2].answer)
-            sys.stdout.write('Hey moderator, is %s answer correct (y/n)? ' % (apostrophize(player_name)))
-            mod_response = raw_input()
-
-        if mod_response == 'y':
+        if self._prompt_yes_no(prompt):
             self.events.broadcast('gui.correct_answer_received', question)
         else:
             self.events.broadcast('gui.incorrect_answer_received', question)
+
+    def _on_prompt_for_token_use(self):
+        prompt = 'Would you like to use one of your free spin tokens (y/n)? '
+
+        if self._prompt_yes_no(prompt):
+            self.events.broadcast('gui.use_free_token')
+        else:
+            self.events.broadcast('gui.dont_use_free_token')
 
     def _print_scores(self):
         score_strings = []
@@ -119,6 +124,15 @@ class TextGUI(object):
 
     def _get_whose_turn_message(self):
         return "It's %s turn." % apostrophize(self.game_state.get_current_player().name)
+
+    def _prompt_yes_no(self, prompt):
+        response = None
+
+        while response != 'y' and response != 'n':
+            sys.stdout.write(prompt)
+            response = raw_input()
+
+        return response == 'y'
 
 if __name__ == '__main__':
     TextGUI.start()
