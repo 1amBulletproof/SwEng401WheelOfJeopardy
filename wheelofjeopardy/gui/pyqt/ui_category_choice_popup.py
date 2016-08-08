@@ -141,6 +141,12 @@ class Ui_CategoryChoicePopup(object):
         self.horizontalLayout_3.addLayout(self.verticalLayout)
 
         self.retranslateUi(CategoryChoicePopup)
+        QtCore.QObject.connect(self.category1, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
+        QtCore.QObject.connect(self.category2, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
+        QtCore.QObject.connect(self.category3, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
+        QtCore.QObject.connect(self.category4, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
+        QtCore.QObject.connect(self.category5, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
+        QtCore.QObject.connect(self.category6, QtCore.SIGNAL(_fromUtf8("clicked()")), CategoryChoicePopup.close)
         QtCore.QMetaObject.connectSlotsByName(CategoryChoicePopup)
 
     def retranslateUi(self, CategoryChoicePopup):
