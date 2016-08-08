@@ -66,7 +66,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def on_submitAnswerButton_clicked(self):
         # call moderator_popup
         #
-        player_answer = self.playerAnswerEntryBox.text()
+        player_answer = self.playerAnswerEntryBox.toPlainText()
         self.events.broadcast('gui.answer_received', player_answer)
         pass
 
@@ -101,13 +101,13 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     def _show_daily_double_popup(self):
         # call daily_double_popup
-        pass
+        self.events.broadcast('gui.show_dailydouble_popup')
     
 
     def _show_token_popup(self):
         # call token_popup
-        pass
-
+        self.events.broadcast('gui.show_token_popup')
+        
     def _update_score(self):
         # needs to know current player..
         #
