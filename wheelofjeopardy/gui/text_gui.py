@@ -1,9 +1,6 @@
 import sys
 import os
 
-# make sure wheelofjeopardy module is available on the load path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-
 from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
@@ -81,6 +78,7 @@ class TextGUI(object):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
 
     def _on_question_will_be_asked(self, question):
+        print "Alright, here's the %d-point question in %s:" % (question[0], question[1])
         sys.stdout.write('%s: ' % (question[2].text))
         answer = raw_input()
         self.events.broadcast('gui.answer_received', answer)
