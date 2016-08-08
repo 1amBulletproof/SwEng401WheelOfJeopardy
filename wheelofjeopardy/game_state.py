@@ -73,3 +73,12 @@ class GameState(object):
     def _choose_next_player(self):
         self.current_player_index = \
             (self.current_player_index + 1) % len(self.player_states)
+
+    def _on_answer_received(self, answer):
+        self.current_sector.receive_answer(self, self.current_question, answer)
+
+    def _on_correct_answer_received(self, question):
+        self.current_sector.received_correct_answer(self, question)
+
+    def _on_incorrect_answer_received(self, question):
+        self.current_sector.received_incorrect_answer(self, question)
