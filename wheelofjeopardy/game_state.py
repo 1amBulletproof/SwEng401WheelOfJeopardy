@@ -15,7 +15,7 @@ class GameState(object):
         self.wheel = Wheel()
         self.active_wager = 0 # placeholder
         self.current_round = 1
-        self.current_category = None # these two will be set by methods
+        self.current_category = None # these three will be set by methods
         self.current_question = None
         self.current_sector = None
 
@@ -37,9 +37,8 @@ class GameState(object):
     def spin(self):
         self.current_sector = self.wheel.get_random_sector()
         self.spins_remaining -= 1
-        self._broadcast('spins_did_update', self)
-        # are these both needed? only included 1 in sequence diagram
         self._broadcast('sector_was_chosen', self.current_sector)
+        self._broadcast('spins_did_update', self)
         self.current_sector.action(self)
 
         if self.has_game_ended():
