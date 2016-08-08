@@ -6,9 +6,10 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class BoardSector(Sector):
     def __init__ (self, category):
-        Sector.__init__(self, str(category) + " Board sector")
+        Sector.__init__(self, "Board sector " + str(category))
         self.category = category
 
+    #@TODO Apply Question Selection logic (i.e. are there any questions left: see sequence diagram)
     def action(self, game_state):
         game_state.current_category = self.category
         process_question(game_state)
