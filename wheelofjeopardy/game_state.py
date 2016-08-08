@@ -34,8 +34,11 @@ class GameState(object):
     def any_spins_remaining(self):
         return self.spins_remaining > 0
 
-    def spin(self):
-        self.current_sector = self.wheel.get_random_sector()
+    def spin(self, sect=None):
+        if sect is None:
+            self.current_sector = self.wheel.get_random_sector()
+        else:
+            self.current_sector = self.wheel._get_sector(sect)
         self.spins_remaining -= 1
         self._broadcast('sector_was_chosen', self.current_sector)
         self._broadcast('spins_did_update', self)
@@ -43,6 +46,12 @@ class GameState(object):
 
         if self.has_game_ended():
             self._broadcast('game_did_end', self)
+
+    def _cheat(self, sect):
+        if not sect.isdigit():
+            raise ValueError('Second char is not a digit')
+        else:
+            self.spin( int(sect)-1 ) # sector number needs to be subtracted
 
     def next_question_in_category(self, category):
         return self.board.next_q_in_category(self.current_round, category)
