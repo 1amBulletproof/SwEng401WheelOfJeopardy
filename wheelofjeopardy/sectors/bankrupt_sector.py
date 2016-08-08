@@ -1,7 +1,7 @@
 """
 Logic for player landing on "bankrupt" sector of Wheel
 """
-#@todo unit tests
+#@TODO unit tests
 from wheelofjeopardy.sectors.sector import Sector
 
 class BankruptSector(Sector):
@@ -11,3 +11,4 @@ class BankruptSector(Sector):
     def action(self, game_state):
         player = game_state.get_current_player()
         player.reset_score()
+        game_state.end_turn()

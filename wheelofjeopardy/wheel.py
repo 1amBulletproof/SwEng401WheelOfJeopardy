@@ -1,47 +1,43 @@
 """
-Wraps the sector classes and controls which affect the game_state
+Wraps the sector classes and controls which sector affects the game_state
 """
-#FARHEEN COMMENT
-from wheelofjeopardy.sectors.sector import *
+from wheelofjeopardy.sectors import *
+from wheelofjeopardy.category import Category
+import random
+
+import random
 
 #@TODO: create unit tests for this class
 class Wheel(object):
-    #@TODO: initialization incomplete?
-    def __init__(self, event):
+    def __init__(self):
         self.description = 'Wheel from the game Wheel of Jeopardy!'
-        pass
-        # self._sectors = self._initialize_sectors()
+        self._sectors = self._initialize_sectors()
 
     #@TODO: update sectors for actual physical implementations available
     def _initialize_sectors(self):
-        pass
-        # sector1 = Section1()
-        # sector2 =
-        # sector3 =
-        # sector4 =
-        # sector5 =
-        # sector6 =
-        # .
-        # .
-        # .
-        # sector12 =
-        # return [sector1, sector2, sector3, sector4, sector5, sector6 ... sector12]
+        sector1 = bankrupt_sector.BankruptSector()
+        sector2 = free_turn_sector.FreeTurnSector()
+        sector3 = lose_turn_sector.LoseTurnSector()
+        sector4 = spin_again_sector.SpinAgainSector()
+        sector5 = opponent_choice_sector.OpponentChoiceSector()
+        sector6 = player_choice_sector.PlayerChoiceSector()
+        sector7 = board_sector.BoardSector(Category.category1)
+        sector8 = board_sector.BoardSector(Category.category2)
+        sector9 = board_sector.BoardSector(Category.category3)
+        sector10 = board_sector.BoardSector(Category.category4)
+        sector11 = board_sector.BoardSector(Category.category5)
+        sector12 = board_sector.BoardSector(Category.category6)
+        return [sector1, sector2, sector3, sector4,
+                sector5, sector6, sector7, sector8,
+                sector9, sector10, sector11, sector12]
 
     """
     get random sector, notify GUI of this sector (to show/animate it), and return the random sector
     """
     #@TODO:unfinished method
     def get_random_sector(self):
-        self.sector_selected = Sector("random sector")
-        return self.sector_selected
-        # self.current_sector = self._get_random_sector()
-        # #Notify GUI? GUI Observers?
-        # self.current_sector.action(game_state) - handled by the game_state currently
-        # return self.current_sector
-
-    #@TODO: get random number and return that index of self._sectors
-    def _get_random_sector(self):
-        pass
+        random_number = random.randrange(0, len(self._sectors), 1)
+        return self._sectors[random_number]
 
 
     def __str__(self):

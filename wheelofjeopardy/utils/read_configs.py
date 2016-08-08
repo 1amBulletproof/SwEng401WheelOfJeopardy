@@ -19,7 +19,7 @@ def ReadCfgToOptions(cfgFile = "Options.ini"):
     import ConfigParser, os
     from collections import namedtuple as ntp  # use nametuple since immutable
 
-    cfgFile = os.path.join(os.getcwd(), "cfg", cfgFile)
+    cfgFile = os.path.join(os.getcwd(), "wheelofjeopardy", "cfg", cfgFile)
     cp = ConfigParser.RawConfigParser() # configParser
     tmpName = cp.read(cfgFile) # read in config file
     if not tmpName: # if file is not found

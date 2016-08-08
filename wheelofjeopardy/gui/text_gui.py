@@ -74,7 +74,7 @@ class TextGUI(object):
         print self._get_spins_remaining_message()
 
     def _on_sector_was_chosen(self, sector):
-        print('Your spinned %s.' % str(sector))
+        print('You spinned %s.' % str(sector))
         TextGUI._clear_terminal()
 
     def _on_turn_will_end(self, game_state):
