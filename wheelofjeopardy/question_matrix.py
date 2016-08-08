@@ -38,16 +38,19 @@ class QuestionMatrix(object):
         from the given location in the matrix
 
         @type    c: int
-        @param   c: the column # of the matrix
+        @param   c: the category index # of the matrix
         @type    r: int
-        @param   r: the row # of the matrix
+        @param   r: the question index # of the matrix
 
-        @rtype:  pointValue, Category, Question
+        @rtype:  int, string, Question
         @return: tuple of (pointValue, Category, Question)
         """
-        catg = self.headers[c]
-        val = self.pointValue[r]
-        return (val, catg, self.questions[r][c])
+        if c < len(self.questions) and r < len(self.questions[c]):
+            catg = self.headers[c]
+            val = self.pointValue[r]
+            return (val, catg, self.questions[c][r])
+        else:
+            return None
 
     def get_value(r):
         """
