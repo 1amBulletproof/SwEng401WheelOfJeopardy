@@ -47,12 +47,7 @@ class QuestionMatrix(object):
         """
         catg = self.headers[c]
         val = self.pointValue[r]
-        try:
-            return (val, catg, self.questions[c][r])
-        except:
-            print('Matrix dimension is: %s' % map(len,self.questions))
-            print('These index caused exception: c=%u, r=%u' % (c,r))
-            raise
+        return (val, catg, self.questions[c][r])
 
     def get_value(r):
         """
