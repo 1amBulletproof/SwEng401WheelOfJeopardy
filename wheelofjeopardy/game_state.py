@@ -78,6 +78,9 @@ class GameState(object):
         self.current_player_index = \
             (self.current_player_index + 1) % len(self.player_states)
 
+    def _on_category_chosen(self, category):
+        self.current_sector.process_question(self)
+
     def _on_answer_received(self, answer):
         self.current_sector.receive_answer(self, self.current_question, answer)
 
