@@ -5,6 +5,8 @@ from wheelofjeopardy.sectors import *
 from wheelofjeopardy.category import Category
 import random
 
+import random
+
 #@TODO: create unit tests for this class
 class Wheel(object):
     def __init__(self):

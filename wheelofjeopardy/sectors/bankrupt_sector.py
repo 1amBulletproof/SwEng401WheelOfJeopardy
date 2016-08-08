@@ -11,3 +11,4 @@ class BankruptSector(Sector):
     def action(self, game_state):
         player = game_state.get_current_player()
         player.reset_score()
+        game_state.end_turn()
