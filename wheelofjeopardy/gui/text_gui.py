@@ -31,12 +31,8 @@ class TextGUI(object):
 
     @staticmethod
     def _clear_terminal():
+        raw_input("Press Enter to continue...")
         os.system('cls' if os.name=='nt' else 'clear')
-
-    # not sure if the following is needed anymore??
-#	@classmethod
-#	def _create_player(cls, name, events, score):
-#		return PlayerState(name=name, events=events, score=score)
 
     # public instance
 
@@ -79,6 +75,7 @@ class TextGUI(object):
 
     def _on_sector_was_chosen(self, sector):
         print('Your spinned %s.' % str(sector))
+        TextGUI._clear_terminal()
 
     def _on_turn_will_end(self, game_state):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
@@ -105,12 +102,12 @@ class TextGUI(object):
     def _print_scores(self):
         score_strings = []
 
-        for player_state in self.game_state.player_states:
-            score_strings.append("\t%s has %d points" % (player_state.name, player_state.score))
+        for pl in self.game_state.player_states:
+            score_strings.append("\t%s has %u points, %u tokens." % \
+                                 (pl.name, pl.score, pl.free_spin_tokens) )
 
         print 'Here are the scores:'
         print '\n'.join(score_strings)
-        raw_input("Press Enter to continue...")
         TextGUI._clear_terminal()
 
     def _get_spins_remaining_message(self):

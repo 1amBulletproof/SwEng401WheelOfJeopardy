@@ -35,11 +35,11 @@ class GameState(object):
 
     def spin(self):
         self.current_sector = self.wheel.get_random_sector()
+        self.spins_remaining -= 1
+        self._broadcast('spins_did_update', self)
         # are these both needed? only included 1 in sequence diagram
         self._broadcast('sector_was_chosen', self.current_sector)
         self.current_sector.action(self)
-        self.spins_remaining -= 1
-        self._broadcast('spins_did_update', self)
 
         if self.has_game_ended():
             self._broadcast('game_did_end', self)
@@ -49,7 +49,6 @@ class GameState(object):
 
     def end_turn(self):
         self._broadcast('turn_will_end', self)
-
         if self.has_round_ended():
             if self.current_round == 1:
                 self.current_round += 1
@@ -58,19 +57,16 @@ class GameState(object):
                 self._broadcast('turn_did_end', self)
                 self._broadcast('game_did_end', self)
                 return
-
         self._choose_next_player()
-        self._broadcast('current_player_did_change', self)
         self._broadcast('turn_did_end', self)
+        self._broadcast('current_player_did_change', self)
 
     def has_game_ended(self):
         return self.board.no_more_q()
 
     def has_round_ended(self):
         return self.board.no_q_in_round(self.current_round) or not self.any_spins_remaining()
-
     # private
-
     def _broadcast(self, channel, *args):
         self.events.broadcast('game_state.%s' % channel, *args)
 
