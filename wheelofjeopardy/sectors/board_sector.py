@@ -12,4 +12,4 @@ class BoardSector(Sector):
     #@TODO Apply Question Selection logic (i.e. are there any questions left: see sequence diagram)
     def action(self, game_state):
         game_state.current_category = self.category
-        process_question(game_state)
+        self.process_question(game_state)
