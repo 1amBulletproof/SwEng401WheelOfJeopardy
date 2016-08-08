@@ -19,6 +19,7 @@ class GameState(object):
         self.current_question = None
         self.current_sector = None
 
+        self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
         self.events.subscribe('gui.incorrect_answer_received', self._on_incorrect_answer_received)
