@@ -144,7 +144,7 @@ class QuestionBoardState(object):
         @rtype:  String
         @return: the string of all categories in the game
         """
-        cats = self._q_mat[self._current_round()].headers
+        cats = self._q_mat[self._current_round()-1].headers
         outStr = ''
         for n in range(len(cats)):
             outStr += ('\t' + '(' + str(n+1) + ') ' + cats[n] + '\n')
