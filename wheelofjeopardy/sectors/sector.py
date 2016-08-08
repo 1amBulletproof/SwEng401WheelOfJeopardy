@@ -35,6 +35,16 @@ class Sector:
         game_state.get_current_player().increase_score_by(question[0])
 
     def received_incorrect_answer(self, game_state, question):
-        game_state.get_current_player().decrease_score_by(question[0])
-        # @TODO: use free token?
+        current_player = game_state.get_current_player()
+        current_player.decrease_score_by(question[0])
+
+        if current_player.has_free_spin_token():
+            game_state.events.broadcast('sector.prompt_for_token_use')
+        else:
+            game_state.end_turn()
+
+    def received_use_free_token(self, game_state):
+        game_state.get_current_player().use_free_spin_token()
+
+    def received_dont_use_free_token(self, game_state):
         game_state.end_turn()

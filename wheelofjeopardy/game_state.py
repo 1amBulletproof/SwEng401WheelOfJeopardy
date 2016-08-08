@@ -24,6 +24,9 @@ class GameState(object):
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
         self.events.subscribe('gui.incorrect_answer_received', self._on_incorrect_answer_received)
 
+        self.events.subscribe('gui.use_free_token', self._on_use_free_token)
+        self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
+
         # broadcast initial values
         self._broadcast('spins_did_update', self)
         self._broadcast('current_player_did_change', self)
@@ -85,3 +88,9 @@ class GameState(object):
 
     def _on_incorrect_answer_received(self, question):
         self.current_sector.received_incorrect_answer(self, question)
+
+    def _on_use_free_token(self):
+        self.current_sector.received_use_free_token(self)
+
+    def _on_dont_use_free_token(self):
+        self.current_sector.received_dont_use_free_token(self)
