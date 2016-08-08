@@ -65,7 +65,7 @@ class Ui_DailyDoublePopup(object):
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.retranslateUi(DailyDoublePopup)
-        QtCore.QObject.connect(self.submitWagerButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DailyDoublePopup.dailyDoubleDialog.close)
+        QtCore.QObject.connect(self.submitWagerButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DailyDoublePopup.close)
         QtCore.QMetaObject.connectSlotsByName(DailyDoublePopup)
 
     def retranslateUi(self, DailyDoublePopup):
