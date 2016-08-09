@@ -70,8 +70,6 @@ class QuestionBoardState(object):
         if self.progress[roundNum-1][catgNum-1] < self.MAX_QS:
             # increment the progress count if still question left in category
             self.progress[roundNum-1][catgNum-1] += 1
-        else:
-            raise RuntimeWarning('No more questions in category.')
 
     def next_q_in_category(self, roundNum, catgNum):
         """
