@@ -88,7 +88,7 @@ class QuestionBoardState(object):
         self.mark_q_used(roundNum, catgNum) # note: mark_q_used is 1-indexed
         return self._q_mat[roundNum-1].get(catgNum-1, next_idx)
 
-    def no_q_in_category(self, roundNum, catgNum):
+    def num_q_left_in_category(self, roundNum, catgNum):
         """
         Returns the number of questions left in a given category
 
@@ -96,12 +96,12 @@ class QuestionBoardState(object):
         @param   roundNum: The round number (1 = round one, etc)
 
         @type    catgNum: int
-        @param   catgNum: The category number (0 = first category, etc)
+        @param   catgNum: The category number (1 = first category, etc)
 
         @rtype:  int
-        @return: number of questions in the given category
+        @return: number of unused in the given round and category
         """
-        return (self.progress[roundNum-1][catgNum-1])
+        return (self.MAX_QS - self.progress[roundNum-1][catgNum-1])
 
     def get_catg_status(self, roundNum, catgNum):
         """
@@ -117,7 +117,7 @@ class QuestionBoardState(object):
         @rtype:  boolean
         @return: true if there are questions remaining in the category
         """
-        return (self.progress[roundNum-1][catgNum-1] < self.MAX_QS)
+        return (self.num_q_left_in_category(roundNum, catgNum) > 0)
 
     def _current_round(self):
         """
@@ -148,7 +148,7 @@ class QuestionBoardState(object):
         return outStr
 
     def __str__(self):
-        r = self._current_round()
+        r = self._current_round()-1 # progress is 0-indexed
         outStr = 'Current Round: %u\n' % r
         outStr += 'Categories:\n' + self.get_categories()
 
