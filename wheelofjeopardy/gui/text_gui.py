@@ -63,7 +63,7 @@ class TextGUI(object):
             elif answer == 'q':
                 break
             elif answer[0] == 'c': # cheat menu
-                self.game_state._cheat(answer[1])
+                self.game_state._cheat(answer[1:])
 
         print 'Good game!'
 
