@@ -14,7 +14,7 @@ class GameState(object):
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
         self.wheel = Wheel()
-        self.active_wager = 0 # placeholder
+        self.active_wager = None # placeholder
         self.current_round = 1
         self.current_category = None # these three will be set by methods
         self.current_question = None
@@ -27,6 +27,7 @@ class GameState(object):
 
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
+        self.events.subscribe('gui.wager_received', self._on_wager_received)
         self.events.subscribe('gui.round_did_end', self.advance_round)		
 
         # broadcast initial values
@@ -89,7 +90,6 @@ class GameState(object):
         self.board.mark_all_q_used(self.current_round) # use all questions
         self.current_round += 1
         # Does player sequence reset at round end? Or continue as it was?
-        
     # private
     def _broadcast(self, channel, *args):
         self.events.broadcast('game_state.%s' % channel, *args)
@@ -116,3 +116,6 @@ class GameState(object):
 
     def _on_dont_use_free_token(self):
         self.current_sector.received_dont_use_free_token(self)
+
+    def _on_wager_received(self, amount):
+        self.current_sector.received_wager_amount(self, amount)

@@ -51,6 +51,7 @@ class TextGUI(object):
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
         self.events.subscribe('sector.prompt_for_token_use', self._on_prompt_for_token_use)
         self.events.subscribe('sector.no_questions_in_category', self._on_no_questions_in_category)
+        self.events.subscribe('board_sector.prompt_for_wager', self._on_prompt_for_wager)
 
         TextGUI._clear_terminal()
         while not self.game_state.has_game_ended():
@@ -130,7 +131,13 @@ class TextGUI(object):
     def _on_no_questions_in_category(self, category):
         print 'No questions remaining in category %s, spin again.' % (category)
 
-    def _print_scores(self):
+    def _on_prompt_for_wager(self):
+        print 'DAILY DOUBLE!!'
+        self._print_scores(clear=False)
+        wager = self._prompt_number("What's your wager? ")
+        self.events.broadcast('gui.wager_received', wager)
+
+    def _print_scores(self, clear=True):
         score_strings = []
 
         for pl in self.game_state.player_states:
@@ -139,7 +146,9 @@ class TextGUI(object):
 
         print 'Here are the scores:'
         print '\n'.join(score_strings)
-        TextGUI._clear_terminal()
+
+        if clear:
+            TextGUI._clear_terminal()
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining
@@ -159,6 +168,18 @@ class TextGUI(object):
             response = raw_input()
 
         return response == 'y'
+
+    def _prompt_number(self, prompt):
+        response = None
+
+        while response == None:
+            try:
+                sys.stdout.write(prompt)
+                response = int(raw_input())
+            except ValueError:
+                pass
+
+        return response
 
 if __name__ == '__main__':
     TextGUI.start()
