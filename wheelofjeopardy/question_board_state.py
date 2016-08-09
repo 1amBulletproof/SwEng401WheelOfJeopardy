@@ -148,7 +148,7 @@ class QuestionBoardState(object):
         return outStr
 
     def __str__(self):
-        r = self._current_round()-1 # progress is 0-indexed
+        r = self._current_round() # progress is 0-indexed
         outStr = 'Current Round: %u\n' % r
         outStr += 'Categories:\n' + self.get_categories()
 
@@ -158,7 +158,7 @@ class QuestionBoardState(object):
         outStr += '-' * (self.MAX_CATS*4+1) + '\n' # bar between catgs and mat
         mat = [None for x in range(self.MAX_CATS)]
         for n in range(self.MAX_CATS):
-            used = self.progress[r][n]
+            used = self.progress[r-1][n]
             rem = self.MAX_QS - used
             mat[n] = [' ✕ ' for x in range(used)] + [' ○ ' for y in range(rem)]
         mat = map(list, zip(*mat)) # transpose the progress matrix
