@@ -92,14 +92,17 @@ class TextGUI(object):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
 
     def _on_question_will_be_asked(self, question):
-        print "Alright, here's the %d-point question in %s:" % (question[0], question[1])
-        sys.stdout.write('%s: ' % (question[2].text))
+        print "Alright, here's the %d-point question in %s:" % (
+            question.point_value, question.category_header
+        )
+
+        sys.stdout.write('%s: ' % (question.text))
         answer = raw_input()
         self.events.broadcast('gui.answer_received', answer)
 
     def _on_check_answer(self, question, answer):
         player_name = self.game_state.get_current_player().name
-        print 'Correct answer is: %s' % (question[2].answer)
+        print 'Correct answer is: %s' % (question.answer)
         prompt = 'Hey moderator, is %s answer correct (y/n)? ' % (apostrophize(player_name))
 
         if self._prompt_yes_no(prompt):

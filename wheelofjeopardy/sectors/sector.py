@@ -24,7 +24,7 @@ class Sector(object):
         if game_state.current_question == None:
             game_state.events.broadcast('sector.no_questions_in_category', category)
         else:
-            if game_state.current_question[2].is_daily_double():
+            if game_state.current_question.is_daily_double():
                 game_state.events.broadcast('board_sector.daily_double_selected')
 
                 game_state.events.broadcast(
@@ -90,10 +90,10 @@ class Sector(object):
         )
 
     def get_question_value(self, question, game_state):
-        if question[2].is_daily_double():
+        if question.is_daily_double():
             return game_state.active_wager
         else:
-            return question[0]
+            return question.point_value
 
     # private
 
@@ -102,4 +102,4 @@ class Sector(object):
         return wager >= Sector.MINIMUM_WAGER_AMOUNT and wager <= maximum
 
     def _get_max_wager_amount(self, question, player):
-        return max([player.score, question[0]])
+        return max([player.score, question.point_value])

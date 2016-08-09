@@ -86,7 +86,7 @@ class QuestionBoardState(object):
         @param   catgNum: The category number (1 = first category, etc)
 
         @rtype:  Question
-        @return: next Question in the category given
+        @return: next QuestionWithMetadata in the category given
         """
         next_idx = self.progress[roundNum-1][catgNum-1] # get idx before marking
         self.mark_q_used(roundNum, catgNum) # note: mark_q_used is 1-indexed
