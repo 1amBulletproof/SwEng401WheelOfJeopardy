@@ -66,6 +66,12 @@ python -m wheelofjeopardy.gui.woj_application_window
 python -m wheelofjeopardy.gui.text_gui
 ```
 
+## Regenerating pyqt files
+```bash
+python -m wheelofjeopardy.gui.pyqt.regenerate
+```
+
+
 ## Running Tests
 
 Run all the tests at once:

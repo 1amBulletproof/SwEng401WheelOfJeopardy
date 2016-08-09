@@ -89,6 +89,8 @@ class Ui_TokenPopup(object):
         self.horizontalLayout_3.addLayout(self.everythingLayout)
 
         self.retranslateUi(TokenPopup)
+        QtCore.QObject.connect(self.useTokenButton, QtCore.SIGNAL(_fromUtf8("clicked()")), TokenPopup.close)
+        QtCore.QObject.connect(self.denyTokenButton, QtCore.SIGNAL(_fromUtf8("clicked()")), TokenPopup.close)
         QtCore.QMetaObject.connectSlotsByName(TokenPopup)
 
     def retranslateUi(self, TokenPopup):

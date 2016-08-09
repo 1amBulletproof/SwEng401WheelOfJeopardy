@@ -95,6 +95,7 @@ class Ui_ModeratorPopup(object):
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.retranslateUi(ModeratorPopup)
+        QtCore.QObject.connect(self.okButton, QtCore.SIGNAL(_fromUtf8("clicked()")), ModeratorPopup.close)
         QtCore.QMetaObject.connectSlotsByName(ModeratorPopup)
 
     def retranslateUi(self, ModeratorPopup):

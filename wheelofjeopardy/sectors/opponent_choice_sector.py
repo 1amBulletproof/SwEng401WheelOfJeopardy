@@ -9,4 +9,8 @@ class OpponentChoiceSector(Sector):
         Sector.__init__(self, "opponent choice sector")
 
     def action(self, game_state):
-        game_state.events.broadcast('opponent_choice_sector.choose_cateogry')
+        #gui is listening
+        game_state.events.broadcast('opponent_choice_sector.choose_category')
+        
+    def process_question(self, game_state):
+        Sector.ask_next_question_in_category(self, game_state.current_category, game_state)

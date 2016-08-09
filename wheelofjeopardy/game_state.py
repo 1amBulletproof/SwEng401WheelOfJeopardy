@@ -30,7 +30,7 @@ class GameState(object):
         # broadcast initial values
         self._broadcast('spins_did_update', self)
         self._broadcast('current_player_did_change', self)
-
+        
     def get_current_player(self):
         return self.player_states[self.current_player_index]
 
@@ -87,6 +87,7 @@ class GameState(object):
             (self.current_player_index + 1) % len(self.player_states)
 
     def _on_category_chosen(self, category):
+        self.current_category = category
         self.current_sector.process_question(self)
 
     def _on_answer_received(self, answer):

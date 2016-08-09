@@ -19,7 +19,9 @@ class Sector:
         game_state.current_question = game_state.next_question_in_category(category)
 
         # if no question was available in the selected category...
-        if game_state.current_question != None:
+        if game_state.current_question == None:
+            game_state.events.broadcast('sector.no_questions_in_category', category)
+        else:
             game_state.events.broadcast(
                 'board_sector.question_will_be_asked', game_state.current_question
             )
