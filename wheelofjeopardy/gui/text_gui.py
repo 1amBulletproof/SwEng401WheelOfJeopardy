@@ -53,9 +53,10 @@ class TextGUI(object):
         self.events.subscribe('sector.no_questions_in_category', self._on_no_questions_in_category)
 
         TextGUI._clear_terminal()
-        while self.game_state.any_spins_remaining():
+        while not self.game_state.has_game_ended():
             print(self.game_state.board)
-            print 'What would you like to do, %s?' % self.game_state.get_current_player().name
+            print 'What would you like to do, %s?' % \
+                self.game_state.get_current_player().name
             sys.stdout.write("(S)pin, (Q)uit, (P)rint scores: ")
             answer = raw_input().lower()
 
@@ -67,6 +68,10 @@ class TextGUI(object):
                 break
             elif len(answer)>0 and answer[0] == 'c': # cheat menu
                 self.game_state._cheat(answer[1:])
+
+            if self.game_state.has_round_ended(): # if round ended, go to next
+                self.events.broadcast('gui.round_did_end')
+                self._print_scores() # print end-of-round score
 
         print 'Good game!'
 
