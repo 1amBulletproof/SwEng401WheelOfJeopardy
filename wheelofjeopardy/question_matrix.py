@@ -43,12 +43,12 @@ class QuestionMatrix(object):
         @param   r: the question index # of the matrix
 
         @rtype:  int, string, Question
-        @return: tuple of (pointValue, Category, Question)
+        @return: QuestionWithMetadata instance
         """
         if c < len(self.questions) and r < len(self.questions[c]):
             catg = self.headers[c]
             val = self.pointValue[r]
-            return (val, catg, self.questions[c][r])
+            return QuestionWithMetadata(self.questions[c][r], val, catg)
         else:
             return None
 
@@ -92,3 +92,27 @@ class Question(object):
     # string representation
     def __str__(self):
         return self.text + " : " + self.answer
+
+class QuestionWithMetadata(object):
+    def __init__(self, question, point_value, category_header):
+        self.question = question
+        self.point_value = point_value
+        self.category_header = category_header
+
+    @property
+    def text(self):
+        return self.question.text
+
+    @property
+    def answer(self):
+        return self.question.answer
+
+    @property
+    def daily_double(self):
+        return self.question.is_daily_double()
+
+    def is_daily_double(self):
+        return self.question.is_daily_double()
+
+    def __str__(self):
+        return self.question.__str__()
