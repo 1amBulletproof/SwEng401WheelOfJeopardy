@@ -48,10 +48,12 @@ class TextGUI(object):
         self.events.subscribe('player_choice_sector.choose_category', self._on_prompt_for_category)
 
         self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
+        self.events.subscribe('board_sector.daily_double_selected', self._on_daily_double_selected)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
         self.events.subscribe('sector.prompt_for_token_use', self._on_prompt_for_token_use)
         self.events.subscribe('sector.no_questions_in_category', self._on_no_questions_in_category)
         self.events.subscribe('board_sector.prompt_for_wager', self._on_prompt_for_wager)
+        self.events.subscribe('board_sector.received_invalid_wager', self._on_received_invalid_wager)
 
         TextGUI._clear_terminal()
         while not self.game_state.has_game_ended():
@@ -131,11 +133,17 @@ class TextGUI(object):
     def _on_no_questions_in_category(self, category):
         print 'No questions remaining in category %s, spin again.' % (category)
 
-    def _on_prompt_for_wager(self):
+    def _on_daily_double_selected(self):
         print 'DAILY DOUBLE!!'
+
+    def _on_prompt_for_wager(self, min_wager, max_wager):
         self._print_scores(clear=False)
+        print "You can wager between %d and %d points." % (min_wager, max_wager)
         wager = self._prompt_number("What's your wager? ")
         self.events.broadcast('gui.wager_received', wager)
+
+    def _on_received_invalid_wager(self):
+        print "Sorry, that's an invalid wager amount. Try again."
 
     def _print_scores(self, clear=True):
         score_strings = []

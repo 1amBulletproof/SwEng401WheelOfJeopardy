@@ -28,12 +28,12 @@ class GameState(object):
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
-        self.events.subscribe('gui.round_did_end', self.advance_round)		
+        self.events.subscribe('gui.round_did_end', self.advance_round)
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
         self._broadcast('current_player_did_change', self)
-        
+
     def get_current_player(self):
         return self.player_states[self.current_player_index]
 
