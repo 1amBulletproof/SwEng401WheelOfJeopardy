@@ -23,6 +23,7 @@ class QuestionBoardState(object):
 
         #list of int to keep track of question progress
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
+        self.visuals = self._get_board_visuals() # for visualizing boards
 
     def q_remaining(self, roundNum):
         """
@@ -147,8 +148,16 @@ class QuestionBoardState(object):
             outStr += ('\t' + '(' + str(n+1) + ') ' + cats[n] + '\n')
         return outStr
 
+    def _get_board_visuals(self):
+        import os
+        if os.name=='nt':
+            return [' X ', ' O ', '-']
+        else:
+            return [' ✕ ', ' ○ ', '¯']
+
     def __str__(self):
-        r = self._current_round() # progress is 0-indexed
+        vz = self.visuals # to be used in printing
+        r = self._current_round()
         outStr = 'Current Round: %u\n' % r
         outStr += 'Categories:\n' + self.get_categories()
 
@@ -158,11 +167,11 @@ class QuestionBoardState(object):
         outStr += '-' * (self.MAX_CATS*4+1) + '\n' # bar between catgs and mat
         mat = [None for x in range(self.MAX_CATS)]
         for n in range(self.MAX_CATS):
-            used = self.progress[r-1][n]
+            used = self.progress[r-1][n] # progress is 0-indexed
             rem = self.MAX_QS - used
-            mat[n] = [' ✕ ' for x in range(used)] + [' ○ ' for y in range(rem)]
+            mat[n] = [vz[0] for x in range(used)] + [vz[1] for y in range(rem)]
         mat = map(list, zip(*mat)) # transpose the progress matrix
         tmp = map(lambda x: '|' + '|'.join(x) + '|', mat) # create line output
         outStr += '\n'.join(tmp) + '\n' # all table lines
-        outStr += '¯' * (self.MAX_CATS*4+1) # bottom bar
+        outStr += vz[2] * (self.MAX_CATS*4+1) # bottom bar
         return outStr
