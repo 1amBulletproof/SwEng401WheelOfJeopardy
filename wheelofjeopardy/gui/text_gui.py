@@ -170,16 +170,13 @@ class TextGUI(object):
         return response == 'y'
 
     def _prompt_number(self, prompt):
-        response = None
+        response = ''
 
-        while response == None:
-            try:
-                sys.stdout.write(prompt)
-                response = int(raw_input())
-            except ValueError:
-                pass
+        while not response.isdigit():
+            sys.stdout.write(prompt)
+            response = raw_input()
 
-        return response
+        return int(response)
 
 if __name__ == '__main__':
     TextGUI.start()
