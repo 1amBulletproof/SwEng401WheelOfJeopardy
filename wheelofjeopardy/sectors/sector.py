@@ -5,7 +5,9 @@ action() method MUST be overriden by sub-classes
 """
 
 #@TODO: unit tests for class
-class Sector:
+class Sector(object):
+    MINIMUM_WAGER_AMOUNT = 5
+
     def __init__(self, name):
         self.name = name
 
@@ -23,7 +25,16 @@ class Sector:
             game_state.events.broadcast('sector.no_questions_in_category', category)
         else:
             if game_state.current_question[2].is_daily_double():
-                game_state.events.broadcast('board_sector.prompt_for_wager')
+                game_state.events.broadcast('board_sector.daily_double_selected')
+
+                game_state.events.broadcast(
+                    'board_sector.prompt_for_wager',
+                    Sector.MINIMUM_WAGER_AMOUNT,
+                    self._get_max_wager_amount(
+                        game_state.current_question,
+                        game_state.get_current_player()
+                    )
+                )
             else:
                 game_state.events.broadcast(
                     'board_sector.question_will_be_asked', game_state.current_question
@@ -58,11 +69,24 @@ class Sector:
     def received_dont_use_free_token(self, game_state):
         game_state.end_turn()
 
-    def received_wager_amount(self, game_state, amount):
-        game_state.active_wager = amount
+    def received_wager_amount(self, game_state, wager):
+        question = game_state.current_question
+        player = game_state.get_current_player()
+
+        if not self._is_wager_in_bounds(wager, question, player):
+            game_state.events.broadcast('board_sector.received_invalid_wager')
+            game_state.events.broadcast(
+                'board_sector.prompt_for_wager',
+                Sector.MINIMUM_WAGER_AMOUNT,
+                self._get_max_wager_amount(question, player)
+            )
+
+            return
+
+        game_state.active_wager = wager
 
         game_state.events.broadcast(
-            'board_sector.question_will_be_asked', game_state.current_question
+            'board_sector.question_will_be_asked', question
         )
 
     def get_question_value(self, question, game_state):
@@ -70,3 +94,12 @@ class Sector:
             return game_state.active_wager
         else:
             return question[0]
+
+    # private
+
+    def _is_wager_in_bounds(self, wager, question, player):
+        maximum = self._get_max_wager_amount(question, player)
+        return wager >= Sector.MINIMUM_WAGER_AMOUNT and wager <= maximum
+
+    def _get_max_wager_amount(self, question, player):
+        return max([player.score, question[0]])
