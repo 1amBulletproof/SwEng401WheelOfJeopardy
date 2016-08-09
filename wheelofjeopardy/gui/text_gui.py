@@ -99,15 +99,20 @@ class TextGUI(object):
         else:
             self.events.broadcast('gui.incorrect_answer_received', question)
 
-    def _on_prompt_for_category(self):
-        sys.stdout.write("Enter the number 1-6 that corresponds to the category you wish to choose: ")
-        answer = input()
-        print 'You answered: %s' %answer
-        while answer > 6 or answer < 0:
+    def _on_prompt_for_category(self, person='Please'):
+        '''
+        Optional parameter person contains the text that would be displayed
+        on the prompt.
+        '''
+        sys.stdout.write("%s, enter a number 1-6 for the category "%person +\
+                         "you wish to choose: ")
+        answer = raw_input()
+        print 'You answered: %s' %(answer)
+        while (not answer.isdigit()) or (int(answer) > 6 or int(answer) < 0):
             sys.stdout.write("Incorrect format. Please enter a number 1-6: ")
-            answer = input()
+            answer = raw_input()
         #game_state is listening
-        self.events.broadcast('gui.category_chosen', answer)
+        self.events.broadcast('gui.category_chosen', int(answer))
 
     def _on_prompt_for_token_use(self):
         prompt = 'Would you like to use one of your free spin tokens (y/n)? '
