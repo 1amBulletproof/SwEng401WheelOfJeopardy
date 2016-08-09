@@ -8,7 +8,8 @@ from wheelofjeopardy.wheel import Wheel
 class GameState(object):
     def __init__(self, player_states, events, opts):
         self.events = events
-        self.spins_remaining = opts.totalSpins
+        self.TOTAL_SPINS = opts.totalSpins
+        self.spins_remaining = self.TOTAL_SPINS
         self.player_states = player_states
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
@@ -26,6 +27,7 @@ class GameState(object):
 
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
+        self.events.subscribe('gui.round_did_end', self.advance_round)		
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -62,10 +64,11 @@ class GameState(object):
     def end_turn(self):
         self._broadcast('turn_will_end', self)
         if self.has_round_ended():
-            if self.current_round == 1:
-                self.current_round += 1
-                self._broadcast('round_did_end')
-            elif self.current_round == 2:
+            if not self.has_game_ended:
+                # not sure if broadcasting is needed here
+                # self._broadcast('round_did_end')
+                self.advance_round()
+            else:
                 self._broadcast('turn_did_end', self)
                 self._broadcast('game_did_end', self)
                 return
@@ -77,7 +80,16 @@ class GameState(object):
         return self.board.no_more_q()
 
     def has_round_ended(self):
-        return self.board.no_q_in_round(self.current_round) or not self.any_spins_remaining()
+        return self.board.no_q_in_round(self.current_round) or \
+            not self.any_spins_remaining()
+
+    def advance_round(self):
+        print('That concludes round %u.' % self.current_round )
+        self.spins_remaining = self.TOTAL_SPINS # reset spin count
+        self.board.mark_all_q_used(self.current_round) # use all questions
+        self.current_round += 1
+        # Does player sequence reset at round end? Or continue as it was?
+        
     # private
     def _broadcast(self, channel, *args):
         self.events.broadcast('game_state.%s' % channel, *args)

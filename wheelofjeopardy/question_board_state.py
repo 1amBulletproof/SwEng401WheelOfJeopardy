@@ -72,6 +72,9 @@ class QuestionBoardState(object):
             # increment the progress count if still question left in category
             self.progress[roundNum-1][catgNum-1] += 1
 
+    def mark_all_q_used(self, roundNum):
+        self.progress[roundNum-1][:] = [self.MAX_QS] * self.MAX_CATS
+
     def next_q_in_category(self, roundNum, catgNum):
         """
         Returns the next question in the given category
