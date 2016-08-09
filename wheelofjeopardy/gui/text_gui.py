@@ -44,6 +44,8 @@ class TextGUI(object):
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
         self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
+        self.events.subscribe('opponent_choice_sector.choose_category', self._on_prompt_for_category)
+        self.events.subscribe('player_choice_sector.choose_category', self._on_prompt_for_category)
 
         self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
@@ -96,6 +98,16 @@ class TextGUI(object):
             self.events.broadcast('gui.correct_answer_received', question)
         else:
             self.events.broadcast('gui.incorrect_answer_received', question)
+
+    def _on_prompt_for_category(self):
+        sys.stdout.write("Enter the number 1-6 that corresponds to the category you wish to choose: ")
+        answer = input()
+        print 'You answered: %s' %answer
+        while answer > 6 or answer < 0:
+            sys.stdout.write("Incorrect format. Please enter a number 1-6: ")
+            answer = input()
+        #game_state is listening
+        self.events.broadcast('gui.category_chosen', answer)
 
     def _on_prompt_for_token_use(self):
         prompt = 'Would you like to use one of your free spin tokens (y/n)? '
