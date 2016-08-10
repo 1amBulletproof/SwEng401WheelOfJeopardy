@@ -8,7 +8,7 @@ from wheelofjeopardy.wheel import Wheel
 class GameState(object):
     def __init__(self, player_states, events, opts):
         self.events = events
-        self.TOTAL_SPINS = opts.totalSpins
+        self.TOTAL_SPINS = opts.total_spins
         self.spins_remaining = self.TOTAL_SPINS
         self.player_states = player_states
         self.current_player_index = 0
