@@ -29,6 +29,7 @@ class GameState(object):
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
         self.events.subscribe('gui.round_did_end', self.advance_round)
+        self.events.subscribe('gui.game_did_end', self.game_has_ended)
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -51,7 +52,11 @@ class GameState(object):
         self.current_sector.action(self)
 
         if self.has_game_ended():
-            self._broadcast('game_did_end', self)
+            game_has_ended()
+
+    def game_has_ended(self):
+            winner = self.calculate_winner()
+            self._broadcast('announce_winner', self, winner)
 
     def _cheat(self, sect):
         if not sect.isdigit():
@@ -119,3 +124,40 @@ class GameState(object):
 
     def _on_wager_received(self, amount):
         self.current_sector.received_wager_amount(self, amount)
+
+    def calculate_winner(self):
+        winner = []
+        #scores is a dictionary object, which means each element
+        #has a key and a value
+        #used this so the player name would be linked to the score
+        scores = {}
+        num_winners = 0
+        num_players = len(self.player_states)
+        for x in range(0, num_players-1):
+            scores[self.player_states[x].name] = self.player_states[x].score
+        #sort the scores
+        sorted(scores.values(), key=int)
+        #check for multiple winners
+        #if there's more than one player
+        if num_players > 1:
+            #if the last and 2nd to last scores are equal
+            #should this care if all scores are 0?
+            for n in range(num_players-1, 1, -1):
+                #THIS CAUSES AN ERROR
+                #instead of -n for a number index, it is expecting
+                #a string index since I defined this as a "dictionary"
+                #list. Not sure how to make this logic work..
+                if (scores[-n] == scores[-n-1]):
+                    if n == 1:
+                        num_winners = 2
+                    #if any other scores are equal too
+                    else:
+                        num_winners += 1
+        #finally add the player names to the list of winners
+        for x in range(0, num_winners-1):
+            for name, score in scores.iteritems():
+                if score == scores[num_players-x]:
+                    winner[x] = name
+        winner_ret = ", ".join(winner)
+        return winner_ret
+        

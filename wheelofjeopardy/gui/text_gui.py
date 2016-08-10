@@ -44,6 +44,8 @@ class TextGUI(object):
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
         self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
+        self.events.subscribe('game_state.announce_winner', self._print_winner)
+
         self.events.subscribe('opponent_choice_sector.choose_category', self._on_prompt_for_category)
         self.events.subscribe('player_choice_sector.choose_category', self._on_prompt_for_category)
 
@@ -76,6 +78,7 @@ class TextGUI(object):
                 self.events.broadcast('gui.round_did_end')
                 self._print_scores() # print end-of-round score
 
+        self.events.broadcast('gui.game_did_end')
         print 'Good game!'
 
     def _on_current_player_did_change(self, game_state):
@@ -160,6 +163,10 @@ class TextGUI(object):
 
         if clear:
             TextGUI._clear_terminal()
+
+    def _print_winner(self, winner):
+        print "in print winner method"
+        print "Winner(s): %s" % winner
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining
