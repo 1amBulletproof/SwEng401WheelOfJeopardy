@@ -6,14 +6,16 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.question_board_state import QuestionBoardState
+from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
 from wheelofjeopardy.wheel import Wheel
 
 class GameStateTestCase(unittest.TestCase):
     def setUp(self):
+        self.opts = ReadCfgToOptions()
         self.events = TestEvents()
         self.player1 = PlayerState(name='Arthur', events=self.events)
         self.player2 = PlayerState(name='Lancelot', events=self.events)
-        self.game_state = GameState([self.player1, self.player2], self.events)
+        self.game_state = GameState([self.player1, self.player2], self.events, self.opts)
 
         # check for game state setup events
         self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
@@ -21,6 +23,13 @@ class GameStateTestCase(unittest.TestCase):
 
         # clear out setup events
         self.events.reset()
+
+    def use_all_questions(self):
+        # use up all questions in both rounds
+        for round_num in xrange(2):
+            for cat_num in xrange(self.game_state.board.MAX_CATS):
+                for _ in xrange(self.game_state.board.MAX_QS):
+                    self.game_state.board.mark_q_used(round_num, cat_num)
 
 class TestInitialGameState(GameStateTestCase):
     def test_number_of_remaining_spins(self):
@@ -71,6 +80,7 @@ class TestSpin(GameStateTestCase):
 
     def test_spin_fires_game_end_event(self):
         self.game_state.spins_remaining = 1
+        self.game_state.current_round = 2
         self.game_state.spin()
         self.assertTrue(self.events.did_broadcast('game_state.game_did_end'))
 
@@ -80,18 +90,25 @@ class TestSpin(GameStateTestCase):
 
     def test_spin_fires_sector_events(self):
         self.game_state.spin()
-        self.assertTrue(self.events.did_broadcast('game_state.sector_will_apply'))
-        self.assertTrue(self.events.did_broadcast('game_state.sector_did_apply'))
+        self.assertTrue(self.events.did_broadcast('game_state.sector_was_chosen'))
 
 class TestEndGame(GameStateTestCase):
     def test_game_end_when_no_more_questions(self):
         self.assertFalse(self.game_state.has_game_ended())
-        self.game_state.board.questions_remaining = 0
+        self.use_all_questions()
+        self.game_state.current_round = 2
         self.assertTrue(self.game_state.has_game_ended())
 
-    def test_game_end_when_no_more_spins(self):
+    def test_round_end_when_no_more_spins(self):
+        self.assertFalse(self.game_state.has_round_ended())
+        self.game_state.spins_remaining = 0
+        self.assertTrue(self.game_state.has_round_ended())
+
+    def test_game_end_when_no_more_spins_or_questions(self):
         self.assertFalse(self.game_state.has_game_ended())
         self.game_state.spins_remaining = 0
+        self.game_state.current_round = 2
+        self.use_all_questions()
         self.assertTrue(self.game_state.has_game_ended())
 
 if __name__ == '__main__':

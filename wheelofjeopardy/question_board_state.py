@@ -49,15 +49,6 @@ class QuestionBoardState(object):
         """
         return (self.q_remaining(roundNum) == 0)
 
-    def no_more_q(self):
-        """
-        Whether there are any more questions left in the game
-
-        @rtype:  boolean
-        @return: true if the round # is > 2
-        """
-        return self._current_round() > 2 # round = 3 means first 2 round is over
-
     def mark_q_used(self, roundNum, catgNum):
         """
         Marks a question on the board as used
