@@ -164,9 +164,11 @@ class TextGUI(object):
         if clear:
             TextGUI._clear_terminal()
 
-    def _print_winner(self, winner):
-        print "in print winner method"
-        print "Winner(s): %s" % winner
+    def _print_winner(self, winners):
+        outStr = 'The winner(s):\n'
+        for p in winners:
+            outStr += '\t%s\n'%p
+        print(outStr)
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining
