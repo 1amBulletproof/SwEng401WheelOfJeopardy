@@ -18,7 +18,7 @@ class QuestionMatrix(object):
     def __init__(self, catgs, Qs, pts):
         self.headers = catgs
         self.questions = Qs
-        self.pointValue = pts
+        self.pointValues = pts
 
         # sanity check: number of columns
         if len(self.headers) != len(self.questions):
@@ -47,16 +47,10 @@ class QuestionMatrix(object):
         """
         if c < len(self.questions) and r < len(self.questions[c]):
             catg = self.headers[c]
-            val = self.pointValue[r]
+            val = self.pointValues[r]
             return QuestionWithMetadata(self.questions[c][r], val, catg)
         else:
             return None
-
-    def get_value(r):
-        """
-        Get the point value of the n-th question in the round.
-        """
-        return self.pointValue[r]
 
     def __str__(self):
         """
