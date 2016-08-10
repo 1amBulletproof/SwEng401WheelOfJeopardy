@@ -66,7 +66,7 @@ class TextGUI(object):
             answer = raw_input().lower()
 
             if answer == 's':
-                self.game_state.spin()
+                self.events.broadcast('gui.spin')
             elif answer == 'p':
                 self._print_scores()
             elif answer == 'q':
