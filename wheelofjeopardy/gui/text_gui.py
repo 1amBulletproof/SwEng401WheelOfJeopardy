@@ -5,7 +5,7 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.text_helper import apostrophize, pluralize
-from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
+from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
 class TextGUI(object):
     @classmethod
@@ -15,21 +15,24 @@ class TextGUI(object):
         global opts
 
         events = Events()
-        opts = ReadCfgToOptions()
+        opts = read_cfg_to_options()
         TextGUI(cls._create_game_state(events), events)._start()
 
     # private static
 
     @classmethod
     def _create_game_state(cls, events):
-        players = [PlayerState(opts.playerNames[n], events, opts.startScores[n])
-                   for n in range(opts.nPlayers)]
+        players = [
+            PlayerState(opts.player_names[n], events, opts.start_scores[n])
+                for n in range(opts.n_players)
+        ]
+
         return GameState(players, events, opts)
 
     @staticmethod
     def _clear_terminal():
-        raw_input("Press Enter to continue...")
-        os.system('cls' if os.name=='nt' else 'clear')
+        raw_input('Press Enter to continue...')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
     # public instance
 
