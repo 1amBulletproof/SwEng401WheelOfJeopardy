@@ -20,6 +20,7 @@ class GameState(object):
         self.current_question = None
         self.current_sector = None
 
+        self.events.subscribe('gui.spin', self._on_spin)
         self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
@@ -62,7 +63,7 @@ class GameState(object):
         if not sect.isdigit():
             raise ValueError('Second char is not a digit')
         else:
-            self.spin( int(sect)-1 ) # sector number needs to be subtracted
+            self.spin(int(sect) - 1) # sector number needs to be subtracted
 
     def next_question_in_category(self, category):
         return self.board.next_q_in_category(self.current_round, category)
@@ -95,9 +96,14 @@ class GameState(object):
         self.board.mark_all_q_used(self.current_round) # use all questions
         self.current_round += 1
         # Does player sequence reset at round end? Or continue as it was?
+
     # private
+
     def _broadcast(self, channel, *args):
         self.events.broadcast('game_state.%s' % channel, *args)
+
+    def _on_spin(self):
+        self.spin()
 
     def _choose_next_player(self):
         self.current_player_index = \
@@ -160,4 +166,4 @@ class GameState(object):
                     winner[x] = name
         winner_ret = ", ".join(winner)
         return winner_ret
-        
+
