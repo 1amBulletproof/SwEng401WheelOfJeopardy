@@ -15,9 +15,6 @@ class TokenPopup(QDialog, Ui_TokenPopup):
     self.setupUi(self)
     self.events = events
 
-    # initialize variables
-    #
-
     # button clicks
     #
     def _on_useTokenButton_clicked():
@@ -38,5 +35,3 @@ if __name__ == '__main__':
   gui.raise_()
   application.exec_()
 
-# subscriptions
-events.subscribe('gui.show_token_popup', TokenPopup)

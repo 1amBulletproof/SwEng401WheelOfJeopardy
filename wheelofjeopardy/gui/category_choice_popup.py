@@ -10,14 +10,19 @@ from wheelofjeopardy.gui.pyqt.ui_category_choice_popup import Ui_CategoryChoiceP
 from wheelofjeopardy.events import Events
 
 class CategoryChoicePopup(QDialog, Ui_CategoryChoicePopup):
-  def __init__(self, events, parent=None):
+  def __init__(self, events, categories, parent=None):
     super(CategoryChoicePopup, self).__init__(parent)
     self.setupUi(self)
     self.events = events
+    self.categoryChoiceLabels = [self.category1Label, self.category2Label,
+                                 self.category3Label, self.category4Label,
+                                 self.category5Label, self.category6Label]
 
     # initialize variables
     #
-
+    for categoryIndex in xrange(len(categories)):
+      self.categoryChoiceLabels[categoryIndex].setText(categories[categoryIndex])
+      
     # disable categories if applicable
     #
 
@@ -53,6 +58,3 @@ if __name__ == '__main__':
   gui.raise_()
   application.exec_()
 
-# subscriptions
-#
-events.subscribe('gui.show_token_popup', CategoryChoicePopup)
