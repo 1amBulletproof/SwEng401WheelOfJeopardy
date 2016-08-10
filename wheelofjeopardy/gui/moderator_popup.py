@@ -41,7 +41,3 @@ if __name__ == '__main__':
   gui.raise_()
   application.exec_()
 
-# subscriptions
-#
-## events.subscribe('gui.answer_received', ModeratorPopup)
-## events.subscribe('gui.spin_happened'

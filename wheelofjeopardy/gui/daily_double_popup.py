@@ -18,7 +18,7 @@ class DailyDoublePopup(QDialog, Ui_DailyDoublePopup):
     # button clicks
     #
     def _on_submitWagerButton_clicked():
-      #wager = self.wagerAmount.text()
+      wager = self.wagerAmount.text()
       self.events.broadcast('gui.wager_received')
 
 
@@ -34,6 +34,3 @@ if __name__ == '__main__':
   application.exec_()
 
 
-# subscriptions
-#
-events.subscribe('gui.show_dailydouble_popup', DailyDoublePopup)
