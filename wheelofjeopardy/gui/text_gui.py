@@ -5,7 +5,7 @@ from wheelofjeopardy.events import Events
 from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.game_state import GameState
 from wheelofjeopardy.text_helper import apostrophize, pluralize
-from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
+from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
 class TextGUI(object):
     @classmethod
@@ -15,21 +15,24 @@ class TextGUI(object):
         global opts
 
         events = Events()
-        opts = ReadCfgToOptions()
+        opts = read_cfg_to_options()
         TextGUI(cls._create_game_state(events), events)._start()
 
     # private static
 
     @classmethod
     def _create_game_state(cls, events):
-        players = [PlayerState(opts.playerNames[n], events, opts.startScores[n])
-                   for n in range(opts.nPlayers)]
+        players = [
+            PlayerState(opts.player_names[n], events, opts.start_scores[n])
+                for n in range(opts.n_players)
+        ]
+
         return GameState(players, events, opts)
 
     @staticmethod
     def _clear_terminal():
-        raw_input("Press Enter to continue...")
-        os.system('cls' if os.name=='nt' else 'clear')
+        raw_input('Press Enter to continue...')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
     # public instance
 
@@ -44,7 +47,9 @@ class TextGUI(object):
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.turn_will_end', self._on_turn_will_end)
         self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
-        self.events.subscribe('game_state.announce_winner', self._print_winner)
+        self.events.subscribe('game_state.round_did_end', self._on_round_did_end)
+        self.events.subscribe('game_state.game_did_end', self._on_game_did_end)
+        self.events.subscribe('game_state.announce_winners', self._on_announce_winners)
 
         self.events.subscribe('opponent_choice_sector.choose_category', self._on_prompt_for_category)
         self.events.subscribe('player_choice_sector.choose_category', self._on_prompt_for_category)
@@ -66,7 +71,7 @@ class TextGUI(object):
             answer = raw_input().lower()
 
             if answer == 's':
-                self.game_state.spin()
+                self.events.broadcast('gui.spin')
             elif answer == 'p':
                 self._print_scores()
             elif answer == 'q':
@@ -74,11 +79,6 @@ class TextGUI(object):
             elif len(answer)>0 and answer[0] == 'c': # cheat menu
                 self.game_state._cheat(answer[1:])
 
-            if self.game_state.has_round_ended(): # if round ended, go to next
-                self.events.broadcast('gui.round_did_end')
-                self._print_scores() # print end-of-round score
-
-        self.events.broadcast('gui.game_did_end')
         print 'Good game!'
 
     def _on_current_player_did_change(self, game_state):
@@ -151,6 +151,17 @@ class TextGUI(object):
     def _on_received_invalid_wager(self):
         print "Sorry, that's an invalid wager amount. Try again."
 
+    def _on_round_did_end(self, game_state):
+        print('That concludes round %u.' % game_state.current_round)
+        self._print_scores() # print end-of-round scores
+
+    def _on_game_did_end(self, game_state):
+        print('Game over!')
+        self._print_scores() # print end-of-game scores
+
+    def _on_announce_winners(self, winners):
+        self._print_winners(winners)
+
     def _print_scores(self, clear=True):
         score_strings = []
 
@@ -164,9 +175,11 @@ class TextGUI(object):
         if clear:
             TextGUI._clear_terminal()
 
-    def _print_winner(self, winner):
-        print "in print winner method"
-        print "Winner(s): %s" % winner
+    def _print_winners(self, winners):
+        outStr = 'The winner(s):\n'
+        for p in winners:
+            outStr += '\t%s\n'%p
+        print(outStr)
 
     def _get_spins_remaining_message(self):
         spins = self.game_state.spins_remaining

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from wheelofjeopardy.utils.read_question_file import ReadQuestions
+from wheelofjeopardy.utils.read_question_file import read_questions
+import os
 
 """
 Controls and monitors the state of the Questions/Board
@@ -10,13 +11,13 @@ which questions have already been selected.
 """
 
 class QuestionBoardState(object):
-    def __init__(self, events, Opts):
+    def __init__(self, events, opts):
         self.events = events
         self.MAX_QS = 5 # max questions per category
         self.MAX_CATS = 6 # max categories per round
 
         #two question_matrix returned - 1 for each round
-        (tmp1,tmp2) = ReadQuestions(Opts) # read questions
+        (tmp1, tmp2) = read_questions(opts) # read questions
 
         #the question matrix, 2 question_matrix (1 for each round)
         self._q_mat = [tmp1, tmp2]
@@ -25,7 +26,7 @@ class QuestionBoardState(object):
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
         self.visuals = self._get_board_visuals() # for visualizing boards
 
-    def q_remaining(self, roundNum):
+    def q_remaining(self, round_num):
         """
         Number of questions remaining in a round
 
@@ -35,9 +36,9 @@ class QuestionBoardState(object):
         @rtype:  int
         @return: the number of questions remaining in said round
         """
-        return (self.MAX_QS*self.MAX_CATS) - sum(self.progress[roundNum-1])
+        return (self.MAX_QS * self.MAX_CATS) - sum(self.progress[round_num - 1])
 
-    def no_q_in_round(self, roundNum):
+    def no_q_in_round(self, round_num):
         """
         Whether there are remaining questions in a round
 
@@ -47,18 +48,9 @@ class QuestionBoardState(object):
         @rtype:  boolean
         @return: True if no more questions remains in round, False otherwise
         """
-        return (self.q_remaining(roundNum) == 0)
+        return (self.q_remaining(round_num) == 0)
 
-    def no_more_q(self):
-        """
-        Whether there are any more questions left in the game
-
-        @rtype:  boolean
-        @return: true if the round # is > 2
-        """
-        return self._current_round() > 2 # round = 3 means first 2 round is over
-
-    def mark_q_used(self, roundNum, catgNum):
+    def mark_q_used(self, round_num, catg_num):
         """
         Marks a question on the board as used
 
@@ -68,14 +60,14 @@ class QuestionBoardState(object):
         @type    catgNum: int
         @param   catgNum: The category number (1 = first category, etc)
         """
-        if self.progress[roundNum-1][catgNum-1] < self.MAX_QS:
+        if self.progress[round_num - 1][catg_num - 1] < self.MAX_QS:
             # increment the progress count if still question left in category
-            self.progress[roundNum-1][catgNum-1] += 1
+            self.progress[round_num - 1][catg_num - 1] += 1
 
-    def mark_all_q_used(self, roundNum):
-        self.progress[roundNum-1][:] = [self.MAX_QS] * self.MAX_CATS
+    def mark_all_q_used(self, round_num):
+        self.progress[round_num - 1][:] = [self.MAX_QS] * self.MAX_CATS
 
-    def next_q_in_category(self, roundNum, catgNum):
+    def next_q_in_category(self, round_num, catg_num):
         """
         Returns the next question in the given category
 
@@ -88,11 +80,11 @@ class QuestionBoardState(object):
         @rtype:  Question
         @return: next QuestionWithMetadata in the category given
         """
-        next_idx = self.progress[roundNum-1][catgNum-1] # get idx before marking
-        self.mark_q_used(roundNum, catgNum) # note: mark_q_used is 1-indexed
-        return self._q_mat[roundNum-1].get(catgNum-1, next_idx)
+        next_idx = self.progress[round_num - 1][catg_num - 1] # get idx before marking
+        self.mark_q_used(round_num, catg_num) # note: mark_q_used is 1-indexed
+        return self._q_mat[round_num - 1].get(catg_num - 1, next_idx)
 
-    def num_q_left_in_category(self, roundNum, catgNum):
+    def num_q_left_in_category(self, round_num, catg_num):
         """
         Returns the number of questions left in a given category
 
@@ -105,9 +97,9 @@ class QuestionBoardState(object):
         @rtype:  int
         @return: number of unused in the given round and category
         """
-        return (self.MAX_QS - self.progress[roundNum-1][catgNum-1])
+        return (self.MAX_QS - self.progress[round_num - 1][catg_num - 1])
 
-    def get_catg_status(self, roundNum, catgNum):
+    def get_catg_status(self, round_num, catg_num):
         """
         Returns the status of the category (are all questions
         answered or not?)
@@ -121,7 +113,7 @@ class QuestionBoardState(object):
         @rtype:  boolean
         @return: true if there are questions remaining in the category
         """
-        return (self.num_q_left_in_category(roundNum, catgNum) > 0)
+        return (self.num_q_left_in_category(round_num, catg_num) > 0)
 
     def _current_round(self):
         """
@@ -145,15 +137,16 @@ class QuestionBoardState(object):
         @rtype:  String
         @return: the string of all categories in the game
         """
-        cats = self._q_mat[self._current_round()-1].headers
-        outStr = ''
+        cats = self._q_mat[self._current_round() - 1].headers
+        out_str = ''
+
         for n in range(len(cats)):
-            outStr += ('\t' + '(' + str(n+1) + ') ' + cats[n] + '\n')
-        return outStr
+            out_str += ('\t' + '(' + str(n + 1) + ') ' + cats[n] + '\n')
+
+        return out_str
 
     def _get_board_visuals(self):
-        import os
-        if os.name=='nt':
+        if os.name == 'nt':
             return [' X ', ' O ', '-']
         else:
             return [' ✕ ', ' ○ ', '¯']
@@ -161,20 +154,23 @@ class QuestionBoardState(object):
     def __str__(self):
         vz = self.visuals # to be used in printing
         r = self._current_round()
-        outStr = 'Current Round: %u\n' % r
-        outStr += 'Categories:\n' + self.get_categories()
+        out_str = 'Current Round: %u\n' % r
+        out_str += 'Categories:\n' + self.get_categories()
 
-        outStr += '_' * (self.MAX_CATS*4+1) + '\n' # top bar
-        cats = range(1, self.MAX_CATS+1)
-        outStr += '|(' + ')|('.join( map(str,cats) ) + ')|\n'
-        outStr += '-' * (self.MAX_CATS*4+1) + '\n' # bar between catgs and mat
+        out_str += '_' * (self.MAX_CATS * 4 + 1) + '\n' # top bar
+        cats = range(1, self.MAX_CATS + 1)
+        out_str += '|(' + ')|('.join(map(str, cats)) + ')|\n'
+        out_str += '-' * (self.MAX_CATS * 4 + 1) + '\n' # bar between catgs and mat
         mat = [None for x in range(self.MAX_CATS)]
+
         for n in range(self.MAX_CATS):
-            used = self.progress[r-1][n] # progress is 0-indexed
+            used = self.progress[r - 1][n] # progress is 0-indexed
             rem = self.MAX_QS - used
             mat[n] = [vz[0] for x in range(used)] + [vz[1] for y in range(rem)]
+
         mat = map(list, zip(*mat)) # transpose the progress matrix
         tmp = map(lambda x: '|' + '|'.join(x) + '|', mat) # create line output
-        outStr += '\n'.join(tmp) + '\n' # all table lines
-        outStr += vz[2] * (self.MAX_CATS*4+1) # bottom bar
-        return outStr
+        out_str += '\n'.join(tmp) + '\n' # all table lines
+        out_str += vz[2] * (self.MAX_CATS * 4 + 1) # bottom bar
+
+        return out_str
