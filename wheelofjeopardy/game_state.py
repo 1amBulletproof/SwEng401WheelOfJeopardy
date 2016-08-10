@@ -29,8 +29,6 @@ class GameState(object):
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
-        self.events.subscribe('gui.round_did_end', self.advance_round)
-        self.events.subscribe('gui.game_did_end', self.game_has_ended)
 
         # broadcast initial values
         self._broadcast('spins_did_update', self)
@@ -47,17 +45,14 @@ class GameState(object):
             self.current_sector = self.wheel.get_random_sector()
         else:
             self.current_sector = self.wheel._get_sector(sect)
+
         self.spins_remaining -= 1
         self._broadcast('sector_was_chosen', self.current_sector)
         self._broadcast('spins_did_update', self)
         self.current_sector.action(self)
 
         if self.has_game_ended():
-            game_has_ended()
-
-    def game_has_ended(self):
-            winner = self.calculate_winner()
-            self._broadcast('announce_winner', winner)
+            self.end_turn()
 
     def _cheat(self, sect):
         if not sect.isdigit():
@@ -70,28 +65,29 @@ class GameState(object):
 
     def end_turn(self):
         self._broadcast('turn_will_end', self)
+
         if self.has_round_ended():
-            if not self.has_game_ended:
-                # not sure if broadcasting is needed here
-                # self._broadcast('round_did_end')
-                self.advance_round()
-            else:
+            if self.has_game_ended():
                 self._broadcast('turn_did_end', self)
                 self._broadcast('game_did_end', self)
+                self._broadcast('announce_winners', self._calculate_winner())
                 return
+            else:
+                self._broadcast('round_did_end', self)
+                self.advance_round()
+
         self._choose_next_player()
         self._broadcast('turn_did_end', self)
         self._broadcast('current_player_did_change', self)
 
     def has_game_ended(self):
-        return self.board.no_more_q()
+        return self.has_round_ended() and self.current_round == 2
 
     def has_round_ended(self):
         return self.board.no_q_in_round(self.current_round) or \
             not self.any_spins_remaining()
 
     def advance_round(self):
-        print('That concludes round %u.' % self.current_round )
         self.spins_remaining = self.TOTAL_SPINS # reset spin count
         self.board.mark_all_q_used(self.current_round) # use all questions
         self.current_round += 1
@@ -131,7 +127,7 @@ class GameState(object):
     def _on_wager_received(self, amount):
         self.current_sector.received_wager_amount(self, amount)
 
-    def calculate_winner(self):
+    def _calculate_winner(self):
         '''
         Return a list of strings where the strings are the names of winners
         '''
@@ -139,5 +135,5 @@ class GameState(object):
         winning_score = max(scores) # high score, the winner
         winners = [pl.name for pl in self.player_states \
                    if pl.score == winning_score]
-        
+
         return winners
