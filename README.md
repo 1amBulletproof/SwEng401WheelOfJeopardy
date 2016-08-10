@@ -55,9 +55,8 @@ Tests are written with the TestUnit functionality available in the Python standa
 
 ## Running the Program
 
-There are two available GUIs:
+There are two available GUIs (run these commands from the root directory of your project):
 
-(run these commands from the root directory of your project)
 ```bash
 # PyQt GUI:
 python -m wheelofjeopardy.gui.woj_application_window
@@ -66,7 +65,17 @@ python -m wheelofjeopardy.gui.woj_application_window
 python -m wheelofjeopardy.gui.text_gui
 ```
 
-## Regenerating pyqt files
+### Debugging Events
+
+Setting the `LOG_EVENTS` environment variable to `true` will print every event the system broadcasts to the console. For example:
+
+```bash
+LOG_EVENTS=true python -m wheelofjeopardy.gui.text_gui
+```
+
+## PyQt
+Wheel of Jeopardy uses PyQt to privide a window-based GUI. We use Qt Creator to design each window, then use the `pyuic4` command to convert the resulting .ui files to .py files. We've got a handy script you can run to regenerate everything:
+
 ```bash
 python -m wheelofjeopardy.gui.pyqt.regenerate
 ```
