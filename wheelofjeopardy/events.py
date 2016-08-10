@@ -19,6 +19,7 @@ class Events(object):
       self.subscriptions[channel] = [func]
 
   def broadcast(self, channel, *args):
+    print(channel)
     if channel in self.subscriptions:
       for func in self.subscriptions[channel]:
         func(*args)

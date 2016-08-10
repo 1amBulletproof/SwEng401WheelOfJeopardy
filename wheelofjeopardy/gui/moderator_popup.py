@@ -11,15 +11,15 @@ from wheelofjeopardy.events import Events
 
 
 class ModeratorPopup(QDialog, Ui_ModeratorPopup):
-  def __init__(self, events, parent=None):
+  def __init__(self, events, correct_answer, player_answer, parent=None):
     super(ModeratorPopup, self).__init__(parent)
     self.setupUi(self)
     self.events = events
     
     # initialize variables
     #
-    #self.correctAnswer.setText(correct_answer)
-    #self.playerAnswer.setText(player_answer)
+    self.correctAnswer.setText(correct_answer)
+    self.playerAnswer.setText(player_answer)
 
   # button clicks
   #
@@ -27,7 +27,6 @@ class ModeratorPopup(QDialog, Ui_ModeratorPopup):
   def _on_okButton_clicked(self):
     if self.playerCorrectRadio.ischecked():
       self.events.broadcast('gui.correct_answer_received')
-      self.events.broadcast('moderator.update_score')
     else:
       self.events.broadcast('gui.incorrect_answer_received')
 
@@ -44,4 +43,5 @@ if __name__ == '__main__':
 
 # subscriptions
 #
-events.subscribe('gui.answer_received', ModeratorPopup)
+## events.subscribe('gui.answer_received', ModeratorPopup)
+## events.subscribe('gui.spin_happened'
