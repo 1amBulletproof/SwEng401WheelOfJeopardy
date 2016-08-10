@@ -26,7 +26,6 @@ class Wheel(object):
         sector10 = spin_again_sector.SpinAgainSector()
         sector11 = opponent_choice_sector.OpponentChoiceSector()
         sector12 = player_choice_sector.PlayerChoiceSector()
-
         return [sector1, sector2, sector3, sector4,
                 sector5, sector6, sector7, sector8,
                 sector9, sector10, sector11, sector12]
