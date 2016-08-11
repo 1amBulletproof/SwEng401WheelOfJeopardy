@@ -61,7 +61,9 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
         self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
         ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
+        ## self.events.subscribe('player_state.spin_tokens_did_update'. self._update_token_count) # not tried yet, similar to update_score
         self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
+        ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
         ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
         ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
         self.events.subscribe('game_state.spins_did_update', self._update_spin_count)
@@ -167,6 +169,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         #
         self.spinButton.setEnabled(False)
         self.submitAnswerButton.setEnabled(False)
+        
 
     def _set_player(self, game_state): #WAHOO
         # set the current player for the answer area
@@ -174,19 +177,15 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         current_player = self.game_state.get_current_player().name
         self.playerAnswerLabel.setText(current_player)
 
-        # bold the current player in the player area
-        #
-        #self.playerName.setFont.setBold(True) #need player1Name, player2Name.. etc
 
-
-    def _show_category_popup_player(self, jeopardy_board): # coming up, not communicating choice correctly
+    def _show_category_popup_player(self, jeopardy_board): # not communicating choice correctly
         # call category_choice_popup for the current player
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
         self.dialog.titleLabel.setText("current player, choose a category!")
         self.dialog.exec_()
 
-    def _show_category_popup_opponent(self, jeopardy_board): # coming up, not communicating choice correctly
+    def _show_category_popup_opponent(self, jeopardy_board): # not communicating choice correctly
         # call category_choice_popup for the opponents
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
@@ -208,10 +207,10 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.dialog.exec_()
 
         
-    def _update_score(self): # needs to be tested
+    def _update_score(self): # needs to be tested, somehow specifically state player1Score, player2Score, or player3Score
         current_score = self.playerScore.text()
         new_score = int(current_score) + question_point_value
-        self.playerScore.setText(new_score)
+        self.playerScore.setText(str(new_score))
         pass
 
 
@@ -225,6 +224,12 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             #
         self.spinCountValue.setText(str(new_count))
 
+
+    def _update_token_count(self): # needs to be tested, somehow specifically state player1Tokens, player2Tokens or player3Tokens
+        current_tokens = self.playerTokens.text()
+        new_count = int(current_tokens) + 1
+        self.playerTokens.setText(str(new_count))
+        
 
     def _zero_score(self):
         self.playerScore.setText("0")
@@ -248,26 +253,19 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         #
         self.player1Name.setText(player_names[0].name)
         self.player1Score.setText("0")
+        self.player1Tokens.setText("0")
         self.player2Name.setText(player_names[1].name)
         self.player2Score.setText("0")
+        self.player2Tokens.setText("0")
         self.player3Name.setText(player_names[2].name)
         self.player3Score.setText("0")
+        self.player3Tokens.setText("0")
 
 
 
 
 # MAIN PROGRAM
 #
-# define things to be used in the functions...
-# players
-# scores
-# categories
-# question_values
-
-# call functions when things are heard from broadcasts
-#
-
-
 
 # Display GUI.
 #
