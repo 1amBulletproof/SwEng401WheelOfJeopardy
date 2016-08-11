@@ -7,7 +7,7 @@ This is a class that can be called to bring up the wojApplication gui.
 import random
 from os import sys
 from PyQt4.QtGui import QMainWindow, QApplication
-from PyQt4.QtCore import pyqtSignature
+from PyQt4.QtCore import pyqtSlot
 
 # this is the .py file spit out from PyQt
 from wheelofjeopardy.gui.pyqt.ui_woj_application_window import Ui_WojApplicationWindow
@@ -42,35 +42,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
                                   [10, 'SpinAgain'], [11, 'OpponentChoice'], [12, 'PlayerChoice']]
 
 
-        # subscriptions
-        #
-        ## self.events.subscribe('board_sector.deactivate_square', self._deactivate_square)
-        self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup)
-        self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup)
-        self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
-        self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
-        ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
-        ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
-        self.events.subscribe('game_state.spins_did_update', self._update_spin_count)
-        self.events.subscribe('game_state.game_did_end', self._game_end)
-        self.events.subscribe('game_state.current_player_did_change', self._set_player) # not working
-        self.events.subscribe('board_sector.check_answer', self._on_check_answer)
-
-        # put image behind wheel
-        #
-
-        # click stuff
-        #
-        self.submitAnswerButton.clicked.connect(self.on_submitAnswerButton_clicked)
-        self.spinButton.clicked.connect(self.on_spinButton_clicked)
-        
-        # setup the player answer interface to not show "TextLabels" everywhere.
-        #
-        self.sectorOutput.setText("")
-        self.currentQuestion.setText("")
-        self.playerAnswerLabel.setText("")
-        self.spinCountValue.setText("50")
-
         # create the game state
         #
         players = [PlayerState(self.opts.player_names[n], self.events, self.opts.start_scores[n])
@@ -81,7 +52,37 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # tentative wheel state
         #
-        self.wheel = Wheel()
+        #self.wheel = Wheel()
+
+        # subscriptions
+        #
+        ## self.events.subscribe('board_sector.deactivate_square', self._deactivate_square)
+        self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
+        self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
+        self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
+        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
+        self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
+        ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
+        ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
+        self.events.subscribe('game_state.spins_did_update', self._update_spin_count)
+        self.events.subscribe('game_state.game_did_end', self._game_end)
+        self.events.subscribe('game_state.current_player_did_change', self._set_player) 
+        self.events.subscribe('board_sector.check_answer', self._on_check_answer)
+
+        # put image behind wheel
+        #
+
+        # click stuff
+        #
+        #self.submitAnswerButton.clicked.connect(self.on_submitAnswerButton_clicked)
+        #self.spinButton.clicked.connect(self.on_spinButton_clicked)
+        
+        # setup the player answer interface to not show "TextLabels" everywhere.
+        #
+        self.sectorOutput.setText("")
+        self.currentQuestion.setText("")
+        self.playerAnswerLabel.setText("")
+        self.spinCountValue.setText("50")
 
         # initialize variables - i.e. set up the entire board.
         #
@@ -92,7 +93,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     # Methods that run on specific button clicks
     #
-    @pyqtSignature("")
+    @pyqtSlot()
     def on_spinButton_clicked(self):
         # broadcast that the spin button was clicked
         #
@@ -138,7 +139,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             self.sectorOutput.setText("not a category!")
 
 
-    @pyqtSignature("") #WAHOO
+    @pyqtSlot() #WAHOO
     def on_submitAnswerButton_clicked(self):
         player_answer = self.playerAnswerEntryBox.toPlainText()
         print("submitting...")
@@ -167,7 +168,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.spinButton.setEnabled(False)
         self.submitAnswerButton.setEnabled(False)
 
-    def _set_player(self, players): # not working
+    def _set_player(self, game_state): #WAHOO
         # set the current player for the answer area
         #
         current_player = self.game_state.get_current_player().name
@@ -175,21 +176,28 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # bold the current player in the player area
         #
-        self.playerName.setFont.setBold(True)
+        #self.playerName.setFont.setBold(True) #need player1Name, player2Name.. etc
 
 
-    def _show_category_popup(self, jeopardy_board): # coming up, not communicating choice correctly
-        # call category_choice_popup
+    def _show_category_popup_player(self, jeopardy_board): # coming up, not communicating choice correctly
+        # call category_choice_popup for the current player
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
+        self.dialog.titleLabel.setText("current player, choose a category!")
+        self.dialog.exec_()
+
+    def _show_category_popup_opponent(self, jeopardy_board): # coming up, not communicating choice correctly
+        # call category_choice_popup for the opponents
+        #
+        self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
+        self.dialog.titleLabel.setText("opponents, collaborate and choose a category!")
         self.dialog.exec_()
 
 
     def _show_daily_double_popup(self, min_wager, max_wager): #WAHOO
         # call daily_double_popup
         #
-        # use min_wager and max_wager later
-        self.dialog = DailyDoublePopup(events=self.events, parent=self)
+        self.dialog = DailyDoublePopup(events=self.events, min_wager=min_wager, max_wager=max_wager, parent=self)
         self.dialog.exec_()
 
 
