@@ -19,14 +19,14 @@ from wheelofjeopardy.gui.moderator_popup import ModeratorPopup
 from wheelofjeopardy.gui.category_choice_popup import CategoryChoicePopup
 from wheelofjeopardy.gui.daily_double_popup import DailyDoublePopup
 from wheelofjeopardy.gui.token_popup import TokenPopup
-from wheelofjeopardy.utils.read_configs import ReadCfgToOptions
+from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
 class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def __init__(self, events, parent=None):
         super(WojApplicationWindow, self).__init__(parent)
         self.setupUi(self)
         self.events = events
-        self.opts = ReadCfgToOptions()
+        self.opts = read_cfg_to_options()
         self.categoryLabels = [self.category1, self.category2, self.category3,
                                self.category4, self.category5, self.category6]
         self.cellMatrix = [[self.category1Cell1, self.category1Cell2, self.category1Cell3, self.category1Cell4, self.category1Cell5],
@@ -47,13 +47,13 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         ## self.events.subscribe('board_sector.deactivate_square', self._deactivate_square)
         self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup)
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup)
-        ## self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup) # not working
-        ## self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup) # not working
-        ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score)
-        ## self.events.subscribe('moderator.update_score', self._update_score) 
+        self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
+        self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
+        ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
+        ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
         self.events.subscribe('game_state.spins_did_update', self._update_spin_count)
         self.events.subscribe('game_state.game_did_end', self._game_end)
-        ## self.events.subscribe('game_state.current_player_did_change', self._set_player) # not working
+        self.events.subscribe('game_state.current_player_did_change', self._set_player) # not working
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
         # put image behind wheel
@@ -73,8 +73,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # create the game state
         #
-        players = [PlayerState(self.opts.playerNames[n], self.events, self.opts.startScores[n])
-                   for n in range(self.opts.nPlayers)]
+        players = [PlayerState(self.opts.player_names[n], self.events, self.opts.start_scores[n])
+                   for n in range(self.opts.n_players)]
         self.game_state = GameState(players, self.events, self.opts)
 
         player_names = self.game_state.player_states
@@ -170,7 +170,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _set_player(self, players): # not working
         # set the current player for the answer area
         #
-        current_player = self.game_state.get_current_player()
+        current_player = self.game_state.get_current_player().name
         self.playerAnswerLabel.setText(current_player)
 
         # bold the current player in the player area
@@ -185,16 +185,20 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.dialog.exec_()
 
 
-    def _show_daily_double_popup(self): # complaining about 3 arguments given, wont pop up
+    def _show_daily_double_popup(self, min_wager, max_wager): #WAHOO
         # call daily_double_popup
+        #
+        # use min_wager and max_wager later
         self.dialog = DailyDoublePopup(events=self.events, parent=self)
         self.dialog.exec_()
 
-    def _show_token_popup(self, players): # takes 2 arguments, 1 given...
+
+    def _show_token_popup(self): #WAHOO
         # call token_popup
-        current_player = self.game_state.get_current_player()
+        current_player = self.game_state.get_current_player().name
         self.dialog = TokenPopup(events=self.events, current_player=current_player, parent=self)
         self.dialog.exec_()
+
         
     def _update_score(self): # needs to be tested
         current_score = self.playerScore.text()
