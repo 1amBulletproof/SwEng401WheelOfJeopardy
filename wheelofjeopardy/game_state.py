@@ -20,6 +20,7 @@ class GameState(object):
         self.current_question = None
         self.current_sector = None
 
+        self.events.subscribe('gui.game_will_start', self._on_game_will_start)
         self.events.subscribe('gui.spin', self._on_spin)
         self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
@@ -29,10 +30,6 @@ class GameState(object):
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
-
-        # broadcast initial values
-        self._broadcast('spins_did_update', self)
-        self._broadcast('current_player_did_change', self)
 
     def get_current_player(self):
         return self.player_states[self.current_player_index]
@@ -97,6 +94,11 @@ class GameState(object):
 
     def _broadcast(self, channel, *args):
         self.events.broadcast('game_state.%s' % channel, *args)
+
+    def _on_game_will_start(self):
+        # broadcast initial values
+        self._broadcast('spins_did_update', self)
+        self._broadcast('current_player_did_change', self)
 
     def _on_spin(self):
         self.spin()
