@@ -18,7 +18,7 @@ class TokenPopup(QDialog, Ui_TokenPopup):
     # initialize variables
     #
     self.playerLabel.setText(current_player)
-
+    
     # button clicks
     #
     def _on_useTokenButton_clicked():
