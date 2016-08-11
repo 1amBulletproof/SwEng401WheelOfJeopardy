@@ -63,6 +63,9 @@ class TextGUI(object):
         self.events.subscribe('board_sector.received_invalid_wager', self._on_received_invalid_wager)
 
         TextGUI._clear_terminal()
+
+        self.events.broadcast('gui.game_will_start')
+
         while not self.game_state.has_game_ended():
             print(self.game_state.board)
             print 'What would you like to do, %s?' % \
