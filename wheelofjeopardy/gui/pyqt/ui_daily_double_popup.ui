@@ -6,13 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-<<<<<<< HEAD
-    <width>419</width>
-    <height>232</height>
-=======
     <width>422</width>
     <height>239</height>
->>>>>>> 729a303aa8c41bf01ee6216b759b85a485ed432a
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,8 +39,6 @@
     </widget>
    </item>
    <item>
-<<<<<<< HEAD
-=======
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <spacer name="horizontalSpacer_6">
@@ -117,7 +110,6 @@
     </layout>
    </item>
    <item>
->>>>>>> 729a303aa8c41bf01ee6216b759b85a485ed432a
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
