@@ -3,7 +3,7 @@ This is a class that can be called to bring up the wojApplication gui.
 
 @author = Miranda Link, mirandanlink@gmail.com
 '''
-#import pdb
+# import pdb
 import random
 from os import sys
 from PyQt4.QtGui import QMainWindow, QApplication
@@ -44,9 +44,19 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         ]
 
         self.player_controls = [
-            { 'score_label': self.player1Score, 'token_label': self.player1Tokens },
-            { 'score_label': self.player2Score, 'token_label': self.player2Tokens },
-            { 'score_label': self.player3Score, 'token_label': self.player3Tokens }
+            {
+                'name_label':  self.player1Name,
+                'score_label': self.player1Score,
+                'token_label': self.player1Tokens
+            }, {
+                'name_label':  self.player2Name,
+                'score_label': self.player2Score,
+                'token_label': self.player2Tokens
+            }, {
+                'name_label':  self.player3Name,
+                'score_label': self.player3Score,
+                'token_label': self.player3Tokens
+            }
         ]
 
         self.sector_category_map = [
@@ -85,7 +95,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.game_did_end', self._game_end)
-        self.events.subscribe('game_state.current_player_did_change', self._set_player)
+        self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
         # put image behind wheel
@@ -176,13 +186,11 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         dialog.exec_()
 
     def _on_score_did_update(self, player_state):
-        idx = self._find_player_index(player_state)
-        controls = self.player_controls[idx]
+        controls = self._find_player_controls(player_state)
         controls['score_label'].setText(str(player_state.score))
 
     def _on_spin_tokens_did_update(self, player_state):
-        idx = self._find_player_index(player_state)
-        controls = self.player_controls[idx]
+        controls = self._find_player_controls(player_state)
         controls['token_label'].setText(str(player_state.free_spin_tokens))
 
     def _find_player_index(self, player_state):
@@ -191,6 +199,10 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
                 return idx
 
         return None
+
+    def _find_player_controls(self, player_state):
+        idx = self._find_player_index(player_state)
+        return self.player_controls[idx]
 
     def _deactivate_square(self, square): # no broadcast for this
         # when a square's question has been shown to the user
@@ -204,12 +216,24 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.spinButton.setEnabled(False)
         self.submitAnswerButton.setEnabled(False)
 
-    def _set_player(self, game_state): #WAHOO
+    def _on_current_player_did_change(self, game_state): #WAHOO
         # set the current player for the answer area
         #
-        current_player = self.game_state.get_current_player().name
-        self.playerAnswerLabel.setText(current_player)
+        current_player = self.game_state.get_current_player()
+        cur_idx = self._find_player_index(current_player)
+        cur_controls = self.player_controls[cur_idx]
 
+        self.playerAnswerLabel.setText(current_player.name)
+        self._set_bold(cur_controls['name_label'], True)
+
+        for idx, controls in enumerate(self.player_controls):
+            if idx != cur_idx:
+                self._set_bold(controls['name_label'], False)
+
+    def _set_bold(self, label, bold=True):
+        font = label.font()
+        font.setBold(bold)
+        label.setFont(font)
 
     def _show_category_popup_player(self, jeopardy_board): # not communicating choice correctly
         # call category_choice_popup for the current player
