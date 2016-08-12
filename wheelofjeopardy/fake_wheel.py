@@ -5,10 +5,18 @@ from wheelofjeopardy.sectors import *
 from wheelofjeopardy.category import Category
 import random
 
-class Wheel(object):
-    def __init__(self):
+#@TODO: create unit tests for this class
+class FakeWheel(object):
+    def __init__(self, steps=None):
         self.description = 'Wheel from the game Wheel of Jeopardy!'
         self._sectors = self._initialize_sectors()
+
+        if steps == None:
+            #function for loading steps from a file here
+            # self.steps = _load_steps()
+        else:
+            self.steps = steps
+        self.count = -1 # initialized to unused
 
     def _initialize_sectors(self):
         sector1 = board_sector.BoardSector(Category.category1)
@@ -32,13 +40,19 @@ class Wheel(object):
     """
     #@TODO:unfinished method
     def get_random_sector(self):
-        random_number = random.randrange(0, len(self._sectors), 1)
-        return self._sectors[random_number]
+        # random_number = random.randrange(0, len(self._sectors), 1)
+        return self._sectors[ self._next_pretermined() ]
 
     def _get_sector(self, ind):
         if ind >= len(self._sectors) or ind < 0:
             raise IndexError('Invalid sector choice.')
         return self._sectors[ind]
+
+    def _next_predetermined(self):
+        self.count += 1
+        if self.count > len(self.steps): # loops back to first if exhaust steps
+            self.count = 0
+        return self.steps[self.count]
 
     def __str__(self):
         return self.description

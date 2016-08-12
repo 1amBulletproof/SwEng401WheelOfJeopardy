@@ -10,10 +10,14 @@ from wheelofjeopardy.gui.pyqt.ui_token_popup import Ui_TokenPopup
 from wheelofjeopardy.events import Events
 
 class TokenPopup(QDialog, Ui_TokenPopup):
-  def __init__(self, events, parent=None):
+  def __init__(self, events, current_player, parent=None):
     super(TokenPopup, self).__init__(parent)
     self.setupUi(self)
     self.events = events
+
+    # initialize variables
+    #
+    self.playerLabel.setText(current_player)
 
     # button clicks
     #
@@ -34,4 +38,3 @@ if __name__ == '__main__':
   gui.show()
   gui.raise_()
   application.exec_()
-
