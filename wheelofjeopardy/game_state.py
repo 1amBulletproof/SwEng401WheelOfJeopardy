@@ -4,6 +4,7 @@ Control and monitor the wheelofjeopardy game state
 
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.wheel import Wheel
+from wheelofjeopardy.fake_wheel import FakeWheel
 
 class GameState(object):
     def __init__(self, player_states, events, opts):
@@ -13,7 +14,10 @@ class GameState(object):
         self.player_states = player_states
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
-        self.wheel = Wheel()
+        if len(opts.programmed_spins) == 0: # no programmed spins
+            self.wheel = Wheel()
+        else: # wheel programmed to spin according to list
+            self.wheel = FakeWheel(opts.programmed_spins)
         self.active_wager = None # placeholder
         self.current_round = 1
         self.current_category = None # these three will be set by methods

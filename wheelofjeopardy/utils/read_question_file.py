@@ -22,14 +22,20 @@ def index_all( l, elem):
 # parse each CSV row, return value
 def get_data_from_q_row(row):
     (rd_ind, pts) = map(int, (row['Rounds'], row['Points']) ) # conv str to int
-    dd = row['DailyDouble'].upper() in true_list # if in set of true strings
+    if opts.daily_double:
+        dd = row['DailyDouble'].upper() in true_list # if in set of true strings
+    else:
+        dd = False
+
     return (rd_ind, row['Category'], pts, row['Question'], row['Answer'], dd)
 
 
 #%% Read CSV
-def read_questions(opts):
+def read_questions(inOpts):
     import os, csv, sys
     import wheelofjeopardy.question_matrix as qm
+    global opts # make opts readable from util functions
+    opts = inOpts
 
     num_qs = 5 # number of questions in category
     num_cats = 6 # number of categories per round
@@ -50,7 +56,7 @@ def read_questions(opts):
         reader = csv.DictReader(csvfile)
 
         for row in reader:
-            (rd_ind, cat, pts, q_txt, ans, dd) = get_data_from_q_row(row) # read row
+            (rd_ind, cat, pts, q_txt, ans, dd) = get_data_from_q_row(row) # row
 
             if rd_ind == 1:
                 if not catg_ind1.has_key(cat): # if category not encountered yet

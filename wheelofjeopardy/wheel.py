@@ -5,9 +5,6 @@ from wheelofjeopardy.sectors import *
 from wheelofjeopardy.category import Category
 import random
 
-import random
-
-#@TODO: create unit tests for this class
 class Wheel(object):
     def __init__(self):
         self.description = 'Wheel from the game Wheel of Jeopardy!'
@@ -39,7 +36,7 @@ class Wheel(object):
         return self._sectors[random_number]
 
     def _get_sector(self, ind):
-        if ind >= len(self._sectors):
+        if ind >= len(self._sectors) or ind < 0:
             raise IndexError('Invalid sector choice.')
         return self._sectors[ind]
 

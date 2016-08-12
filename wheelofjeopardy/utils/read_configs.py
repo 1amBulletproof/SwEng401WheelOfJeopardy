@@ -49,12 +49,17 @@ def read_cfg_to_options(cfg_file='Options.ini'):
     enable_animation = cp.getboolean(sec, 'enableAnimation')
     time_limit1 = cp.getint(sec, 'round1AnswerTimeLimitInSeconds')
     time_limit2 = cp.getint(sec, 'round2AnswerTimeLimitInSeconds')
+    
+    # Parse [cheat] section
+    programmed_spins = [int(x) for x in cp.get('cheat', 'spinSequence').split()]
+    if not all( (x<13 and x>0) for x in programmed_spins ):
+        raise ValueError('All spins must be between 1 and 12 inclusive')
 
     # make the namedtuple
     options_list = [
         'n_players', 'player_names', 'start_scores', 'q_points1', 'q_points2',
-        'q_file_name', 'total_spins', 'daily_double','time_limit1', 'time_limit2',
-        'enable_sound', 'enable_animation'
+        'q_file_name', 'total_spins', 'daily_double','time_limit1', 
+        'time_limit2', 'enable_sound', 'enable_animation', 'programmed_spins'
     ]
 
     # make named tuple class
@@ -64,7 +69,7 @@ def read_cfg_to_options(cfg_file='Options.ini'):
     woj_opt = Options._make([
         n_players, player_names, start_scores, q_points1,
         q_points2, q_file_name, total_spins, daily_double, time_limit1,
-        time_limit2, enable_sound, enable_animation
+        time_limit2, enable_sound, enable_animation, programmed_spins
     ])
 
     return woj_opt

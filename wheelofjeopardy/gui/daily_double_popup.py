@@ -28,7 +28,6 @@ class DailyDoublePopup(QDialog, Ui_DailyDoublePopup):
       wager = self.wagerAmount.text()
       self.events.broadcast('gui.wager_received')
 
-
 # Display GUI.
 #
 if __name__ == '__main__':
@@ -39,5 +38,3 @@ if __name__ == '__main__':
   gui.show()
   gui.raise_()
   application.exec_()
-
-

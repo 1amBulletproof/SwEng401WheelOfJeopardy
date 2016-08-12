@@ -98,4 +98,3 @@ class Ui_DailyDoublePopup(object):
         self.minLabel.setText(_translate("DailyDoublePopup", "Min:", None))
         self.minLabelValue.setText(_translate("DailyDoublePopup", "TextLabel", None))
         self.submitWagerButton.setText(_translate("DailyDoublePopup", "Submit Wager!", None))
-
