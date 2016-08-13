@@ -91,7 +91,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
         self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
-        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup) # feature
+        self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
+        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
         self.events.subscribe('player_state.spin_tokens_did_update', self._on_spin_tokens_did_update)
         self.events.subscribe('player_state.score_did_update', self._on_score_did_update)
         self.events.subscribe('player_state.score_did_update', self._clear_answer_area)
@@ -131,44 +132,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def on_spinButton_clicked(self):
         # broadcast that the spin button was clicked
         #
-        print("spinning...")
-        self.game_state.spin() #quick fix, need to use broadcast
-        #self.events.broadcast('gui.spin_happened')
-
-        # animate the wheel
-        #
-
-        # get category landed on
-        #
-        current_sector = self.game_state.current_sector
-        ## for sector in self.sectorCategoryMap:
-        ##     print(current_sector, sector)
-        ##     if str(current_sector) in sector[1]:
-        ##         current_sector_number = sector[0]
-        #current_sector_numbers = self.wheel._initialize_sectors
-        #print(current_sector_numbers)
-
-        # put wheel at location
-        #
-        #self.dial.setValue(current_sector_number)
-
-        # populate current category for answer area
-        #
-        current_category = self.game_state.current_category
-        if type(current_category) is int:
-            headers_index = current_category - 1
-            current_category_text = self.current_matrix.headers[headers_index]
-            self.sectorOutput.setText(current_category_text)
-
-            # populate current question to be answered
-            #
-            question = self.game_state.next_question_in_category(current_category)
-            question = str(question).split(":")[0]
-            if question != "None":
-                self.currentQuestion.setText(question)
-        else:
-            self.sectorOutput.setText("None")
-            self.currentQuestion.setText("you landed on {}!".format(self.game_state.current_sector))
+        self.events.broadcast('gui.spin')
 
     @pyqtSlot() #WAHOO
     def on_submitAnswerButton_clicked(self):
@@ -182,14 +146,23 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerEntryBox.setText("")
-        
+
 
     def _deactivate_square(self, square):
         # when a square's question has been shown to the user
         #
         self.square.setEnabled(False)
-        
-    
+
+    def _on_question_will_be_asked(self, question):
+        current_category = self.game_state.current_category
+
+        if type(current_category) is int:
+            self.sectorOutput.setText(question.category_header)
+            self.currentQuestion.setText(question.text)
+        else:
+            self.sectorOutput.setText("None")
+            self.currentQuestion.setText("you landed on {}!".format(question.category_header))
+
     def _on_check_answer(self, question, player_answer): #WAHOO
         # call moderator popup
         #
@@ -200,14 +173,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             parent=self
         )
         dialog.exec_()
-        
+
 
     def _on_score_did_update(self, player_state):
         player = self._find_player(player_state)
         player.score_label.setText(str(player_state.score))
         # call clear answer area and deactivate square
         #
-        #square = 
+        #square =
         self._clear_answer_area()
         #self._deactivate_square(self, square)
 
@@ -222,7 +195,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             if player.state == player_state:
                 return idx
         return None
-    
+
 
     def _find_player(self, player_state):
         idx = self._find_player_index(player_state)
@@ -313,7 +286,7 @@ class GuiPlayer(object):
         self.name_label = name_label
         self.score_label = score_label
         self.token_label = token_label
-        
+
 
 # MAIN PROGRAM
 #

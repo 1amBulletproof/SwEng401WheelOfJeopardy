@@ -42,10 +42,13 @@ class GameState(object):
         return self.spins_remaining > 0
 
     def spin(self, sect=None):
+        self.current_question = None
+
         if sect is None:
             self.current_sector = self.wheel.get_random_sector()
         else:
             self.current_sector = self.wheel._get_sector(sect)
+
         print(self.current_sector)
 
         self.spins_remaining -= 1
@@ -53,7 +56,10 @@ class GameState(object):
         self._broadcast('spins_did_update', self)
         self.current_sector.action(self)
 
-        if self.has_game_ended():
+        self.check_for_game_or_round_end()
+
+    def check_for_game_or_round_end(self):
+        if self.has_game_ended() or self.has_round_ended():
             self.end_turn()
 
     def _cheat(self, sect):
@@ -83,11 +89,13 @@ class GameState(object):
         self._broadcast('current_player_did_change', self)
 
     def has_game_ended(self):
-        return self.has_round_ended() and self.current_round == 2
+        return self.has_round_ended() and self.current_round == 2 \
+            and self.current_question == None
 
     def has_round_ended(self):
-        return self.board.no_q_in_round(self.current_round) or \
-            not self.any_spins_remaining()
+        return (self.board.no_q_in_round(self.current_round) or \
+            not self.any_spins_remaining()) and \
+            self.current_question == None
 
     def advance_round(self):
         self.spins_remaining = self.TOTAL_SPINS # reset spin count

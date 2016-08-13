@@ -51,12 +51,15 @@ class Sector(object):
         amount = self.get_question_value(question, game_state)
         game_state.get_current_player().increase_score_by(amount)
         game_state.active_wager = None
+        game_state.current_question = None
+        game_state.check_for_game_or_round_end()
 
     def received_incorrect_answer(self, game_state, question):
         current_player = game_state.get_current_player()
         amount = self.get_question_value(question, game_state)
         current_player.decrease_score_by(amount)
         game_state.active_wager = None
+        game_state.current_question = None
 
         if current_player.has_free_spin_token():
             game_state.events.broadcast('sector.prompt_for_token_use')
@@ -65,6 +68,7 @@ class Sector(object):
 
     def received_use_free_token(self, game_state):
         game_state.get_current_player().use_free_spin_token()
+        game_state.check_for_game_or_round_end()
 
     def received_dont_use_free_token(self, game_state):
         game_state.end_turn()
