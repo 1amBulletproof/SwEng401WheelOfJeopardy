@@ -19,6 +19,7 @@ from wheelofjeopardy.gui.moderator_popup import ModeratorPopup
 from wheelofjeopardy.gui.category_choice_popup import CategoryChoicePopup
 from wheelofjeopardy.gui.daily_double_popup import DailyDoublePopup
 from wheelofjeopardy.gui.token_popup import TokenPopup
+from wheelofjeopardy.gui.round_game_popup import RoundGamePopup
 from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
 
@@ -101,7 +102,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
         ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
-        self.events.subscribe('game_state.game_did_end', self._game_end)
+        self.events.subscribe('game_state.announce_winners', self._game_end)
         self.events.subscribe('game_state.round_did_end', self._round_end)
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
@@ -202,17 +203,31 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         return self.players[idx]
 
 
-    def _game_end(self):
-        # deactivate buttons
+    def _game_end(self, winner):
+        # show winner
         #
-        pass
+        dialog = RoundGamePopup(
+            events=self.events, round=False, winner=winner,
+            parent=self
+        )
+        dialog.exec_()
 
-    def _round_end(self):
+
+    def _no_questions_left(self):
+        self.currentQuestion.setText("no questions left in this category. spin again!")
+        
+
+    def _round_end(self, game_state):
         # start round 2 population
         #
         self.current_matrix = self.game_state.board._q_mat[1] # [0] means round 1
         self.populate_board(self.current_matrix)
-
+        
+        dialog = RoundGamePopup(
+            events=self.events, round=True, winner=None,
+            parent=self
+        )
+        dialog.exec_()
 
     def _on_current_player_did_change(self, game_state): #WAHOO
         # set the current player for the answer area

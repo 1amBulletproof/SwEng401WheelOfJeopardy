@@ -99,7 +99,7 @@ class GameState(object):
 
     def advance_round(self):
         self.spins_remaining = self.TOTAL_SPINS # reset spin count
-        self._broadcast('spins_did_update')
+        self._broadcast('spins_did_update', self)
         self.board.mark_all_q_used(self.current_round) # use all questions
         self.current_round += 1
         # Does player sequence reset at round end? Or continue as it was?
