@@ -60,10 +60,17 @@ There are two available GUIs (run these commands from the root directory of your
 ```bash
 # PyQt GUI:
 python -m wheelofjeopardy.gui.woj_application_window
+```
 
+### CHEAT (script the sector Order)
+Set the "spinSequence" in the Options.ini file, i.e. spinSequence = "spinSequence=1 2 12"
+
+```bash
 # text-based GUI:
 python -m wheelofjeopardy.gui.text_gui
 ```
+
+
 
 ### Debugging Events
 
