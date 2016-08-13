@@ -87,17 +87,17 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # subscriptions
         #
-        ## self.events.subscribe('board_sector.deactivate_square', self._deactivate_square)
+        ## self.events.subscribe('player_state.deactivate_square', self._deactivate_square)
         self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
         self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
         ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
         self.events.subscribe('player_state.spin_tokens_did_update', self._on_spin_tokens_did_update)
         self.events.subscribe('player_state.score_did_update', self._on_score_did_update)
+        self.events.subscribe('player_state.score_did_update', self._clear_answer_area)
         self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
         ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
         ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
-        ## self.events.subscribe('moderator.update_score', self._update_score) # do set player first
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.game_did_end', self._game_end)
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
@@ -111,7 +111,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
-        # self.spinCountValue.setText("50")
 
         # initialize variables - i.e. set up the entire board.
         #
@@ -165,11 +164,9 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             question = str(question).split(":")[0]
             if question != "None":
                 self.currentQuestion.setText(question)
-            else:
-                pass
-                #self.currentQuestion.setText(current_category)
         else:
-            self.sectorOutput.setText("not a category!")
+            self.sectorOutput.setText("None")
+            #self.currentQuestion.setText("you landed on {}!".format(game_state.current_sector))
 
     @pyqtSlot() #WAHOO
     def on_submitAnswerButton_clicked(self):
@@ -179,6 +176,18 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     # Functions that run from subscriptions
     #
+    def _clear_answer_area(self, *args):
+        self.sectorOutput.setText("")
+        self.currentQuestion.setText("")
+        self.playerAnswerEntryBox.setText("")
+        
+
+    def _deactivate_square(self, square):
+        # when a square's question has been shown to the user
+        #
+        self.square.setEnabled(False)
+        
+    
     def _on_check_answer(self, question, player_answer): #WAHOO
         # call moderator popup
         #
@@ -188,32 +197,34 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             events=self.events, question=question, player_answer=player_answer,
             parent=self
         )
-
         dialog.exec_()
+        
 
     def _on_score_did_update(self, player_state):
         player = self._find_player(player_state)
         player.score_label.setText(str(player_state.score))
+        # call clear answer area and deactivate square
+        #
+        #square = 
+        self._clear_answer_area()
+        #self._deactivate_square(self, square)
 
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
-        player.token_label.setText(str(player_state.free_spin_tokens))
+        print(player.state.free_spin_tokens)
+        player.token_label.setText(str(player.state.free_spin_tokens)) # how is token_label getting defined?
+        
 
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
             if player.state == player_state:
                 return idx
-
         return None
+    
 
     def _find_player(self, player_state):
         idx = self._find_player_index(player_state)
         return self.players[idx]
-
-    def _deactivate_square(self, square): # no broadcast for this
-        # when a square's question has been shown to the user
-        #
-        self.square.setEnabled(False)
 
 
     def _game_end(self):
@@ -298,6 +309,7 @@ class GuiPlayer(object):
         self.name_label = name_label
         self.score_label = score_label
         self.token_label = token_label
+        
 
 # MAIN PROGRAM
 #

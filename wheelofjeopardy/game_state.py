@@ -46,6 +46,7 @@ class GameState(object):
             self.current_sector = self.wheel.get_random_sector()
         else:
             self.current_sector = self.wheel._get_sector(sect)
+        print(self.current_sector)
 
         self.spins_remaining -= 1
         self._broadcast('sector_was_chosen', self.current_sector)

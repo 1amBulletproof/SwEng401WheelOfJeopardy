@@ -6,6 +6,7 @@ This is called to have a player accept or deny token use.
 
 from os import sys
 from PyQt4.QtGui import *
+from PyQt4.QtCore import pyqtSlot
 from wheelofjeopardy.gui.pyqt.ui_token_popup import Ui_TokenPopup
 from wheelofjeopardy.events import Events
 
@@ -21,9 +22,11 @@ class TokenPopup(QDialog, Ui_TokenPopup):
 
     # button clicks
     #
+    @pyqtSlot()
     def _on_useTokenButton_clicked():
       self.events.broadcast('gui.use_free_token')
 
+    @pyqtSlot()
     def _on_denyTokenButton_clicked():
       self.events.broadcast('gui.dont_use_free_token')
 
