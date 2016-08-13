@@ -18,11 +18,7 @@ class TokenPopup(QDialog, Ui_TokenPopup):
     # initialize variables
     #
     self.playerLabel.setText(current_player)
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> d6b5a63ad51c7eb626a323e60f980550c3b3cd0b
     # button clicks
     #
     def _on_useTokenButton_clicked():

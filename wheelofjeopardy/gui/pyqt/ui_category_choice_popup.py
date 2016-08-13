@@ -176,3 +176,4 @@ class Ui_CategoryChoicePopup(object):
         self.category4.setText(_translate("CategoryChoicePopup", "Category 4", None))
         self.category5.setText(_translate("CategoryChoicePopup", "Category 5", None))
         self.category6.setText(_translate("CategoryChoicePopup", "Category 6", None))
+
