@@ -87,19 +87,21 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # subscriptions
         #
-        ## self.events.subscribe('player_state.deactivate_square', self._deactivate_square)
+        ## self.events.subscribe('player_state.deactivate_square', self._deactivate_square) # animation
         self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
         self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
-        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
+        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup) # feature
         self.events.subscribe('player_state.spin_tokens_did_update', self._on_spin_tokens_did_update)
         self.events.subscribe('player_state.score_did_update', self._on_score_did_update)
         self.events.subscribe('player_state.score_did_update', self._clear_answer_area)
         self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
+        self.events.subscribe('sector.no_questions_in_category', self._no_questions_left)
         ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
         ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.game_did_end', self._game_end)
+        self.events.subscribe('game_state.round_did_end', self._round_end)
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
@@ -212,7 +214,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
         print(player.state.free_spin_tokens)
-        player.token_label.setText(str(player.state.free_spin_tokens)) # how is token_label getting defined?
+        player.token_label.setText(str(player.state.free_spin_tokens)) 
         
 
     def _find_player_index(self, player_state):
@@ -230,8 +232,13 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _game_end(self):
         # deactivate buttons
         #
-        self.spinButton.setEnabled(False)
-        self.submitAnswerButton.setEnabled(False)
+        pass
+
+    def _round_end(self):
+        # start round 2 population
+        #
+        self.current_matrix = self.game_state.board._q_mat[1] # [0] means round 1
+        self.populate_board(self.current_matrix)
 
 
     def _on_current_player_did_change(self, game_state): #WAHOO
@@ -253,14 +260,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         font.setBold(bold)
         label.setFont(font)
 
-    def _show_category_popup_player(self, current_matrix): # not communicating choice correctly
+    def _show_category_popup_player(self, current_matrix): #WAHOO
         # call category_choice_popup for the current player
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
         self.dialog.titleLabel.setText("current player, choose a category!")
         self.dialog.exec_()
 
-    def _show_category_popup_opponent(self, current_matrix): # not communicating choice correctly
+    def _show_category_popup_opponent(self, current_matrix): #WAHOO
         # call category_choice_popup for the opponents
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
@@ -283,9 +290,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
 
     def _on_spins_did_update(self, game_state): #WAHOO
-        if self.game_state.spins_remaining <= 0:
-            self.spinButton.setEnabled(False)
-
         self.spinCountValue.setText(str(self.game_state.spins_remaining))
 
 
