@@ -166,7 +166,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
                 self.currentQuestion.setText(question)
         else:
             self.sectorOutput.setText("None")
-            #self.currentQuestion.setText("you landed on {}!".format(game_state.current_sector))
+            self.currentQuestion.setText("you landed on {}!".format(self.game_state.current_sector))
 
     @pyqtSlot() #WAHOO
     def on_submitAnswerButton_clicked(self):
@@ -253,17 +253,17 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         font.setBold(bold)
         label.setFont(font)
 
-    def _show_category_popup_player(self, jeopardy_board): # not communicating choice correctly
+    def _show_category_popup_player(self, current_matrix): # not communicating choice correctly
         # call category_choice_popup for the current player
         #
-        self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
+        self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
         self.dialog.titleLabel.setText("current player, choose a category!")
         self.dialog.exec_()
 
-    def _show_category_popup_opponent(self, jeopardy_board): # not communicating choice correctly
+    def _show_category_popup_opponent(self, current_matrix): # not communicating choice correctly
         # call category_choice_popup for the opponents
         #
-        self.dialog = CategoryChoicePopup(events=self.events, categories=self.jeopardy_board.headers, parent=self)
+        self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
         self.dialog.titleLabel.setText("opponents, collaborate and choose a category!")
         self.dialog.exec_()
 
