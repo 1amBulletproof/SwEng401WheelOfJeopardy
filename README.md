@@ -63,7 +63,7 @@ python -m wheelofjeopardy.gui.woj_application_window
 ```
 
 ### CHEAT (script the sector Order)
-Set the "spinSequence" in the Options.ini file, i.e. spinSequence = "spinSequence=1 2 12"
+Set the "spinSequence" in the Options.ini file, i.e. "spinSequence=1 2 12"
 
 ```bash
 # text-based GUI:
