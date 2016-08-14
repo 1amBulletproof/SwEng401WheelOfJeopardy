@@ -1,0 +1,940 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module woj_application_window</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>woj_application_window</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/woj_application_window.py">/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/woj_application_window.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;class&nbsp;that&nbsp;can&nbsp;be&nbsp;called&nbsp;to&nbsp;bring&nbsp;up&nbsp;the&nbsp;wojApplication&nbsp;gui.<br>
+&nbsp;<br>
+@author&nbsp;=&nbsp;Miranda&nbsp;Link,&nbsp;mirandanlink@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>(<a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="woj_application_window.html#WojApplicationWindow">WojApplicationWindow</a>(<a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>, <a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="woj_application_window.html#GuiPlayer">GuiPlayer</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="woj_application_window.html#WojApplicationWindow">WojApplicationWindow</a>(<a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>, <a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GuiPlayer">class <strong>GuiPlayer</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GuiPlayer-__init__"><strong>__init__</strong></a>(self, player_state, name_label, score_label, token_label)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="WojApplicationWindow">class <strong>WojApplicationWindow</strong></a>(<a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>, <a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="woj_application_window.html#WojApplicationWindow">WojApplicationWindow</a></dd>
+<dd><a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a></dd>
+<dd><a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a></dd>
+<dd><a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="WojApplicationWindow-__init__"><strong>__init__</strong></a>(self, events, parent<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="WojApplicationWindow-on_spinButton_clicked"><strong>on_spinButton_clicked</strong></a>(self)</dt><dd><tt>#&nbsp;Methods&nbsp;that&nbsp;run&nbsp;on&nbsp;specific&nbsp;button&nbsp;clicks</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-on_submitAnswerButton_clicked"><strong>on_submitAnswerButton_clicked</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="WojApplicationWindow-populate_board"><strong>populate_board</strong></a>(self, question_matrix)</dt><dd><tt>#&nbsp;functions&nbsp;that&nbsp;are&nbsp;just&nbsp;being&nbsp;functions</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>:<br>
+<dl><dt><a name="WojApplicationWindow-addDockWidget"><strong>addDockWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-addDockWidget">addDockWidget</a>(self,&nbsp;Qt.DockWidgetArea,&nbsp;QDockWidget)<br>
+<a href="#WojApplicationWindow-addDockWidget">addDockWidget</a>(self,&nbsp;Qt.DockWidgetArea,&nbsp;QDockWidget,&nbsp;Qt.Orientation)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-addToolBar"><strong>addToolBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-addToolBar">addToolBar</a>(self,&nbsp;Qt.ToolBarArea,&nbsp;QToolBar)<br>
+<a href="#WojApplicationWindow-addToolBar">addToolBar</a>(self,&nbsp;QToolBar)<br>
+<a href="#WojApplicationWindow-addToolBar">addToolBar</a>(self,&nbsp;QString)&nbsp;-&gt;&nbsp;QToolBar</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-addToolBarBreak"><strong>addToolBarBreak</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-addToolBarBreak">addToolBarBreak</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea&nbsp;=&nbsp;Qt.TopToolBarArea)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-centralWidget"><strong>centralWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-centralWidget">centralWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-corner"><strong>corner</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-corner">corner</a>(self,&nbsp;Qt.Corner)&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-createPopupMenu"><strong>createPopupMenu</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-createPopupMenu">createPopupMenu</a>(self)&nbsp;-&gt;&nbsp;QMenu</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dockOptions"><strong>dockOptions</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dockOptions">dockOptions</a>(self)&nbsp;-&gt;&nbsp;<a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.DockOptions</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dockWidgetArea"><strong>dockWidgetArea</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dockWidgetArea">dockWidgetArea</a>(self,&nbsp;QDockWidget)&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-documentMode"><strong>documentMode</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-documentMode">documentMode</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-iconSize"><strong>iconSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-iconSize">iconSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<strong>iconSizeChanged</strong> = &lt;unbound signal iconSizeChanged&gt;
+<dl><dt><a name="WojApplicationWindow-insertToolBar"><strong>insertToolBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-insertToolBar">insertToolBar</a>(self,&nbsp;QToolBar,&nbsp;QToolBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-insertToolBarBreak"><strong>insertToolBarBreak</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-insertToolBarBreak">insertToolBarBreak</a>(self,&nbsp;QToolBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isAnimated"><strong>isAnimated</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isAnimated">isAnimated</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isDockNestingEnabled"><strong>isDockNestingEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isDockNestingEnabled">isDockNestingEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isSeparator"><strong>isSeparator</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isSeparator">isSeparator</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-menuBar"><strong>menuBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-menuBar">menuBar</a>(self)&nbsp;-&gt;&nbsp;QMenuBar</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-menuWidget"><strong>menuWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-menuWidget">menuWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-removeDockWidget"><strong>removeDockWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-removeDockWidget">removeDockWidget</a>(self,&nbsp;QDockWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-removeToolBar"><strong>removeToolBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-removeToolBar">removeToolBar</a>(self,&nbsp;QToolBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-removeToolBarBreak"><strong>removeToolBarBreak</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-removeToolBarBreak">removeToolBarBreak</a>(self,&nbsp;QToolBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-restoreDockWidget"><strong>restoreDockWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-restoreDockWidget">restoreDockWidget</a>(self,&nbsp;QDockWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-restoreState"><strong>restoreState</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-restoreState">restoreState</a>(self,&nbsp;QByteArray,&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-saveState"><strong>saveState</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-saveState">saveState</a>(self,&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAnimated"><strong>setAnimated</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAnimated">setAnimated</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setCentralWidget"><strong>setCentralWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setCentralWidget">setCentralWidget</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setCorner"><strong>setCorner</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setCorner">setCorner</a>(self,&nbsp;Qt.Corner,&nbsp;Qt.DockWidgetArea)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setDockNestingEnabled"><strong>setDockNestingEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setDockNestingEnabled">setDockNestingEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setDockOptions"><strong>setDockOptions</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setDockOptions">setDockOptions</a>(self,&nbsp;<a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.DockOptions)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setDocumentMode"><strong>setDocumentMode</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setDocumentMode">setDocumentMode</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setIconSize"><strong>setIconSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setIconSize">setIconSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMenuBar"><strong>setMenuBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMenuBar">setMenuBar</a>(self,&nbsp;QMenuBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMenuWidget"><strong>setMenuWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMenuWidget">setMenuWidget</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setStatusBar"><strong>setStatusBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setStatusBar">setStatusBar</a>(self,&nbsp;QStatusBar)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setTabPosition"><strong>setTabPosition</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setTabPosition">setTabPosition</a>(self,&nbsp;Qt.DockWidgetAreas,&nbsp;QTabWidget.TabPosition)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setTabShape"><strong>setTabShape</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setTabShape">setTabShape</a>(self,&nbsp;QTabWidget.TabShape)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setToolButtonStyle"><strong>setToolButtonStyle</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setToolButtonStyle">setToolButtonStyle</a>(self,&nbsp;Qt.ToolButtonStyle)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setUnifiedTitleAndToolBarOnMac"><strong>setUnifiedTitleAndToolBarOnMac</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setUnifiedTitleAndToolBarOnMac">setUnifiedTitleAndToolBarOnMac</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-splitDockWidget"><strong>splitDockWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-splitDockWidget">splitDockWidget</a>(self,&nbsp;QDockWidget,&nbsp;QDockWidget,&nbsp;Qt.Orientation)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-statusBar"><strong>statusBar</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-statusBar">statusBar</a>(self)&nbsp;-&gt;&nbsp;QStatusBar</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tabPosition"><strong>tabPosition</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tabPosition">tabPosition</a>(self,&nbsp;Qt.DockWidgetArea)&nbsp;-&gt;&nbsp;QTabWidget.TabPosition</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tabShape"><strong>tabShape</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tabShape">tabShape</a>(self)&nbsp;-&gt;&nbsp;QTabWidget.TabShape</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tabifiedDockWidgets"><strong>tabifiedDockWidgets</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tabifiedDockWidgets">tabifiedDockWidgets</a>(self,&nbsp;QDockWidget)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tabifyDockWidget"><strong>tabifyDockWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tabifyDockWidget">tabifyDockWidget</a>(self,&nbsp;QDockWidget,&nbsp;QDockWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-toolBarArea"><strong>toolBarArea</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-toolBarArea">toolBarArea</a>(self,&nbsp;QToolBar)&nbsp;-&gt;&nbsp;Qt.ToolBarArea</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-toolBarBreak"><strong>toolBarBreak</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-toolBarBreak">toolBarBreak</a>(self,&nbsp;QToolBar)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-toolButtonStyle"><strong>toolButtonStyle</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-toolButtonStyle">toolButtonStyle</a>(self)&nbsp;-&gt;&nbsp;Qt.ToolButtonStyle</tt></dd></dl>
+
+<strong>toolButtonStyleChanged</strong> = &lt;unbound signal toolButtonStyleChanged&gt;
+<dl><dt><a name="WojApplicationWindow-unifiedTitleAndToolBarOnMac"><strong>unifiedTitleAndToolBarOnMac</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-unifiedTitleAndToolBarOnMac">unifiedTitleAndToolBarOnMac</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QMainWindow">PyQt4.QtGui.QMainWindow</a>:<br>
+<dl><dt><strong>AllowNestedDocks</strong> = 2</dl>
+
+<dl><dt><strong>AllowTabbedDocks</strong> = 4</dl>
+
+<dl><dt><strong>AnimatedDocks</strong> = 1</dl>
+
+<dl><dt><strong>DockOption</strong> = &lt;class 'PyQt4.QtGui.DockOption'&gt;</dl>
+
+<dl><dt><strong>DockOptions</strong> = &lt;class 'PyQt4.QtGui.DockOptions'&gt;<dd><tt><a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.<a href="#WojApplicationWindow-DockOptions">DockOptions</a>(<a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.DockOptions)<br>
+<a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.<a href="#WojApplicationWindow-DockOptions">DockOptions</a>(int)<br>
+<a href="PyQt4.QtGui.html#QMainWindow">QMainWindow</a>.<a href="#WojApplicationWindow-DockOptions">DockOptions</a>()</tt></dl>
+
+<dl><dt><strong>ForceTabbedDocks</strong> = 8</dl>
+
+<dl><dt><strong>VerticalTabs</strong> = 16</dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><a name="WojApplicationWindow-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-actions">actions</a>(self)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-addActions">addActions</a>(self,&nbsp;<a href="__builtin__.html#object">object</a>)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#WojApplicationWindow-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-closeEvent">closeEvent</a>(self,&nbsp;QCloseEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-create">create</a>(self,&nbsp;window:&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound signal customContextMenuRequested&gt;
+<dl><dt><a name="WojApplicationWindow-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-find">find</a>(<a href="__builtin__.html#object">object</a>)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-geometry"><strong>geometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlags&nbsp;=&nbsp;Qt.GestureFlags(0))</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-grabMouse">grabMouse</a>(self)<br>
+<a href="#WojApplicationWindow-grabMouse">grabMouse</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-grabShortcut">grabShortcut</a>(self,&nbsp;QKeySequence,&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;<a href="__builtin__.html#object">object</a>)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isEnabledToTLW"><strong>isEnabledToTLW</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isEnabledToTLW">isEnabledToTLW</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isTopLevel"><strong>isTopLevel</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isTopLevel">isTopLevel</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#WojApplicationWindow-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-nativeEvent">nativeEvent</a>(self,&nbsp;QByteArray,&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-overrideWindowState">overrideWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-redirected"><strong>redirected</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-redirected">redirected</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPaintDevice</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)<br>
+<a href="#WojApplicationWindow-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-repaint">repaint</a>(self)<br>
+<a href="#WojApplicationWindow-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#WojApplicationWindow-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#WojApplicationWindow-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-resizeEvent">resizeEvent</a>(self,&nbsp;QResizeEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-restoreGeometry">restoreGeometry</a>(self,&nbsp;QByteArray)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAccessibleName">setAccessibleName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setCursor">setCursor</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#WojApplicationWindow-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFocus">setFocus</a>(self)<br>
+<a href="#WojApplicationWindow-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#WojApplicationWindow-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Qt.InputMethodHints)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#WojApplicationWindow-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#WojApplicationWindow-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#WojApplicationWindow-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#WojApplicationWindow-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setStatusTip">setStatusTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setStyleSheet">setStyleSheet</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setToolTip">setToolTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWhatsThis">setWhatsThis</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowFlags">setWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowIconText">setWindowIconText</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowRole">setWindowRole</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowState">setWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setWindowTitle">setWindowTitle</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-topLevelWidget"><strong>topLevelWidget</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-topLevelWidget">topLevelWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-update">update</a>(self)<br>
+<a href="#WojApplicationWindow-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#WojApplicationWindow-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#WojApplicationWindow-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-winId">winId</a>(self)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt4.QtGui.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt4.QtGui.RenderFlags'&gt;<dd><tt>QWidget.<a href="#WojApplicationWindow-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)<br>
+QWidget.<a href="#WojApplicationWindow-RenderFlags">RenderFlags</a>(int)<br>
+QWidget.<a href="#WojApplicationWindow-RenderFlags">RenderFlags</a>()</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><a name="WojApplicationWindow-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-children">children</a>(self)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-connect"><strong>connect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a><br>
+<a href="#WojApplicationWindow-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None],&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a><br>
+<a href="#WojApplicationWindow-connect">connect</a>(self,&nbsp;QObject,&nbsp;QT_SIGNAL,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound signal destroyed&gt;
+<dl><dt><a name="WojApplicationWindow-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a><br>
+<a href="#WojApplicationWindow-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None])&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-emit"><strong>emit</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-emit">emit</a>(self,&nbsp;QT_SIGNAL,&nbsp;*)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a><br>
+<a href="#WojApplicationWindow-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#WojApplicationWindow-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#WojApplicationWindow-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List<br>
+<a href="#WojApplicationWindow-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound signal objectNameChanged&gt;
+<dl><dt><a name="WojApplicationWindow-parent"><strong>parent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-parent">parent</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#WojApplicationWindow-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-receivers">receivers</a>(self,&nbsp;QT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setObjectName">setObjectName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;QVariant)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-trUtf8"><strong>trUtf8</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-trUtf8">trUtf8</a>(self,&nbsp;<a href="__builtin__.html#object">object</a>,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>staticMetaObject</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="WojApplicationWindow-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="WojApplicationWindow-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#WojApplicationWindow-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt4.QtGui.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of sip.wrappertype object&gt;<dd><tt>T.<a href="#WojApplicationWindow-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="wheelofjeopardy.gui.pyqt.ui_woj_application_window.html#Ui_WojApplicationWindow">wheelofjeopardy.gui.pyqt.ui_woj_application_window.Ui_WojApplicationWindow</a>:<br>
+<dl><dt><a name="WojApplicationWindow-retranslateUi"><strong>retranslateUi</strong></a>(self, WojApplicationWindow)</dt></dl>
+
+<dl><dt><a name="WojApplicationWindow-setupUi"><strong>setupUi</strong></a>(self, WojApplicationWindow)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;str&nbsp;name=None,&nbsp;str&nbsp;result=None)<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+</td></tr></table>
+</body></html>

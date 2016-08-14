@@ -1,0 +1,869 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module daily_double_popup</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>daily_double_popup</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/daily_double_popup.py">/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/daily_double_popup.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;clas&nbsp;that&nbsp;can&nbsp;be&nbsp;called&nbsp;when&nbsp;a&nbsp;daily&nbsp;double&nbsp;square&nbsp;has&nbsp;been&nbsp;landed&nbsp;on<br>
+&nbsp;<br>
+@author&nbsp;=&nbsp;Miranda&nbsp;Link,&nbsp;mirandanlink@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>(<a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="daily_double_popup.html#DailyDoublePopup">DailyDoublePopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="daily_double_popup.html#DailyDoublePopup">DailyDoublePopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DailyDoublePopup">class <strong>DailyDoublePopup</strong></a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="daily_double_popup.html#DailyDoublePopup">DailyDoublePopup</a></dd>
+<dd><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a></dd>
+<dd><a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a></dd>
+<dd><a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DailyDoublePopup-__init__"><strong>__init__</strong></a>(self, events, min_wager, max_wager, parent<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><a name="DailyDoublePopup-accept"><strong>accept</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-accept">accept</a>(self)</tt></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound signal accepted&gt;
+<dl><dt><a name="DailyDoublePopup-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-closeEvent">closeEvent</a>(self,&nbsp;QCloseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-extension"><strong>extension</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-extension">extension</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound signal finished&gt;
+<dl><dt><a name="DailyDoublePopup-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-orientation"><strong>orientation</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-orientation">orientation</a>(self)&nbsp;-&gt;&nbsp;Qt.Orientation</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound signal rejected&gt;
+<dl><dt><a name="DailyDoublePopup-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-resizeEvent">resizeEvent</a>(self,&nbsp;QResizeEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setExtension"><strong>setExtension</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setExtension">setExtension</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setOrientation"><strong>setOrientation</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setOrientation">setOrientation</a>(self,&nbsp;Qt.Orientation)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showExtension"><strong>showExtension</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showExtension">showExtension</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt4.QtGui.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><a name="DailyDoublePopup-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-actions">actions</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-addActions">addActions</a>(self,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#DailyDoublePopup-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-create">create</a>(self,&nbsp;window:&nbsp;object&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound signal customContextMenuRequested&gt;
+<dl><dt><a name="DailyDoublePopup-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-find">find</a>(object)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-geometry"><strong>geometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlags&nbsp;=&nbsp;Qt.GestureFlags(0))</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-grabMouse">grabMouse</a>(self)<br>
+<a href="#DailyDoublePopup-grabMouse">grabMouse</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-grabShortcut">grabShortcut</a>(self,&nbsp;QKeySequence,&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isEnabledToTLW"><strong>isEnabledToTLW</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isEnabledToTLW">isEnabledToTLW</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isTopLevel"><strong>isTopLevel</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isTopLevel">isTopLevel</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#DailyDoublePopup-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-nativeEvent">nativeEvent</a>(self,&nbsp;QByteArray,&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-overrideWindowState">overrideWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-redirected"><strong>redirected</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-redirected">redirected</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPaintDevice</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)<br>
+<a href="#DailyDoublePopup-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-repaint">repaint</a>(self)<br>
+<a href="#DailyDoublePopup-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#DailyDoublePopup-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#DailyDoublePopup-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-restoreGeometry">restoreGeometry</a>(self,&nbsp;QByteArray)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setAccessibleName">setAccessibleName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setCursor">setCursor</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#DailyDoublePopup-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFocus">setFocus</a>(self)<br>
+<a href="#DailyDoublePopup-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#DailyDoublePopup-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Qt.InputMethodHints)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#DailyDoublePopup-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#DailyDoublePopup-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DailyDoublePopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#DailyDoublePopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setStatusTip">setStatusTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setStyleSheet">setStyleSheet</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setToolTip">setToolTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWhatsThis">setWhatsThis</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowFlags">setWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowIconText">setWindowIconText</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowRole">setWindowRole</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowState">setWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setWindowTitle">setWindowTitle</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-topLevelWidget"><strong>topLevelWidget</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-topLevelWidget">topLevelWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-update">update</a>(self)<br>
+<a href="#DailyDoublePopup-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#DailyDoublePopup-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#DailyDoublePopup-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-winId">winId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt4.QtGui.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt4.QtGui.RenderFlags'&gt;<dd><tt>QWidget.<a href="#DailyDoublePopup-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)<br>
+QWidget.<a href="#DailyDoublePopup-RenderFlags">RenderFlags</a>(int)<br>
+QWidget.<a href="#DailyDoublePopup-RenderFlags">RenderFlags</a>()</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><a name="DailyDoublePopup-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-children">children</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-connect"><strong>connect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#DailyDoublePopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None],&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#DailyDoublePopup-connect">connect</a>(self,&nbsp;QObject,&nbsp;QT_SIGNAL,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound signal destroyed&gt;
+<dl><dt><a name="DailyDoublePopup-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL)&nbsp;-&gt;&nbsp;object<br>
+<a href="#DailyDoublePopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None])&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-emit"><strong>emit</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-emit">emit</a>(self,&nbsp;QT_SIGNAL,&nbsp;*)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object<br>
+<a href="#DailyDoublePopup-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#DailyDoublePopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#DailyDoublePopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List<br>
+<a href="#DailyDoublePopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound signal objectNameChanged&gt;
+<dl><dt><a name="DailyDoublePopup-parent"><strong>parent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-parent">parent</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#DailyDoublePopup-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-receivers">receivers</a>(self,&nbsp;QT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setObjectName">setObjectName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;QVariant)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-trUtf8"><strong>trUtf8</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-trUtf8">trUtf8</a>(self,&nbsp;object,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>staticMetaObject</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="DailyDoublePopup-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DailyDoublePopup-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#DailyDoublePopup-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt4.QtGui.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of sip.wrappertype object&gt;<dd><tt>T.<a href="#DailyDoublePopup-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="wheelofjeopardy.gui.pyqt.ui_daily_double_popup.html#Ui_DailyDoublePopup">wheelofjeopardy.gui.pyqt.ui_daily_double_popup.Ui_DailyDoublePopup</a>:<br>
+<dl><dt><a name="DailyDoublePopup-retranslateUi"><strong>retranslateUi</strong></a>(self, DailyDoublePopup)</dt></dl>
+
+<dl><dt><a name="DailyDoublePopup-setupUi"><strong>setupUi</strong></a>(self, DailyDoublePopup)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix,&nbsp;QMatrix)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSwap"><strong>qSwap</strong></a>(...)</dt><dd><tt><a href="#-qSwap">qSwap</a>(QBitmap,&nbsp;QBitmap)<br>
+<a href="#-qSwap">qSwap</a>(QBrush,&nbsp;QBrush)<br>
+<a href="#-qSwap">qSwap</a>(QIcon,&nbsp;QIcon)<br>
+<a href="#-qSwap">qSwap</a>(QImage,&nbsp;QImage)<br>
+<a href="#-qSwap">qSwap</a>(QKeySequence,&nbsp;QKeySequence)<br>
+<a href="#-qSwap">qSwap</a>(QPen,&nbsp;QPen)<br>
+<a href="#-qSwap">qSwap</a>(QPicture,&nbsp;QPicture)<br>
+<a href="#-qSwap">qSwap</a>(QPixmap,&nbsp;QPixmap)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>qApp</strong> = &lt;PyQt4.QtGui.QApplication object&gt;</td></tr></table>
+</body></html>

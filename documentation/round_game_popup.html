@@ -1,0 +1,877 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module round_game_popup</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>round_game_popup</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/round_game_popup.py">/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/round_game_popup.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;class&nbsp;called&nbsp;when&nbsp;a&nbsp;round&nbsp;or&nbsp;the&nbsp;game&nbsp;is&nbsp;over.<br>
+&nbsp;<br>
+@author&nbsp;=&nbsp;Miranda&nbsp;Link,&nbsp;mirandanlink@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>(<a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="round_game_popup.html#RoundGamePopup">RoundGamePopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="round_game_popup.html#RoundGamePopup">RoundGamePopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RoundGamePopup">class <strong>RoundGamePopup</strong></a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="round_game_popup.html#RoundGamePopup">RoundGamePopup</a></dd>
+<dd><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a></dd>
+<dd><a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a></dd>
+<dd><a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RoundGamePopup-__init__"><strong>__init__</strong></a>(self, events, round<font color="#909090">=False</font>, winner<font color="#909090">=None</font>, parent<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><a name="RoundGamePopup-accept"><strong>accept</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-accept">accept</a>(self)</tt></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound signal accepted&gt;
+<dl><dt><a name="RoundGamePopup-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-closeEvent">closeEvent</a>(self,&nbsp;QCloseEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-extension"><strong>extension</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-extension">extension</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound signal finished&gt;
+<dl><dt><a name="RoundGamePopup-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-orientation"><strong>orientation</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-orientation">orientation</a>(self)&nbsp;-&gt;&nbsp;Qt.Orientation</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound signal rejected&gt;
+<dl><dt><a name="RoundGamePopup-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-resizeEvent">resizeEvent</a>(self,&nbsp;QResizeEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setExtension"><strong>setExtension</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setExtension">setExtension</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setOrientation"><strong>setOrientation</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setOrientation">setOrientation</a>(self,&nbsp;Qt.Orientation)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showExtension"><strong>showExtension</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showExtension">showExtension</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt4.QtGui.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><a name="RoundGamePopup-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-actions">actions</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-addActions">addActions</a>(self,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#RoundGamePopup-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-create">create</a>(self,&nbsp;window:&nbsp;object&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound signal customContextMenuRequested&gt;
+<dl><dt><a name="RoundGamePopup-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-find">find</a>(object)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-geometry"><strong>geometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlags&nbsp;=&nbsp;Qt.GestureFlags(0))</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-grabMouse">grabMouse</a>(self)<br>
+<a href="#RoundGamePopup-grabMouse">grabMouse</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-grabShortcut">grabShortcut</a>(self,&nbsp;QKeySequence,&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isEnabledToTLW"><strong>isEnabledToTLW</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isEnabledToTLW">isEnabledToTLW</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isTopLevel"><strong>isTopLevel</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isTopLevel">isTopLevel</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#RoundGamePopup-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-nativeEvent">nativeEvent</a>(self,&nbsp;QByteArray,&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-overrideWindowState">overrideWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-redirected"><strong>redirected</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-redirected">redirected</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPaintDevice</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)<br>
+<a href="#RoundGamePopup-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-repaint">repaint</a>(self)<br>
+<a href="#RoundGamePopup-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#RoundGamePopup-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#RoundGamePopup-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-restoreGeometry">restoreGeometry</a>(self,&nbsp;QByteArray)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setAccessibleName">setAccessibleName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setCursor">setCursor</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#RoundGamePopup-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFocus">setFocus</a>(self)<br>
+<a href="#RoundGamePopup-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#RoundGamePopup-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Qt.InputMethodHints)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#RoundGamePopup-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#RoundGamePopup-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#RoundGamePopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#RoundGamePopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setStatusTip">setStatusTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setStyleSheet">setStyleSheet</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setToolTip">setToolTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWhatsThis">setWhatsThis</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowFlags">setWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowIconText">setWindowIconText</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowRole">setWindowRole</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowState">setWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setWindowTitle">setWindowTitle</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-topLevelWidget"><strong>topLevelWidget</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-topLevelWidget">topLevelWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-update">update</a>(self)<br>
+<a href="#RoundGamePopup-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#RoundGamePopup-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#RoundGamePopup-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-winId">winId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt4.QtGui.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt4.QtGui.RenderFlags'&gt;<dd><tt>QWidget.<a href="#RoundGamePopup-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)<br>
+QWidget.<a href="#RoundGamePopup-RenderFlags">RenderFlags</a>(int)<br>
+QWidget.<a href="#RoundGamePopup-RenderFlags">RenderFlags</a>()</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><a name="RoundGamePopup-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-children">children</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-connect"><strong>connect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#RoundGamePopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None],&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#RoundGamePopup-connect">connect</a>(self,&nbsp;QObject,&nbsp;QT_SIGNAL,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound signal destroyed&gt;
+<dl><dt><a name="RoundGamePopup-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL)&nbsp;-&gt;&nbsp;object<br>
+<a href="#RoundGamePopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None])&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-emit"><strong>emit</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-emit">emit</a>(self,&nbsp;QT_SIGNAL,&nbsp;*)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object<br>
+<a href="#RoundGamePopup-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#RoundGamePopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#RoundGamePopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List<br>
+<a href="#RoundGamePopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound signal objectNameChanged&gt;
+<dl><dt><a name="RoundGamePopup-parent"><strong>parent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-parent">parent</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#RoundGamePopup-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-receivers">receivers</a>(self,&nbsp;QT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setObjectName">setObjectName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;QVariant)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-trUtf8"><strong>trUtf8</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-trUtf8">trUtf8</a>(self,&nbsp;object,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>staticMetaObject</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="RoundGamePopup-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="RoundGamePopup-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#RoundGamePopup-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt4.QtGui.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of sip.wrappertype object&gt;<dd><tt>T.<a href="#RoundGamePopup-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="wheelofjeopardy.gui.pyqt.ui_round_game_over.html#Ui_RoundGamePopup">wheelofjeopardy.gui.pyqt.ui_round_game_over.Ui_RoundGamePopup</a>:<br>
+<dl><dt><a name="RoundGamePopup-retranslateUi"><strong>retranslateUi</strong></a>(self, RoundGamePopup)</dt></dl>
+
+<dl><dt><a name="RoundGamePopup-setupUi"><strong>setupUi</strong></a>(self, RoundGamePopup)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;str&nbsp;name=None,&nbsp;str&nbsp;result=None)<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix,&nbsp;QMatrix)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSwap"><strong>qSwap</strong></a>(...)</dt><dd><tt><a href="#-qSwap">qSwap</a>(QBitmap,&nbsp;QBitmap)<br>
+<a href="#-qSwap">qSwap</a>(QBrush,&nbsp;QBrush)<br>
+<a href="#-qSwap">qSwap</a>(QIcon,&nbsp;QIcon)<br>
+<a href="#-qSwap">qSwap</a>(QImage,&nbsp;QImage)<br>
+<a href="#-qSwap">qSwap</a>(QKeySequence,&nbsp;QKeySequence)<br>
+<a href="#-qSwap">qSwap</a>(QPen,&nbsp;QPen)<br>
+<a href="#-qSwap">qSwap</a>(QPicture,&nbsp;QPicture)<br>
+<a href="#-qSwap">qSwap</a>(QPixmap,&nbsp;QPixmap)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>qApp</strong> = &lt;PyQt4.QtGui.QApplication object&gt;</td></tr></table>
+</body></html>
