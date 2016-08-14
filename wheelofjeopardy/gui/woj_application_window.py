@@ -111,6 +111,9 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
+        self.events.subscribe('question_timer.tick', self._on_question_timer_tick)
+        self.events.subscribe('question_timer.has_expired', self._on_question_timer_has_expired)
+
         # put image behind wheel
         #
 
@@ -119,6 +122,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
+        self.timeRemainingValue.setText("")
+
         self.wheel_view = WheelView(self.wheelView)
         self.wheel_view.on_finished = self._on_wheel_spin_finished
 
@@ -173,6 +178,12 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText(question.category_header)
         self.currentQuestion.setText(question.text)
 
+    def _on_question_timer_tick(self, remaining):
+        self.timeRemainingValue.setText(str(remaining))
+
+    def _on_question_timer_has_expired(self):
+        print 'Expired!'
+
     def _on_check_answer(self, question, player_answer): #WAHOO
         # call moderator popup
         #
@@ -220,7 +231,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             parent=self
         )
         dialog.exec_()
-
 
     def _no_questions_left(self, category):
         self.currentQuestion.setText("no questions left in %s. spin again!" % category.name)

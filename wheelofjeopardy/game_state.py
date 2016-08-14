@@ -2,6 +2,7 @@
 Control and monitor the wheelofjeopardy game state
 """
 
+from wheelofjeopardy.question_timer import QuestionTimer
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.wheel import Wheel
 from wheelofjeopardy.fake_wheel import FakeWheel
@@ -14,10 +15,12 @@ class GameState(object):
         self.player_states = player_states
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
+
         if len(opts.programmed_spins) == 0: # no programmed spins
             self.wheel = Wheel()
         else: # wheel programmed to spin according to list
             self.wheel = FakeWheel(opts.programmed_spins)
+
         self.active_wager = None # placeholder
         self.current_round = 1
         self.current_category = None # these three will be set by methods
@@ -35,6 +38,10 @@ class GameState(object):
         self.events.subscribe('gui.use_free_token', self._on_use_free_token)
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
+
+        self.timer = QuestionTimer(
+            events=self.events, game_state=self, opts=opts
+        )
 
     def get_current_player(self):
         return self.player_states[self.current_player_index]
@@ -63,6 +70,12 @@ class GameState(object):
     def check_for_game_or_round_end(self):
         if self.has_game_ended() or self.has_round_ended():
             self.end_turn()
+
+    def start_timer(self):
+        self.timer.start()
+
+    def stop_timer(self):
+        self.timer.stop()
 
     def _cheat(self, sect):
         if not sect.isdigit():
