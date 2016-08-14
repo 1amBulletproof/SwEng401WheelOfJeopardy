@@ -25,7 +25,7 @@ class RoundGamePopup(QDialog, Ui_RoundGamePopup):
             self.winnerLabel.setText("")
         else:
             self.roundOrGameLabel.setText("The Game")
-            self.winnerLabel.setText("{} is the winner!".format(winner[0])
+            self.winnerLabel.setText("{} is the winner!".format(winner[0]))
 
 
 #Display GUI.

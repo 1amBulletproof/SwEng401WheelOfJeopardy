@@ -36,9 +36,7 @@ class Sector(object):
                     )
                 )
             else:
-                game_state.events.broadcast(
-                    'board_sector.question_will_be_asked', game_state.current_question
-                )
+                self._ask_question(game_state.current_question, game_state)
 
     """
     Methods to deal with answering question for board_sector,
@@ -88,10 +86,7 @@ class Sector(object):
             return
 
         game_state.active_wager = wager
-
-        game_state.events.broadcast(
-            'board_sector.question_will_be_asked', question
-        )
+        self._ask_question(question, game_state)
 
     def get_question_value(self, question, game_state):
         if question.is_daily_double():
@@ -100,6 +95,10 @@ class Sector(object):
             return question.point_value
 
     # private
+
+    def _ask_question(self, question, game_state):
+        game_state.events.broadcast('board_sector.question_will_be_asked', question)
+        game_state.start_timer()
 
     def _is_wager_in_bounds(self, wager, question, player):
         maximum = self._get_max_wager_amount(question, player)

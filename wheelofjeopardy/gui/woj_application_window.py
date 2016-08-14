@@ -107,6 +107,9 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
+        self.events.subscribe('question_timer.tick', self._on_question_timer_tick)
+        self.events.subscribe('question_timer.has_expired', self._on_question_timer_has_expired)
+
         # put image behind wheel
         #
 
@@ -115,6 +118,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
+        self.timeRemainingValue.setText("")
 
         # initialize variables - i.e. set up the entire board.
         #
@@ -164,6 +168,12 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             self.sectorOutput.setText("None")
             self.currentQuestion.setText("you landed on {}!".format(question.category_header))
 
+    def _on_question_timer_tick(self, remaining):
+        self.timeRemainingValue.setText(str(remaining))
+
+    def _on_question_timer_has_expired(self):
+        print 'Expired!'
+
     def _on_check_answer(self, question, player_answer): #WAHOO
         # call moderator popup
         #
@@ -188,8 +198,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
         print(player.state.free_spin_tokens)
-        player.token_label.setText(str(player.state.free_spin_tokens)) 
-        
+        player.token_label.setText(str(player.state.free_spin_tokens))
+
 
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
@@ -215,14 +225,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     def _no_questions_left(self):
         self.currentQuestion.setText("no questions left in this category. spin again!")
-        
+
 
     def _round_end(self, game_state):
         # start round 2 population
         #
         self.current_matrix = self.game_state.board._q_mat[1] # [0] means round 1
         self.populate_board(self.current_matrix)
-        
+
         dialog = RoundGamePopup(
             events=self.events, round=True, winner=None,
             parent=self
