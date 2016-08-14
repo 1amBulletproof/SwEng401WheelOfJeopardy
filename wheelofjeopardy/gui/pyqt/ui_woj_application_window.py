@@ -466,7 +466,7 @@ class Ui_WojApplicationWindow(object):
         self.category6Cell3.setObjectName(_fromUtf8("category6Cell3"))
         self.gridLayout_2.addWidget(self.category6Cell3, 4, 5, 1, 1)
         self.category6Cell1 = QtGui.QLabel(self.jeopardyMatrix)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.category6Cell1.sizePolicy().hasHeightForWidth())

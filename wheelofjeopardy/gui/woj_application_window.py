@@ -20,6 +20,7 @@ from wheelofjeopardy.gui.daily_double_popup import DailyDoublePopup
 from wheelofjeopardy.gui.token_popup import TokenPopup
 from wheelofjeopardy.gui.wheel_view import WheelView
 from wheelofjeopardy.gui.round_game_popup import RoundGamePopup
+from wheelofjeopardy.gui.time_out_popup import TimeOutPopup
 from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
 
@@ -72,12 +73,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             )
         ]
 
-        # create the game state
-        #
-        self.game_state = GameState(
-            [player.state for player in self.players], self.events, self.opts
-        )
-
         # subscriptions
         #
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
@@ -101,6 +96,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('sector.no_questions_in_category', self._no_questions_left)
 
         self.events.subscribe('question_timer.tick', self._on_question_timer_tick)
+        self.events.subscribe('question_timer.has_expired', self._on_time_ran_out)
+
+
+        # create the game state
+        #
+        self.game_state = GameState(
+            [player.state for player in self.players], self.events, self.opts
+        )
 
         # setup the player answer interface to not show "TextLabels" everywhere.
         #
@@ -211,6 +214,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
         player.token_label.setText(str(player.state.free_spin_tokens))
+
+    def _on_time_ran_out(self):
+        answer = self.game_state.current_question.answer
+        dialog = TimeOutPopup(
+            events=self.events, answer=answer, parent=self
+        )
+
+        dialog.exec_()
 
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
