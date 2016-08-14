@@ -92,10 +92,10 @@ class TextGUI(object):
         TextGUI._clear_terminal()
 
     def _on_sector_was_chosen(self, sector):
-        print('You spun %s.' % str(sector))
         self._clear_terminal()
-        self.events.broadcast('gui.trigger_sector_action', \
-                               self.game_state.current_sector)
+        self.events.broadcast(
+            'gui.trigger_sector_action', self.game_state.current_sector
+        )
 
     def _on_turn_will_end(self, game_state):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)

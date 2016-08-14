@@ -25,7 +25,6 @@ class WheelView(object):
         }
 
     def spin_to_sector(self, sector_name):
-        print "Spinning to sector: %s" % sector_name
         self.tl = QtCore.QTimeLine(5000)
         self.tl.setFrameRange(0, 100)
         self.tl.setEasingCurve(QtCore.QEasingCurve.InOutCubic)  # InOutQuart

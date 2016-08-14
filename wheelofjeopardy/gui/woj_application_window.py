@@ -170,9 +170,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         status_matrix = self.game_state.board._get_board_q_status()
         current_question = self.game_state.current_question
 
-        if current_question != None:
-            print 'row %d col %d' % (current_question.row, current_question.column)
-
         for row_idx, row in enumerate(status_matrix):
             for col_idx, visible in enumerate(row):
                 cell = self.cell_matrix[row_idx][col_idx]
@@ -206,7 +203,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         dialog.exec_()
 
-
     def _on_score_did_update(self, player_state):
         player = self._find_player(player_state)
         player.score_label.setText(str(player_state.score))
@@ -214,9 +210,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
-        print(player.state.free_spin_tokens)
         player.token_label.setText(str(player.state.free_spin_tokens))
-
 
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
@@ -224,7 +218,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
                 return idx
 
         return None
-
 
     def _find_player(self, player_state):
         idx = self._find_player_index(player_state)
