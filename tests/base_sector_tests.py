@@ -22,8 +22,8 @@ class TestSector(unittest.TestCase):
         self.category = Category()
 
         # check for game state setup events
-        self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
-        self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
+        # self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
+        # self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
 
         # clear out setup events
         self.events.reset()

@@ -6,7 +6,7 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class LoseTurnSector(Sector):
     def __init__ (self):
-        Sector.__init__(self, 'lose turn')
+        Sector.__init__(self, 'lose turn sector')
 
     def action(self, game_state):
         if game_state.get_current_player().has_free_spin_token():
