@@ -38,6 +38,8 @@ class GameState(object):
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
 
+        self.events.subscribe('question_timer.has_expired', self._question_timer_has_expired)
+
         self.timer = QuestionTimer(
             events=self.events, game_state=self, opts=opts
         )
@@ -147,6 +149,10 @@ class GameState(object):
 
     def _on_incorrect_answer_received(self, question):
         self.current_sector.received_incorrect_answer(self, question)
+
+    def _question_timer_has_expired(self):
+        # treat an expired timer the same as an incorrect answer
+        self.current_sector.received_incorrect_answer(self, self.current_question)
 
     def _on_use_free_token(self):
         self.current_sector.received_use_free_token(self)
