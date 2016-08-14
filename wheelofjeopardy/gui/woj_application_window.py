@@ -3,15 +3,12 @@ This is a class that can be called to bring up the wojApplication gui.
 
 @author = Miranda Link, mirandanlink@gmail.com
 '''
-# import pdb
 import random
 import time
 from os import sys
 
 from PyQt4.QtGui import QMainWindow, QApplication, QPixmap, QFrame
 from PyQt4.QtCore import pyqtSlot
-
-# this is the .py file spit out from PyQt
 from wheelofjeopardy.gui.pyqt.ui_woj_application_window import Ui_WojApplicationWindow
 from wheelofjeopardy.events import Events
 from wheelofjeopardy.game_state import GameState
@@ -90,7 +87,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # subscriptions
         #
-        ## self.events.subscribe('player_state.deactivate_square', self._deactivate_square) # animation
         self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
         self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
         self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
@@ -102,7 +98,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
         self.events.subscribe('sector.no_questions_in_category', self._no_questions_left)
         ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
-        ## self.events.subscribe('bankrupt_sector.update_score', self._zero_score) # do update score first
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.announce_winners', self._game_end)
         self.events.subscribe('game_state.round_did_end', self._round_end)
@@ -112,9 +107,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         self.events.subscribe('question_timer.tick', self._on_question_timer_tick)
         self.events.subscribe('question_timer.has_expired', self._on_question_timer_has_expired)
-
-        # put image behind wheel
-        #
 
         # setup the player answer interface to not show "TextLabels" everywhere.
         #
@@ -136,6 +128,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             player.name_label.setText(player.state.name)
 
         # Let's go!
+        #
         self.events.broadcast('gui.game_will_start')
 
     # Methods that run on specific button clicks
@@ -148,7 +141,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.broadcast('gui.spin')
         self.sectorOutput.setText("None")
 
-    @pyqtSlot() #WAHOO
+    @pyqtSlot()
     def on_submitAnswerButton_clicked(self):
         player_answer = self.playerAnswerEntryBox.toPlainText()
         print("submitting...")
@@ -215,7 +208,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_question_timer_has_expired(self):
         print 'Expired!'
 
-    def _on_check_answer(self, question, player_answer): #WAHOO
+    def _on_check_answer(self, question, player_answer): 
         # call moderator popup
         #
         print("checking...")
@@ -230,11 +223,9 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_score_did_update(self, player_state):
         player = self._find_player(player_state)
         player.score_label.setText(str(player_state.score))
-        # call clear answer area and deactivate square
+        # call clear answer area
         #
-        #square =
         self._clear_answer_area()
-        #self._deactivate_square(self, square)
 
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
@@ -278,7 +269,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         )
         dialog.exec_()
 
-    def _on_current_player_did_change(self, game_state): #WAHOO
+    def _on_current_player_did_change(self, game_state):
         # set the current player for the answer area
         #
         player = self.game_state.get_current_player()
@@ -297,36 +288,33 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         font.setBold(bold)
         label.setFont(font)
 
-    def _show_category_popup_player(self, current_matrix): #WAHOO
+    def _show_category_popup_player(self, current_matrix):
         # call category_choice_popup for the current player
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
         self.dialog.titleLabel.setText("current player, choose a category!")
         self.dialog.exec_()
 
-    def _show_category_popup_opponent(self, current_matrix): #WAHOO
+    def _show_category_popup_opponent(self, current_matrix):
         # call category_choice_popup for the opponents
         #
         self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
         self.dialog.titleLabel.setText("opponents, collaborate and choose a category!")
         self.dialog.exec_()
 
-
-    def _show_daily_double_popup(self, min_wager, max_wager): #WAHOO
+    def _show_daily_double_popup(self, min_wager, max_wager):
         # call daily_double_popup
         #
         self.dialog = DailyDoublePopup(events=self.events, min_wager=min_wager, max_wager=max_wager, parent=self)
         self.dialog.exec_()
 
-
-    def _show_token_popup(self): #WAHOO
+    def _show_token_popup(self):
         # call token_popup
         current_player = self.game_state.get_current_player().name
         self.dialog = TokenPopup(events=self.events, current_player=current_player, parent=self)
         self.dialog.exec_()
 
-
-    def _on_spins_did_update(self, game_state): #WAHOO
+    def _on_spins_did_update(self, game_state):
         self.spinCountValue.setText(str(self.game_state.spins_remaining))
 
 
