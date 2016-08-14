@@ -6,7 +6,7 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class PlayerChoiceSector(Sector):
     def __init__ (self):
-        Sector.__init__(self, "player choice sector")
+        Sector.__init__(self, "player's choice")
 
     def action(self, game_state):
         #gui is listening

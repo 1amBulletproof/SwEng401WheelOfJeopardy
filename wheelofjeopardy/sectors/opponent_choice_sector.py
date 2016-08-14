@@ -6,7 +6,7 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class OpponentChoiceSector(Sector):
     def __init__ (self):
-        Sector.__init__(self, "opponent choice sector")
+        Sector.__init__(self, "opponent's choice")
 
     def action(self, game_state):
         game_state.events.broadcast(
