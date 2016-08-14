@@ -31,8 +31,8 @@ class TestSector(unittest.TestCase):
 class TestBankruptSector(TestSector):
     def test_name(self):
         self.sector = bankrupt_sector.BankruptSector()
-        self.assertEqual(self.sector.name, "bankrupt sector")
-        self.assertEqual(str(self.sector), "bankrupt sector")
+        self.assertEqual(self.sector.name, "bankrupt")
+        self.assertEqual(str(self.sector), "bankrupt")
 
     def test_action(self):
         self.sector = bankrupt_sector.BankruptSector()
@@ -44,8 +44,8 @@ class TestBankruptSector(TestSector):
 class TestFreeSpin(TestSector):
     def test_name(self):
         self.sector = free_spin_sector.FreeSpinSector()
-        self.assertEqual(self.sector.name, "free spin sector")
-        self.assertEqual(str(self.sector), "free spin sector")
+        self.assertEqual(self.sector.name, "free spin")
+        self.assertEqual(str(self.sector), "free spin")
 
     def test_action(self):
         self.sector = free_spin_sector.FreeSpinSector()
@@ -56,16 +56,16 @@ class TestFreeSpin(TestSector):
 class TestLoseTurnSector(TestSector):
     def test_name(self):
         self.sector = lose_turn_sector.LoseTurnSector()
-        self.assertEqual(self.sector.name, "lose turn sector")
-        self.assertEqual(str(self.sector), "lose turn sector")
+        self.assertEqual(self.sector.name, "lose turn")
+        self.assertEqual(str(self.sector), "lose turn")
 
     # def test_action(self):
 
 class TestSpinAgainSector(TestSector):
     def test_name(self):
         self.sector = spin_again_sector.SpinAgainSector()
-        self.assertEqual(self.sector.name, "spin again sector")
-        self.assertEqual(str(self.sector), "spin again sector")
+        self.assertEqual(self.sector.name, "spin again")
+        self.assertEqual(str(self.sector), "spin again")
 
     # def test_action(self):
 
@@ -73,8 +73,8 @@ class TestSpinAgainSector(TestSector):
 class TestOpponentChoiceSector(TestSector):
     def test_name(self):
         self.sector = opponent_choice_sector.OpponentChoiceSector()
-        self.assertEqual(self.sector.name, "opponent choice sector")
-        self.assertEqual(str(self.sector), "opponent choice sector")
+        self.assertEqual(self.sector.name, "opponent's choice")
+        self.assertEqual(str(self.sector), "opponent's choice")
 
     # def test_action(self):
 
@@ -82,8 +82,8 @@ class TestOpponentChoiceSector(TestSector):
 class TestPlayerChoiceSector(TestSector):
     def test_name(self):
         self.sector = player_choice_sector.PlayerChoiceSector()
-        self.assertEqual(self.sector.name, "player choice sector")
-        self.assertEqual(str(self.sector), "player choice sector")
+        self.assertEqual(self.sector.name, "player's choice")
+        self.assertEqual(str(self.sector), "player's choice")
 
     # def test_action(self):
 
