@@ -43,13 +43,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             [self.category1Cell5, self.category2Cell5, self.category3Cell5, self.category4Cell5, self.category5Cell5, self.category6Cell5],
         ]
 
-        self.sector_category_map = [
-            [1, 'category1'],  [2, 'category2'],       [3, 'category3'],
-            [4, 'category4'],  [5, 'category5'],       [6, 'category6'],
-            [7, 'Bankrupt'],   [8, 'FreeSpin'],        [9, 'LoseTurn'],
-            [10, 'SpinAgain'], [11, 'OpponentChoice'], [12, 'PlayerChoice']
-        ]
-
         self.players = [
             GuiPlayer(
                 name_label=self.player1Name,
@@ -87,26 +80,27 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         # subscriptions
         #
-        self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
-        self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
-        self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
-        self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
-        ## self.events.subscribe('board_sector.received_invalid_wager', self._show_daily_double_popup)
-        self.events.subscribe('player_state.spin_tokens_did_update', self._on_spin_tokens_did_update)
-        self.events.subscribe('player_state.score_did_update', self._on_score_did_update)
-        self.events.subscribe('player_state.score_did_update', self._clear_answer_area)
-        self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
-        self.events.subscribe('sector.no_questions_in_category', self._no_questions_left)
-        ## self.events.subscribe('unknown', self._refire_token_popup) # not created yet
         self.events.subscribe('game_state.spins_did_update', self._on_spins_did_update)
         self.events.subscribe('game_state.announce_winners', self._game_end)
         self.events.subscribe('game_state.round_did_end', self._round_end)
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
         self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
+
+        self.events.subscribe('player_state.spin_tokens_did_update', self._on_spin_tokens_did_update)
+        self.events.subscribe('player_state.score_did_update', self._on_score_did_update)
+        self.events.subscribe('player_state.score_did_update', self._clear_answer_area)
+
+        self.events.subscribe('player_choice_sector.choose_category', self._show_category_popup_player)
+        self.events.subscribe('opponent_choice_sector.choose_category', self._show_category_popup_opponent)
+
+        self.events.subscribe('board_sector.prompt_for_wager', self._show_daily_double_popup)
+        self.events.subscribe('board_sector.question_will_be_asked', self._on_question_will_be_asked)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
+        self.events.subscribe('sector.prompt_for_token_use', self._show_token_popup)
+        self.events.subscribe('sector.no_questions_in_category', self._no_questions_left)
+
         self.events.subscribe('question_timer.tick', self._on_question_timer_tick)
-        self.events.subscribe('question_timer.has_expired', self._on_question_timer_has_expired)
 
         # setup the player answer interface to not show "TextLabels" everywhere.
         #
@@ -144,7 +138,6 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     @pyqtSlot()
     def on_submitAnswerButton_clicked(self):
         player_answer = self.playerAnswerEntryBox.toPlainText()
-        print("submitting...")
         self.events.broadcast('gui.answer_received', player_answer)
 
     # Functions that run from subscriptions
@@ -205,26 +198,18 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_question_timer_tick(self, remaining):
         self.timeRemainingValue.setText(str(remaining))
 
-    def _on_question_timer_has_expired(self):
-        print 'Expired!'
-
-    def _on_check_answer(self, question, player_answer): 
-        # call moderator popup
-        #
-        print("checking...")
-
+    def _on_check_answer(self, question, player_answer):
         dialog = ModeratorPopup(
             events=self.events, question=question, player_answer=player_answer,
             parent=self
         )
+
         dialog.exec_()
 
 
     def _on_score_did_update(self, player_state):
         player = self._find_player(player_state)
         player.score_label.setText(str(player_state.score))
-        # call clear answer area
-        #
         self._clear_answer_area()
 
     def _on_spin_tokens_did_update(self, player_state):
@@ -237,6 +222,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         for idx, player in enumerate(self.players):
             if player.state == player_state:
                 return idx
+
         return None
 
 
@@ -244,14 +230,11 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         idx = self._find_player_index(player_state)
         return self.players[idx]
 
-
     def _game_end(self, winner):
-        # show winner
-        #
         dialog = RoundGamePopup(
-            events=self.events, round=False, winner=winner,
-            parent=self
+            events=self.events, round=False, winner=winner, parent=self
         )
+
         dialog.exec_()
 
     def _no_questions_left(self, category):
@@ -267,6 +250,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             events=self.events, round=True, winner=None,
             parent=self
         )
+
         dialog.exec_()
 
     def _on_current_player_did_change(self, game_state):
@@ -289,40 +273,53 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         label.setFont(font)
 
     def _show_category_popup_player(self, current_matrix):
-        # call category_choice_popup for the current player
-        #
-        self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
-        self.dialog.titleLabel.setText("current player, choose a category!")
-        self.dialog.exec_()
+        dialog = CategoryChoicePopup(
+            events=self.events, categories=self.current_matrix.headers,
+            parent=self
+        )
+
+        dialog.titleLabel.setText("current player, choose a category!")
+        dialog.exec_()
 
     def _show_category_popup_opponent(self, current_matrix):
-        # call category_choice_popup for the opponents
-        #
-        self.dialog = CategoryChoicePopup(events=self.events, categories=self.current_matrix.headers, parent=self)
+        self.dialog = CategoryChoicePopup(
+            events=self.events, categories=self.current_matrix.headers,
+            parent=self
+        )
+
         self.dialog.titleLabel.setText("opponents, collaborate and choose a category!")
         self.dialog.exec_()
 
     def _show_daily_double_popup(self, min_wager, max_wager):
-        # call daily_double_popup
-        #
-        self.dialog = DailyDoublePopup(events=self.events, min_wager=min_wager, max_wager=max_wager, parent=self)
-        self.dialog.exec_()
+        # The daily double wager popup is a little different than the other
+        # popups. Rather than having the popup itself broadcast the
+        # gui.wager_received event, the popup sets an instance variable on
+        # itself called wager. This is to avoid issues when the user enters an
+        # invalid wager amount, since the program will broadcast
+        # board_sector.prompt_for_wager immediately upon receiving the invalid
+        # wager, meaning two dialogs will appear instead of one.
+        dialog = DailyDoublePopup(
+            min_wager=min_wager, max_wager=max_wager, parent=self
+        )
+
+        dialog.exec_()
+        self.events.broadcast('gui.wager_received', dialog.wager)
 
     def _show_token_popup(self):
-        # call token_popup
         current_player = self.game_state.get_current_player().name
-        self.dialog = TokenPopup(events=self.events, current_player=current_player, parent=self)
-        self.dialog.exec_()
+
+        dialog = TokenPopup(
+            events=self.events, current_player=current_player, parent=self
+        )
+
+        dialog.exec_()
 
     def _on_spins_did_update(self, game_state):
         self.spinCountValue.setText(str(self.game_state.spins_remaining))
 
-
     # functions that are just being functions
     #
     def populate_board(self, question_matrix):
-        # configure Jeopardy board.
-        #
         for category_index in xrange(len(question_matrix.headers)):
             self.category_labels[category_index].setText(question_matrix.headers[category_index])
 
