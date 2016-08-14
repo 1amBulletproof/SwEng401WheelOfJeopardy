@@ -139,6 +139,7 @@ class GameState(object):
         self.current_sector.process_question(self)
 
     def _on_answer_received(self, answer):
+        self.stop_timer()
         self.current_sector.receive_answer(self, self.current_question, answer)
 
     def _on_correct_answer_received(self, question):
