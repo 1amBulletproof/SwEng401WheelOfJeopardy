@@ -39,12 +39,11 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         ]
 
         self.cell_matrix = [
-            [self.category1Cell1, self.category1Cell2, self.category1Cell3, self.category1Cell4, self.category1Cell5],
-            [self.category2Cell1, self.category2Cell2, self.category2Cell3, self.category2Cell4, self.category2Cell5],
-            [self.category3Cell1, self.category3Cell2, self.category3Cell3, self.category3Cell4, self.category3Cell5],
-            [self.category4Cell1, self.category4Cell2, self.category4Cell3, self.category4Cell4, self.category4Cell5],
-            [self.category5Cell1, self.category5Cell2, self.category5Cell3, self.category5Cell4, self.category5Cell5],
-            [self.category6Cell1, self.category6Cell2, self.category6Cell3, self.category6Cell4, self.category6Cell5]
+            [self.category1Cell1, self.category2Cell1, self.category3Cell1, self.category4Cell1, self.category5Cell1, self.category6Cell1],
+            [self.category1Cell2, self.category2Cell2, self.category3Cell2, self.category4Cell2, self.category5Cell2, self.category6Cell2],
+            [self.category1Cell3, self.category2Cell3, self.category3Cell3, self.category4Cell3, self.category5Cell3, self.category6Cell3],
+            [self.category1Cell4, self.category2Cell4, self.category3Cell4, self.category4Cell4, self.category5Cell4, self.category6Cell4],
+            [self.category1Cell5, self.category2Cell5, self.category3Cell5, self.category4Cell5, self.category5Cell5, self.category6Cell5],
         ]
 
         self.sector_category_map = [
@@ -144,6 +143,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def on_spinButton_clicked(self):
         # broadcast that the spin button was clicked
         #
+        self._update_question_board()
         self.events.broadcast('gui.spin')
         self.sectorOutput.setText("None")
 
@@ -177,6 +177,29 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_question_will_be_asked(self, question):
         self.sectorOutput.setText(question.category_header)
         self.currentQuestion.setText(question.text)
+        self._update_question_board()
+
+    def _update_question_board(self):
+        status_matrix = self.game_state.board._get_board_q_status()
+        current_question = self.game_state.current_question
+
+        if current_question != None:
+            print 'row %d col %d' % (current_question.row, current_question.column)
+
+        for row_idx, row in enumerate(status_matrix):
+            for col_idx, visible in enumerate(row):
+                cell = self.cell_matrix[row_idx][col_idx]
+
+                cell_is_current = current_question != None and \
+                    col_idx == current_question.column and \
+                    row_idx == current_question.row
+
+                if cell_is_current:
+                    cell.setStyleSheet('background-color: blue; color: white')
+                    cell.setVisible(True)
+                else:
+                    cell.setStyleSheet('background-color: none; color: black')
+                    cell.setVisible(visible)
 
     def _on_question_timer_tick(self, remaining):
         self.timeRemainingValue.setText(str(remaining))
@@ -310,7 +333,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         for category_row in xrange(len(self.cell_matrix)):
             for category_column in xrange(len(self.cell_matrix[category_row])):
                 self.cell_matrix[category_row][category_column].setText(
-                    str(question_matrix.pointValues[category_column])
+                    str(question_matrix.pointValues[category_row])
                 )
 
 class GuiPlayer(object):

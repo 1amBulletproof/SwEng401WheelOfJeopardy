@@ -153,6 +153,7 @@ class QuestionBoardState(object):
 
     def _get_board_q_status(self):
         mat = [None for x in range(self.MAX_CATS)]
+        r = self._current_round()
 
         for n in range(self.MAX_CATS):
             used = self.progress[r - 1][n] # progress is 0-indexed
@@ -160,7 +161,6 @@ class QuestionBoardState(object):
             mat[n] = [False for x in range(used)] + [True for y in range(rem)]
 
         return map(list, zip(*mat)) # tranposed
-
 
     def __str__(self):
         vz = self.visuals # to be used in printing
