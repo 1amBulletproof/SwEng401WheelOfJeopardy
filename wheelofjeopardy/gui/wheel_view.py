@@ -18,10 +18,10 @@ class WheelView(object):
         self.on_finished = None
 
         self.sector_locations = {
-            "bankrupt":   0,   "category1":         30,  "free spin":       60,
-            "category2":  90,  "lose turn":         120, "category3":       150,
-            "spin again": 180, "category4":         210, "player's choice": 240,
-            "category5":  270, "opponent's choice": 300, "category6":       330
+            "bankrupt":   0,   "category 1":        30,  "free spin":       60,
+            "category 2": 90,  "lose turn":         120, "category 3":      150,
+            "spin again": 180, "category 4":        210, "player's choice": 240,
+            "category 5": 270, "opponent's choice": 300, "category 6":      330
         }
 
     def spin_to_sector(self, sector_name):

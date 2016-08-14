@@ -222,9 +222,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         dialog.exec_()
 
 
-    def _no_questions_left(self):
-        self.currentQuestion.setText("no questions left in this category. spin again!")
-
+    def _no_questions_left(self, category):
+        self.currentQuestion.setText("no questions left in %s. spin again!" % category.name)
 
     def _round_end(self, game_state):
         # start round 2 population
