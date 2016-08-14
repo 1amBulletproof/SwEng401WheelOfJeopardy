@@ -8,7 +8,7 @@ import random
 import time
 from os import sys
 
-from PyQt4.QtGui import QMainWindow, QApplication, QPixmap
+from PyQt4.QtGui import QMainWindow, QApplication, QPixmap, QFrame
 from PyQt4.QtCore import pyqtSlot
 
 # this is the .py file spit out from PyQt
@@ -197,10 +197,17 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
                 if cell_is_current:
                     cell.setStyleSheet('background-color: blue; color: white')
-                    cell.setVisible(True)
+                    cell.setFrameShape(QFrame.Box)
+                    cell.setText(str(self.current_matrix.pointValues[row_idx]))
                 else:
                     cell.setStyleSheet('background-color: none; color: black')
-                    cell.setVisible(visible)
+
+                    if visible:
+                        cell.setFrameShape(QFrame.Box)
+                        cell.setText(str(self.current_matrix.pointValues[row_idx]))
+                    else:
+                        cell.setFrameShape(QFrame.NoFrame)
+                        cell.setText('')
 
     def _on_question_timer_tick(self, remaining):
         self.timeRemainingValue.setText(str(remaining))
