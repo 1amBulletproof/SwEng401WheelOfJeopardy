@@ -22,8 +22,8 @@ class TestSector(unittest.TestCase):
         self.category = Category()
 
         # check for game state setup events
-        self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
-        self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
+        # self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
+        # self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
 
         # clear out setup events
         self.events.reset()
@@ -41,15 +41,14 @@ class TestBankruptSector(TestSector):
         self.sector.action(self.game_state)
         self.assertTrue(self.player1.score == 0)
 
-
-class TestFreeSpinSector(TestSector):
+class TestFreeSpin(TestSector):
     def test_name(self):
-        self.sector = free_spin_sector.FreeTurnSector()
-        self.assertEqual(self.sector.name, "free turn sector")
-        self.assertEqual(str(self.sector), "free turn sector")
+        self.sector = free_spin_sector.FreeSpinSector()
+        self.assertEqual(self.sector.name, "free spin sector")
+        self.assertEqual(str(self.sector), "free spin sector")
 
     def test_action(self):
-        self.sector = free_spin_sector.FreeTurnSector()
+        self.sector = free_spin_sector.FreeSpinSector()
         self.assertTrue(self.player1.free_spin_tokens == 0)
         self.sector.action(self.game_state)
         self.assertTrue(self.player1.free_spin_tokens == 1)
