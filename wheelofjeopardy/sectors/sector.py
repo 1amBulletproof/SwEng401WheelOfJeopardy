@@ -97,8 +97,8 @@ class Sector(object):
     # private
 
     def _ask_question(self, question, game_state):
-        game_state.events.broadcast('board_sector.question_will_be_asked', question)
         game_state.start_timer()
+        game_state.events.broadcast('board_sector.question_will_be_asked', question)
 
     def _is_wager_in_bounds(self, wager, question, player):
         maximum = self._get_max_wager_amount(question, player)

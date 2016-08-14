@@ -41,7 +41,7 @@ class GameState(object):
 
         self.events.subscribe('question_timer.has_expired', self._question_timer_has_expired)
 
-        self.timer = QuestionTimer(
+        self.timer = QuestionTimer.create(
             events=self.events, game_state=self, opts=opts
         )
 
@@ -142,7 +142,11 @@ class GameState(object):
 
     def _on_answer_received(self, answer):
         self.stop_timer()
-        self.current_sector.receive_answer(self, self.current_question, answer)
+
+        # if time has run out, stopping the timer will have cleared the current
+        # question, so don't propagate any further
+        if self.current_question != None:
+            self.current_sector.receive_answer(self, self.current_question, answer)
 
     def _on_correct_answer_received(self, question):
         self.current_sector.received_correct_answer(self, question)
