@@ -26,6 +26,7 @@ class GameState(object):
 
         self.events.subscribe('gui.game_will_start', self._on_game_will_start)
         self.events.subscribe('gui.spin', self._on_spin)
+        self.events.subscribe('gui.trigger_sector_action', self._on_trigger_sector_action)
         self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
@@ -54,8 +55,9 @@ class GameState(object):
         self.spins_remaining -= 1
         self._broadcast('sector_was_chosen', self.current_sector)
         self._broadcast('spins_did_update', self)
-        self.current_sector.action(self)
 
+    def _on_trigger_sector_action(self, sector):
+        sector.action(self)
         self.check_for_game_or_round_end()
 
     def check_for_game_or_round_end(self):

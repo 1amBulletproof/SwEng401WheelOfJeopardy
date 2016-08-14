@@ -5,7 +5,9 @@ This is a class that can be called to bring up the wojApplication gui.
 '''
 # import pdb
 import random
+import time
 from os import sys
+
 from PyQt4.QtGui import QMainWindow, QApplication
 from PyQt4.QtCore import pyqtSlot
 
@@ -19,6 +21,7 @@ from wheelofjeopardy.gui.moderator_popup import ModeratorPopup
 from wheelofjeopardy.gui.category_choice_popup import CategoryChoicePopup
 from wheelofjeopardy.gui.daily_double_popup import DailyDoublePopup
 from wheelofjeopardy.gui.token_popup import TokenPopup
+from wheelofjeopardy.gui.wheel_view import WheelView
 from wheelofjeopardy.gui.round_game_popup import RoundGamePopup
 from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 
@@ -47,7 +50,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sector_category_map = [
             [1, 'category1'],  [2, 'category2'],       [3, 'category3'],
             [4, 'category4'],  [5, 'category5'],       [6, 'category6'],
-            [7, 'Bankrupt'],   [8, 'FreeTurn'],        [9, 'LoseTurn'],
+            [7, 'Bankrupt'],   [8, 'FreeSpin'],        [9, 'LoseTurn'],
             [10, 'SpinAgain'], [11, 'OpponentChoice'], [12, 'PlayerChoice']
         ]
 
@@ -105,6 +108,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.events.subscribe('game_state.announce_winners', self._game_end)
         self.events.subscribe('game_state.round_did_end', self._round_end)
         self.events.subscribe('game_state.current_player_did_change', self._on_current_player_did_change)
+        self.events.subscribe('game_state.sector_was_chosen', self._on_sector_was_chosen)
         self.events.subscribe('board_sector.check_answer', self._on_check_answer)
 
         # put image behind wheel
@@ -115,6 +119,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.sectorOutput.setText("")
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
+        self.wheel_view = WheelView(self.wheelView)
+        self.wheel_view.on_finished = self._on_wheel_spin_finished
 
         # initialize variables - i.e. set up the entire board.
         #
@@ -134,6 +140,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         # broadcast that the spin button was clicked
         #
         self.events.broadcast('gui.spin')
+        self.sectorOutput.setText("None")
 
     @pyqtSlot() #WAHOO
     def on_submitAnswerButton_clicked(self):
@@ -148,21 +155,23 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.currentQuestion.setText("")
         self.playerAnswerEntryBox.setText("")
 
-
     def _deactivate_square(self, square):
         # when a square's question has been shown to the user
         #
         self.square.setEnabled(False)
 
-    def _on_question_will_be_asked(self, question):
-        current_category = self.game_state.current_category
+    def _on_sector_was_chosen(self, sector):
+        self.wheel_view.spin_to_sector(sector.name)
 
-        if type(current_category) is int:
-            self.sectorOutput.setText(question.category_header)
-            self.currentQuestion.setText(question.text)
-        else:
-            self.sectorOutput.setText("None")
-            self.currentQuestion.setText("you landed on {}!".format(question.category_header))
+    def _on_wheel_spin_finished(self):
+        self.currentQuestion.setText("you landed on {}!".format(self.game_state.current_sector.name))
+        self.events.broadcast(
+            'gui.trigger_sector_action', self.game_state.current_sector
+        )
+
+    def _on_question_will_be_asked(self, question):
+        self.sectorOutput.setText(question.category_header)
+        self.currentQuestion.setText(question.text)
 
     def _on_check_answer(self, question, player_answer): #WAHOO
         # call moderator popup
@@ -188,8 +197,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
     def _on_spin_tokens_did_update(self, player_state):
         player = self._find_player(player_state)
         print(player.state.free_spin_tokens)
-        player.token_label.setText(str(player.state.free_spin_tokens)) 
-        
+        player.token_label.setText(str(player.state.free_spin_tokens))
+
 
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
@@ -215,14 +224,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     def _no_questions_left(self):
         self.currentQuestion.setText("no questions left in this category. spin again!")
-        
+
 
     def _round_end(self, game_state):
         # start round 2 population
         #
         self.current_matrix = self.game_state.board._q_mat[1] # [0] means round 1
         self.populate_board(self.current_matrix)
-        
+
         dialog = RoundGamePopup(
             events=self.events, round=True, winner=None,
             parent=self
@@ -301,7 +310,6 @@ class GuiPlayer(object):
         self.name_label = name_label
         self.score_label = score_label
         self.token_label = token_label
-
 
 # MAIN PROGRAM
 #

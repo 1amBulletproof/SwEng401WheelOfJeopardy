@@ -18,7 +18,7 @@ class Wheel(object):
         sector5 = board_sector.BoardSector(Category.category5)
         sector6 = board_sector.BoardSector(Category.category6)
         sector7 = bankrupt_sector.BankruptSector()
-        sector8 = free_turn_sector.FreeTurnSector()
+        sector8 = free_spin_sector.FreeSpinSector()
         sector9 = lose_turn_sector.LoseTurnSector()
         sector10 = spin_again_sector.SpinAgainSector()
         sector11 = opponent_choice_sector.OpponentChoiceSector()

@@ -42,14 +42,14 @@ class TestBankruptSector(TestSector):
         self.assertTrue(self.player1.score == 0)
 
 
-class TestFreeTurnSector(TestSector):
+class TestFreeSpinSector(TestSector):
     def test_name(self):
-        self.sector = free_turn_sector.FreeTurnSector()
+        self.sector = free_spin_sector.FreeTurnSector()
         self.assertEqual(self.sector.name, "free turn sector")
         self.assertEqual(str(self.sector), "free turn sector")
 
     def test_action(self):
-        self.sector = free_turn_sector.FreeTurnSector()
+        self.sector = free_spin_sector.FreeTurnSector()
         self.assertTrue(self.player1.free_spin_tokens == 0)
         self.sector.action(self.game_state)
         self.assertTrue(self.player1.free_spin_tokens == 1)
