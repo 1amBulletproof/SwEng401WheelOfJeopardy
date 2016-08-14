@@ -1,8 +1,11 @@
-"""
+'''
 Categories of Questions
-"""
+'''
 
 class Category():
+    '''
+    Categories of Questions
+    '''
     category1 = 1
     category2 = 2
     category3 = 3
