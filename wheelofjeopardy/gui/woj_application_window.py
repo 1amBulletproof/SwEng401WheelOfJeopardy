@@ -8,7 +8,7 @@ import random
 import time
 from os import sys
 
-from PyQt4.QtGui import QMainWindow, QApplication
+from PyQt4.QtGui import QMainWindow, QApplication, QPixmap
 from PyQt4.QtCore import pyqtSlot
 
 # this is the .py file spit out from PyQt
@@ -122,6 +122,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.currentQuestion.setText("")
         self.playerAnswerLabel.setText("")
         self.timeRemainingValue.setText("")
+        self.indicatorLabel.setPixmap(QPixmap('wheelofjeopardy/indicator.png'))
 
         self.wheel_view = WheelView(self.wheelView)
         self.wheel_view.on_finished = self._on_wheel_spin_finished

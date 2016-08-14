@@ -2068,6 +2068,19 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
+            <widget class="QLabel" name="indicatorLabel">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../../indicator.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QGraphicsView" name="wheelView">
              <property name="styleSheet">
               <string notr="true">background: transparent</string>
