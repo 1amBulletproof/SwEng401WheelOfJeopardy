@@ -276,7 +276,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         font.setBold(bold)
         label.setFont(font)
 
-    def _show_category_popup_player(self, current_matrix):
+    def _show_category_popup_player(self):
         dialog = CategoryChoicePopup(
             events=self.events, categories=self.current_matrix.headers,
             parent=self
@@ -285,14 +285,13 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         dialog.titleLabel.setText("current player, choose a category!")
         dialog.exec_()
 
-    def _show_category_popup_opponent(self, current_matrix):
-        self.dialog = CategoryChoicePopup(
-            events=self.events, categories=self.current_matrix.headers,
-            parent=self
+    def _show_category_popup_opponent(self):
+        dialog = CategoryChoicePopup(
+            events=self.events, game_state=self.game_state, parent=self
         )
 
-        self.dialog.titleLabel.setText("opponents, collaborate and choose a category!")
-        self.dialog.exec_()
+        dialog.titleLabel.setText("opponents, collaborate and choose a category!")
+        dialog.exec_()
 
     def _show_daily_double_popup(self, min_wager, max_wager):
         # The daily double wager popup is a little different than the other

@@ -24,6 +24,7 @@ class QuestionBoardState(object):
 
         #list of int to keep track of question progress
         self.progress = [[0 for x in range(self.MAX_CATS)] for y in range(2)]
+        self.progress[0][0] = 4
         self.visuals = self._get_board_visuals() # for visualizing boards
 
     def q_remaining(self, round_num):

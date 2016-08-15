@@ -9,8 +9,7 @@ class PlayerChoiceSector(Sector):
         Sector.__init__(self, "player's choice")
 
     def action(self, game_state):
-        #gui is listening
-        game_state.events.broadcast('player_choice_sector.choose_category', self)
+        game_state.events.broadcast('player_choice_sector.choose_category')
 
     def process_question(self, game_state):
         self.ask_next_question_in_category(game_state.current_category, game_state)
