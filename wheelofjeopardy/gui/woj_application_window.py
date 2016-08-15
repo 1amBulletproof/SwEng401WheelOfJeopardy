@@ -112,6 +112,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self.playerAnswerLabel.setText("")
         self.timeRemainingValue.setText("")
         self.indicatorLabel.setPixmap(QPixmap('wheelofjeopardy/indicator.png'))
+        self.submitAnswerButton.setEnabled(False)
 
         self.wheel_view = WheelView(self.wheelView)
         self.wheel_view.on_finished = self._on_wheel_spin_finished
@@ -137,11 +138,14 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
         self._update_question_board()
         self.events.broadcast('gui.spin')
         self.sectorOutput.setText("None")
+        self.spinButton.setEnabled(False)
 
     @pyqtSlot()
     def on_submitAnswerButton_clicked(self):
         player_answer = self.playerAnswerEntryBox.toPlainText()
+        self.submitAnswerButton.setEnabled(False)
         self.events.broadcast('gui.answer_received', player_answer)
+        self.spinButton.setEnabled(True)
 
     # Functions that run from subscriptions
     #
@@ -164,10 +168,15 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
             'gui.trigger_sector_action', self.game_state.current_sector
         )
 
+        if self.game_state.current_question == None:
+            self.spinButton.setEnabled(True)
+
     def _on_question_will_be_asked(self, question):
         self.sectorOutput.setText(question.category_header)
         self.currentQuestion.setText(question.text)
         self._update_question_board()
+        self.submitAnswerButton.setEnabled(True)
+        self.spinButton.setEnabled(False)
 
     def _update_question_board(self):
         status_matrix = self.game_state.board._get_board_q_status()
