@@ -5,7 +5,7 @@ This is a class called when "submit answer" button is clicked.
 '''
 
 from os import sys
-from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtCore import pyqtSlot, Qt
 from PyQt4.QtGui import *
 from wheelofjeopardy.gui.pyqt.ui_moderator_popup import Ui_ModeratorPopup
 from wheelofjeopardy.events import Events
@@ -14,6 +14,12 @@ from wheelofjeopardy.events import Events
 class ModeratorPopup(QDialog, Ui_ModeratorPopup):
     def __init__(self, events, question, player_answer, parent=None):
         super(ModeratorPopup, self).__init__(parent)
+
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
         self.setupUi(self)
 
         self.events = events

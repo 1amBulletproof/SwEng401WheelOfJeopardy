@@ -5,15 +5,20 @@ This is a class called when the timer runs out.
 '''
 
 from os import sys
-from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtCore import Qt
 from PyQt4.QtGui import *
 from wheelofjeopardy.gui.pyqt.ui_time_out import Ui_TimeOutPopup
 from wheelofjeopardy.events import Events
 
-
 class TimeOutPopup(QDialog, Ui_TimeOutPopup):
     def __init__(self, events, answer, parent=None):
         super(TimeOutPopup, self).__init__(parent)
+
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
         self.setupUi(self)
         self.events = events
 

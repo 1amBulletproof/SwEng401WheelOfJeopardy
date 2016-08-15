@@ -96,8 +96,8 @@ class GameState(object):
                 self._broadcast('announce_winners', self._calculate_winner())
                 return
             else:
-                self._broadcast('round_did_end', self)
                 self.advance_round()
+                self._broadcast('round_did_end', self)
 
         self._choose_next_player()
         self._broadcast('turn_did_end', self)

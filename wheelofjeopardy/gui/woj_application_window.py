@@ -257,6 +257,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         dialog.exec_()
 
+        self._update_question_board()
+
     def _on_current_player_did_change(self, game_state):
         # set the current player for the answer area
         #
@@ -278,8 +280,7 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
     def _show_category_popup_player(self):
         dialog = CategoryChoicePopup(
-            events=self.events, categories=self.current_matrix.headers,
-            parent=self
+            events=self.events, game_state=self.game_state, parent=self
         )
 
         dialog.titleLabel.setText("current player, choose a category!")

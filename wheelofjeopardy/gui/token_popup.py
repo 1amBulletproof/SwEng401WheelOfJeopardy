@@ -6,13 +6,19 @@ This is called to have a player accept or deny token use.
 
 from os import sys
 from PyQt4.QtGui import *
-from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtCore import pyqtSlot, Qt
 from wheelofjeopardy.gui.pyqt.ui_token_popup import Ui_TokenPopup
 from wheelofjeopardy.events import Events
 
 class TokenPopup(QDialog, Ui_TokenPopup):
     def __init__(self, events, current_player, parent=None):
         super(TokenPopup, self).__init__(parent)
+
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
         self.setupUi(self)
         self.events = events
 

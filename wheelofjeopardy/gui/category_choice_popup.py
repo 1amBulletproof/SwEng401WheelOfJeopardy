@@ -6,13 +6,19 @@ This class is called to show categories to the user.
 
 from os import sys
 from PyQt4.QtGui import *
-from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtCore import pyqtSlot, Qt
 from wheelofjeopardy.gui.pyqt.ui_category_choice_popup import Ui_CategoryChoicePopup
 from wheelofjeopardy.events import Events
 
 class CategoryChoicePopup(QDialog, Ui_CategoryChoicePopup):
     def __init__(self, events, game_state, parent=None):
         super(CategoryChoicePopup, self).__init__(parent)
+
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
         self.setupUi(self)
         self.events = events
 

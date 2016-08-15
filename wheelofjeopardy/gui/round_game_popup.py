@@ -5,17 +5,21 @@ This is a class called when a round or the game is over.
 '''
 
 from os import sys
-from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtCore import Qt
 from PyQt4.QtGui import *
 from wheelofjeopardy.gui.pyqt.ui_round_game_over import Ui_RoundGamePopup
 from wheelofjeopardy.events import Events
 
-
 class RoundGamePopup(QDialog, Ui_RoundGamePopup):
     def __init__(self, events, round=False, winner=None, parent=None):
         super(RoundGamePopup, self).__init__(parent)
-        self.setupUi(self)
 
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
+        self.setupUi(self)
         self.events = events
 
         # initialize variables

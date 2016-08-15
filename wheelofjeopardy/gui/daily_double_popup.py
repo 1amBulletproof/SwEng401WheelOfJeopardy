@@ -6,12 +6,19 @@ This is a class that can be called when a daily double square has been landed on
 
 from os import sys
 from PyQt4.QtGui import *
+from PyQt4.QtCore import pyqtSlot, Qt
 from wheelofjeopardy.gui.pyqt.ui_daily_double_popup import Ui_DailyDoublePopup
 from wheelofjeopardy.events import Events
 
 class DailyDoublePopup(QDialog, Ui_DailyDoublePopup):
     def __init__(self, min_wager, max_wager, parent=None):
         super(DailyDoublePopup, self).__init__(parent)
+
+        # disable close/maximize/minimize buttons
+        self.setWindowFlags(
+            Qt.Dialog | Qt.WindowTitleHint | Qt.CustomizeWindowHint
+        )
+
         self.setupUi(self)
 
         # initialize variables
@@ -24,6 +31,7 @@ class DailyDoublePopup(QDialog, Ui_DailyDoublePopup):
 
     # button clicks
     #
+    @pyqtSlot()
     def on_submitWagerButton_clicked(self):
         self.wager = int(self.wagerAmount.text())
 
