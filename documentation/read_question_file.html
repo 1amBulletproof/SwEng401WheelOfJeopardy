@@ -1,0 +1,38 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module read_question_file</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>read_question_file</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/utils/read_question_file.py">/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/utils/read_question_file.py</a></font></td></tr></table>
+    <p><tt>Read&nbsp;and&nbsp;parse&nbsp;question&nbsp;file&nbsp;(CSV)&nbsp;and&nbsp;return&nbsp;a&nbsp;QuestionMatrix&nbsp;object&nbsp;containing<br>
+the&nbsp;questions.&nbsp;Also&nbsp;performs&nbsp;basic&nbsp;error&nbsp;checking.&nbsp;The&nbsp;question&nbsp;file&nbsp;does&nbsp;not<br>
+need&nbsp;to&nbsp;be&nbsp;in&nbsp;listed&nbsp;in&nbsp;particular&nbsp;order,&nbsp;but&nbsp;does&nbsp;need&nbsp;to&nbsp;satisfy&nbsp;all&nbsp;the<br>
+formatting&nbsp;requirements&nbsp;for&nbsp;questions.&nbsp;See&nbsp;README.<br>
+&nbsp;<br>
+@author:&nbsp;J&nbsp;Wu,&nbsp;johnwuy@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_data_from_q_row"><strong>get_data_from_q_row</strong></a>(row)</dt><dd><tt>#&nbsp;parse&nbsp;each&nbsp;CSV&nbsp;row,&nbsp;return&nbsp;value</tt></dd></dl>
+ <dl><dt><a name="-index_all"><strong>index_all</strong></a>(l, elem)</dt><dd><tt>#&nbsp;return&nbsp;all&nbsp;index&nbsp;of&nbsp;an&nbsp;element&nbsp;in&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-read_questions"><strong>read_questions</strong></a>(inOpts)</dt><dd><tt>#%%&nbsp;Read&nbsp;CSV</tt></dd></dl>
+ <dl><dt><a name="-slice_col"><strong>slice_col</strong></a>(mat, col)</dt><dd><tt>#&nbsp;to&nbsp;index&nbsp;entire&nbsp;row&nbsp;in&nbsp;2D-List</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>true_list</strong> = set(['1', 'T', 'TRUE', 'Y'])</td></tr></table>
+</body></html>

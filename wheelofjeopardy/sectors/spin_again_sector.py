@@ -6,7 +6,7 @@ from wheelofjeopardy.sectors.sector import Sector
 
 class SpinAgainSector(Sector):
     def __init__ (self):
-        Sector.__init__(self, "spin again sector")
+        Sector.__init__(self, 'spin again')
 
     """
     as currently implemented, should do nothing since game_state will

@@ -2,8 +2,10 @@
 Control and monitor the wheelofjeopardy game state
 """
 
+from wheelofjeopardy.question_timer import QuestionTimer
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.wheel import Wheel
+from wheelofjeopardy.fake_wheel import FakeWheel
 
 class GameState(object):
     def __init__(self, player_states, events, opts):
@@ -13,7 +15,12 @@ class GameState(object):
         self.player_states = player_states
         self.current_player_index = 0
         self.board = QuestionBoardState(events, opts)
-        self.wheel = Wheel()
+
+        if len(opts.programmed_spins) == 0: # no programmed spins
+            self.wheel = Wheel()
+        else: # wheel programmed to spin according to list
+            self.wheel = FakeWheel(opts.programmed_spins)
+
         self.active_wager = None # placeholder
         self.current_round = 1
         self.current_category = None # these three will be set by methods
@@ -22,6 +29,7 @@ class GameState(object):
 
         self.events.subscribe('gui.game_will_start', self._on_game_will_start)
         self.events.subscribe('gui.spin', self._on_spin)
+        self.events.subscribe('gui.trigger_sector_action', self._on_trigger_sector_action)
         self.events.subscribe('gui.category_chosen', self._on_category_chosen)
         self.events.subscribe('gui.answer_received', self._on_answer_received)
         self.events.subscribe('gui.correct_answer_received', self._on_correct_answer_received)
@@ -31,6 +39,12 @@ class GameState(object):
         self.events.subscribe('gui.dont_use_free_token', self._on_dont_use_free_token)
         self.events.subscribe('gui.wager_received', self._on_wager_received)
 
+        self.events.subscribe('question_timer.has_expired', self._question_timer_has_expired)
+
+        self.timer = QuestionTimer.create(
+            events=self.events, game_state=self, opts=opts
+        )
+
     def get_current_player(self):
         return self.player_states[self.current_player_index]
 
@@ -38,6 +52,8 @@ class GameState(object):
         return self.spins_remaining > 0
 
     def spin(self, sect=None):
+        self.current_question = None
+
         if sect is None:
             self.current_sector = self.wheel.get_random_sector()
         else:
@@ -46,10 +62,20 @@ class GameState(object):
         self.spins_remaining -= 1
         self._broadcast('sector_was_chosen', self.current_sector)
         self._broadcast('spins_did_update', self)
-        self.current_sector.action(self)
 
-        if self.has_game_ended():
+    def _on_trigger_sector_action(self, sector):
+        sector.action(self)
+        self.check_for_game_or_round_end()
+
+    def check_for_game_or_round_end(self):
+        if self.has_game_ended() or self.has_round_ended():
             self.end_turn()
+
+    def start_timer(self):
+        self.timer.start()
+
+    def stop_timer(self):
+        self.timer.stop()
 
     def _cheat(self, sect):
         if not sect.isdigit():
@@ -78,14 +104,17 @@ class GameState(object):
         self._broadcast('current_player_did_change', self)
 
     def has_game_ended(self):
-        return self.has_round_ended() and self.current_round == 2
+        return self.has_round_ended() and self.current_round == 2 \
+            and self.current_question == None
 
     def has_round_ended(self):
-        return self.board.no_q_in_round(self.current_round) or \
-            not self.any_spins_remaining()
+        return (self.board.no_q_in_round(self.current_round) or \
+            not self.any_spins_remaining()) and \
+            self.current_question == None
 
     def advance_round(self):
         self.spins_remaining = self.TOTAL_SPINS # reset spin count
+        self._broadcast('spins_did_update', self)
         self.board.mark_all_q_used(self.current_round) # use all questions
         self.current_round += 1
         # Does player sequence reset at round end? Or continue as it was?
@@ -112,13 +141,22 @@ class GameState(object):
         self.current_sector.process_question(self)
 
     def _on_answer_received(self, answer):
-        self.current_sector.receive_answer(self, self.current_question, answer)
+        self.stop_timer()
+
+        # if time has run out, stopping the timer will have cleared the current
+        # question, so don't propagate any further
+        if self.current_question != None:
+            self.current_sector.receive_answer(self, self.current_question, answer)
 
     def _on_correct_answer_received(self, question):
         self.current_sector.received_correct_answer(self, question)
 
     def _on_incorrect_answer_received(self, question):
         self.current_sector.received_incorrect_answer(self, question)
+
+    def _question_timer_has_expired(self):
+        # treat an expired timer the same as an incorrect answer
+        self.current_sector.received_incorrect_answer(self, self.current_question)
 
     def _on_use_free_token(self):
         self.current_sector.received_use_free_token(self)

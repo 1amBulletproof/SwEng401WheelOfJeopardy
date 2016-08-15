@@ -36,9 +36,7 @@ class Sector(object):
                     )
                 )
             else:
-                game_state.events.broadcast(
-                    'board_sector.question_will_be_asked', game_state.current_question
-                )
+                self._ask_question(game_state.current_question, game_state)
 
     """
     Methods to deal with answering question for board_sector,
@@ -51,12 +49,15 @@ class Sector(object):
         amount = self.get_question_value(question, game_state)
         game_state.get_current_player().increase_score_by(amount)
         game_state.active_wager = None
+        game_state.current_question = None
+        game_state.check_for_game_or_round_end()
 
     def received_incorrect_answer(self, game_state, question):
         current_player = game_state.get_current_player()
         amount = self.get_question_value(question, game_state)
         current_player.decrease_score_by(amount)
         game_state.active_wager = None
+        game_state.current_question = None
 
         if current_player.has_free_spin_token():
             game_state.events.broadcast('sector.prompt_for_token_use')
@@ -65,6 +66,7 @@ class Sector(object):
 
     def received_use_free_token(self, game_state):
         game_state.get_current_player().use_free_spin_token()
+        game_state.check_for_game_or_round_end()
 
     def received_dont_use_free_token(self, game_state):
         game_state.end_turn()
@@ -84,10 +86,7 @@ class Sector(object):
             return
 
         game_state.active_wager = wager
-
-        game_state.events.broadcast(
-            'board_sector.question_will_be_asked', question
-        )
+        self._ask_question(question, game_state)
 
     def get_question_value(self, question, game_state):
         if question.is_daily_double():
@@ -96,6 +95,10 @@ class Sector(object):
             return question.point_value
 
     # private
+
+    def _ask_question(self, question, game_state):
+        game_state.start_timer()
+        game_state.events.broadcast('board_sector.question_will_be_asked', question)
 
     def _is_wager_in_bounds(self, wager, question, player):
         maximum = self._get_max_wager_amount(question, player)

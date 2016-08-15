@@ -8,6 +8,7 @@ from wheelofjeopardy.player_state import PlayerState
 from wheelofjeopardy.question_board_state import QuestionBoardState
 from wheelofjeopardy.utils.read_configs import read_cfg_to_options
 from wheelofjeopardy.wheel import Wheel
+from wheelofjeopardy.sectors.free_spin_sector import FreeSpinSector
 
 class GameStateTestCase(unittest.TestCase):
     def setUp(self):
@@ -18,8 +19,8 @@ class GameStateTestCase(unittest.TestCase):
         self.game_state = GameState([self.player1, self.player2], self.events, self.opts)
 
         # check for game state setup events
-        self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
-        self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
+        # self.assertTrue(self.events.did_broadcast('game_state.spins_did_update'))
+        # self.assertTrue(self.events.did_broadcast('game_state.current_player_did_change'))
 
         # clear out setup events
         self.events.reset()
@@ -79,9 +80,10 @@ class TestSpin(GameStateTestCase):
         self.assertEqual(self.game_state.spins_remaining, 49)
 
     def test_spin_fires_game_end_event(self):
-        self.game_state.spins_remaining = 1
+        self.game_state.spins_remaining = 0
         self.game_state.current_round = 2
-        self.game_state.spin()
+        self.game_state.current_question = None
+        self.events.broadcast('gui.trigger_sector_action', FreeSpinSector())
         self.assertTrue(self.events.did_broadcast('game_state.game_did_end'))
 
     def test_spin_fires_spin_update_event(self):
@@ -108,6 +110,7 @@ class TestEndGame(GameStateTestCase):
         self.assertFalse(self.game_state.has_game_ended())
         self.game_state.spins_remaining = 0
         self.game_state.current_round = 2
+        self.game_state.current_question = None
         self.use_all_questions()
         self.assertTrue(self.game_state.has_game_ended())
 

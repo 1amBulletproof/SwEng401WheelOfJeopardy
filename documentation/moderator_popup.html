@@ -1,0 +1,879 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module moderator_popup</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>moderator_popup</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/moderator_popup.py">/Users/Tarney/Desktop/woj-env/WheelOfJeopardy/wheelofjeopardy/gui/moderator_popup.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;class&nbsp;called&nbsp;when&nbsp;"submit&nbsp;answer"&nbsp;button&nbsp;is&nbsp;clicked.<br>
+&nbsp;<br>
+@author&nbsp;=&nbsp;Miranda&nbsp;Link,&nbsp;mirandanlink@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>(<a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="moderator_popup.html#ModeratorPopup">ModeratorPopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="moderator_popup.html#ModeratorPopup">ModeratorPopup</a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ModeratorPopup">class <strong>ModeratorPopup</strong></a>(<a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>, <a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="moderator_popup.html#ModeratorPopup">ModeratorPopup</a></dd>
+<dd><a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a></dd>
+<dd><a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a></dd>
+<dd><a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ModeratorPopup-__init__"><strong>__init__</strong></a>(self, events, question, player_answer, parent<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ModeratorPopup-on_okButton_clicked"><strong>on_okButton_clicked</strong></a>(self)</dt><dd><tt>#&nbsp;button&nbsp;clicks</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><a name="ModeratorPopup-accept"><strong>accept</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-accept">accept</a>(self)</tt></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound signal accepted&gt;
+<dl><dt><a name="ModeratorPopup-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-closeEvent">closeEvent</a>(self,&nbsp;QCloseEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-extension"><strong>extension</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-extension">extension</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound signal finished&gt;
+<dl><dt><a name="ModeratorPopup-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-orientation"><strong>orientation</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-orientation">orientation</a>(self)&nbsp;-&gt;&nbsp;Qt.Orientation</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound signal rejected&gt;
+<dl><dt><a name="ModeratorPopup-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-resizeEvent">resizeEvent</a>(self,&nbsp;QResizeEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setExtension"><strong>setExtension</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setExtension">setExtension</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setOrientation"><strong>setOrientation</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setOrientation">setOrientation</a>(self,&nbsp;Qt.Orientation)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showExtension"><strong>showExtension</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showExtension">showExtension</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QDialog">PyQt4.QtGui.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt4.QtGui.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><a name="ModeratorPopup-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-actions">actions</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-addActions">addActions</a>(self,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#ModeratorPopup-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-create">create</a>(self,&nbsp;window:&nbsp;object&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound signal customContextMenuRequested&gt;
+<dl><dt><a name="ModeratorPopup-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-find">find</a>(object)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-geometry"><strong>geometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlags&nbsp;=&nbsp;Qt.GestureFlags(0))</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-grabMouse">grabMouse</a>(self)<br>
+<a href="#ModeratorPopup-grabMouse">grabMouse</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-grabShortcut">grabShortcut</a>(self,&nbsp;QKeySequence,&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;object)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isEnabledToTLW"><strong>isEnabledToTLW</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isEnabledToTLW">isEnabledToTLW</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isTopLevel"><strong>isTopLevel</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isTopLevel">isTopLevel</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#ModeratorPopup-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-nativeEvent">nativeEvent</a>(self,&nbsp;QByteArray,&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-overrideWindowState">overrideWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-redirected"><strong>redirected</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-redirected">redirected</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPaintDevice</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)<br>
+<a href="#ModeratorPopup-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlags&nbsp;=&nbsp;QWidget.DrawWindowBackground|QWidget.DrawChildren)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-repaint">repaint</a>(self)<br>
+<a href="#ModeratorPopup-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#ModeratorPopup-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#ModeratorPopup-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-restoreGeometry">restoreGeometry</a>(self,&nbsp;QByteArray)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setAccessibleName">setAccessibleName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setCursor">setCursor</a>(self,&nbsp;QCursor)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#ModeratorPopup-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFocus">setFocus</a>(self)<br>
+<a href="#ModeratorPopup-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#ModeratorPopup-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Qt.InputMethodHints)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#ModeratorPopup-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#ModeratorPopup-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#ModeratorPopup-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#ModeratorPopup-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setStatusTip">setStatusTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setStyleSheet">setStyleSheet</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setToolTip">setToolTip</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWhatsThis">setWhatsThis</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowFlags">setWindowFlags</a>(self,&nbsp;Qt.WindowFlags)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowIconText">setWindowIconText</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowRole">setWindowRole</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowState">setWindowState</a>(self,&nbsp;Qt.WindowStates)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setWindowTitle">setWindowTitle</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-topLevelWidget"><strong>topLevelWidget</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-topLevelWidget">topLevelWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-update">update</a>(self)<br>
+<a href="#ModeratorPopup-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#ModeratorPopup-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#ModeratorPopup-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-winId">winId</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QWidget">PyQt4.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt4.QtGui.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt4.QtGui.RenderFlags'&gt;<dd><tt>QWidget.<a href="#ModeratorPopup-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)<br>
+QWidget.<a href="#ModeratorPopup-RenderFlags">RenderFlags</a>(int)<br>
+QWidget.<a href="#ModeratorPopup-RenderFlags">RenderFlags</a>()</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><a name="ModeratorPopup-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-children">children</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-connect"><strong>connect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#ModeratorPopup-connect">connect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None],&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object<br>
+<a href="#ModeratorPopup-connect">connect</a>(self,&nbsp;QObject,&nbsp;QT_SIGNAL,&nbsp;QT_SLOT_QT_SIGNAL,&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound signal destroyed&gt;
+<dl><dt><a name="ModeratorPopup-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;QObject,&nbsp;QT_SLOT_QT_SIGNAL)&nbsp;-&gt;&nbsp;object<br>
+<a href="#ModeratorPopup-disconnect">disconnect</a>(QObject,&nbsp;QT_SIGNAL,&nbsp;Callable[...,&nbsp;None])&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-emit"><strong>emit</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-emit">emit</a>(self,&nbsp;QT_SIGNAL,&nbsp;*)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object<br>
+<a href="#ModeratorPopup-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#ModeratorPopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;QString&nbsp;=&nbsp;QString())&nbsp;-&gt;&nbsp;List<br>
+<a href="#ModeratorPopup-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List<br>
+<a href="#ModeratorPopup-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp)&nbsp;-&gt;&nbsp;List</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound signal objectNameChanged&gt;
+<dl><dt><a name="ModeratorPopup-parent"><strong>parent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-parent">parent</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;QVariant</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#ModeratorPopup-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-receivers">receivers</a>(self,&nbsp;QT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setObjectName">setObjectName</a>(self,&nbsp;QString)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;QVariant)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-trUtf8"><strong>trUtf8</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-trUtf8">trUtf8</a>(self,&nbsp;object,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QString</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt4.QtCore.html#QObject">PyQt4.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>staticMetaObject</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="ModeratorPopup-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="ModeratorPopup-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#ModeratorPopup-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt4.QtGui.html#QPaintDevice">PyQt4.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt4.QtGui.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of sip.wrappertype object&gt;<dd><tt>T.<a href="#ModeratorPopup-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="wheelofjeopardy.gui.pyqt.ui_moderator_popup.html#Ui_ModeratorPopup">wheelofjeopardy.gui.pyqt.ui_moderator_popup.Ui_ModeratorPopup</a>:<br>
+<dl><dt><a name="ModeratorPopup-retranslateUi"><strong>retranslateUi</strong></a>(self, ModeratorPopup)</dt></dl>
+
+<dl><dt><a name="ModeratorPopup-setupUi"><strong>setupUi</strong></a>(self, ModeratorPopup)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;str&nbsp;name=None,&nbsp;str&nbsp;result=None)<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;QColor,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;QBrush&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix,&nbsp;QMatrix)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSwap"><strong>qSwap</strong></a>(...)</dt><dd><tt><a href="#-qSwap">qSwap</a>(QBitmap,&nbsp;QBitmap)<br>
+<a href="#-qSwap">qSwap</a>(QBrush,&nbsp;QBrush)<br>
+<a href="#-qSwap">qSwap</a>(QIcon,&nbsp;QIcon)<br>
+<a href="#-qSwap">qSwap</a>(QImage,&nbsp;QImage)<br>
+<a href="#-qSwap">qSwap</a>(QKeySequence,&nbsp;QKeySequence)<br>
+<a href="#-qSwap">qSwap</a>(QPen,&nbsp;QPen)<br>
+<a href="#-qSwap">qSwap</a>(QPicture,&nbsp;QPicture)<br>
+<a href="#-qSwap">qSwap</a>(QPixmap,&nbsp;QPixmap)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>qApp</strong> = &lt;PyQt4.QtGui.QApplication object&gt;</td></tr></table>
+</body></html>

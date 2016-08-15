@@ -48,7 +48,10 @@ class QuestionMatrix(object):
         if c < len(self.questions) and r < len(self.questions[c]):
             catg = self.headers[c]
             val = self.pointValues[r]
-            return QuestionWithMetadata(self.questions[c][r], val, catg)
+            return QuestionWithMetadata(
+                question=self.questions[c][r], row=r, column=c,
+                point_value=val, category_header=catg
+            )
         else:
             return None
 
@@ -88,8 +91,10 @@ class Question(object):
         return self.text + " : " + self.answer
 
 class QuestionWithMetadata(object):
-    def __init__(self, question, point_value, category_header):
+    def __init__(self, question, row, column, point_value, category_header):
         self.question = question
+        self.row = row
+        self.column = column
         self.point_value = point_value
         self.category_header = category_header
 

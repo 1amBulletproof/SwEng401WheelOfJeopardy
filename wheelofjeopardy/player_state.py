@@ -11,6 +11,8 @@ class PlayerState(object):
         self.score = score # handicaps
         self.free_spin_tokens = 0
 
+        self.events.subscribe('gui.game_will_start', self._on_game_will_start)
+
     def increase_score_by(self, amount):
         self.score += amount
         self._broadcast('score_did_update', self)
@@ -38,6 +40,10 @@ class PlayerState(object):
         return self.free_spin_tokens > 0
 
     # private
+
+    def _on_game_will_start(self):
+        self._broadcast('score_did_update', self)
+        self._broadcast('spin_tokens_did_update', self)
 
     def _broadcast(self, channel, *args):
         self.events.broadcast('player_state.%s' % channel, *args)

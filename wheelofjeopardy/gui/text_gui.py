@@ -16,18 +16,9 @@ class TextGUI(object):
 
         events = Events()
         opts = read_cfg_to_options()
-        TextGUI(cls._create_game_state(events), events)._start()
+        TextGUI(events)._start()
 
     # private static
-
-    @classmethod
-    def _create_game_state(cls, events):
-        players = [
-            PlayerState(opts.player_names[n], events, opts.start_scores[n])
-                for n in range(opts.n_players)
-        ]
-
-        return GameState(players, events, opts)
 
     @staticmethod
     def _clear_terminal():
@@ -36,8 +27,7 @@ class TextGUI(object):
 
     # public instance
 
-    def __init__(self, game_state, events):
-        self.game_state = game_state
+    def __init__(self, events):
         self.events = events
 
     # private instance
@@ -62,6 +52,15 @@ class TextGUI(object):
         self.events.subscribe('board_sector.prompt_for_wager', self._on_prompt_for_wager)
         self.events.subscribe('board_sector.received_invalid_wager', self._on_received_invalid_wager)
 
+        self.events.subscribe('question_timer.has_expired', self._on_question_timer_has_expired)
+
+        players = [
+            PlayerState(opts.player_names[n], self.events, opts.start_scores[n])
+                for n in range(opts.n_players)
+        ]
+
+        self.game_state = GameState(players, self.events, opts)
+
         TextGUI._clear_terminal()
 
         self.events.broadcast('gui.game_will_start')
@@ -79,7 +78,7 @@ class TextGUI(object):
                 self._print_scores()
             elif answer == 'q':
                 break
-            elif len(answer)>0 and answer[0] == 'c': # cheat menu
+            elif len(answer) > 0 and answer[0] == 'c': # cheat menu
                 self.game_state._cheat(answer[1:])
 
         print 'Good game!'
@@ -93,6 +92,10 @@ class TextGUI(object):
 
     def _on_sector_was_chosen(self, sector):
         print('You spun %s.' % str(sector))
+        self._clear_terminal()
+        self.events.broadcast(
+            'gui.trigger_sector_action', self.game_state.current_sector
+        )
 
     def _on_turn_will_end(self, game_state):
         print 'That concludes %s turn.' % apostrophize(game_state.get_current_player().name)
@@ -115,6 +118,9 @@ class TextGUI(object):
             self.events.broadcast('gui.correct_answer_received', question)
         else:
             self.events.broadcast('gui.incorrect_answer_received', question)
+
+    def _on_question_timer_has_expired(self):
+        print "Sorry, you didn't answer the question in time :("
 
     def _on_prompt_for_category(self, person='Please'):
         '''
