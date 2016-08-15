@@ -232,6 +232,8 @@ class WojApplicationWindow(QMainWindow, Ui_WojApplicationWindow):
 
         dialog.exec_()
 
+        self.spinButton.setEnabled(True)
+
     def _find_player_index(self, player_state):
         for idx, player in enumerate(self.players):
             if player.state == player_state:
