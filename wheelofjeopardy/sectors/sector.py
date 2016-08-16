@@ -22,7 +22,11 @@ class Sector(object):
 
         # if no question was available in the selected category...
         if game_state.current_question == None:
-            game_state.events.broadcast('sector.no_questions_in_category', category)
+            # @TODO god this is all kinds of horrible
+            category_name = game_state.board._q_mat[game_state.current_round - 1].headers[category - 1]
+            game_state.events.broadcast(
+                'sector.no_questions_in_category', category_name
+            )
         else:
             if game_state.current_question.is_daily_double():
                 game_state.events.broadcast('board_sector.daily_double_selected')
